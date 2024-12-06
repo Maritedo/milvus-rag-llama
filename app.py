@@ -1,18 +1,18 @@
-from lib.collections import *
+from lib.lib import *
 from pymilvus import connections
 from dotenv import load_dotenv
 import os
-from openai import OpenAI
+# from openai import OpenAI
 
-# 加载环境变量
-load_dotenv()
-_api_key = os.getenv("DASHSCOPE_API_KEY")
+# # 加载环境变量
+# load_dotenv()
+# _api_key = os.getenv("DASHSCOPE_API_KEY")
 
-# 使用DashScope API的兼容模式
-client = OpenAI(
-    api_key=_api_key,  # 使用环境变量中的API Key
-    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"  # DashScope SDK的base_url
-)
+# # 使用DashScope API的兼容模式
+# client = OpenAI(
+#     api_key=_api_key,  # 使用环境变量中的API Key
+#     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"  # DashScope SDK的base_url
+# )
 
 def extract_spo(text, exps):
     # 根据示例数目生成示例部分
@@ -23,9 +23,8 @@ def extract_spo(text, exps):
     if len(exps) > 0:
         prompt += "示例输入如下："
         for exp in exps:
-            prompt += f"输入：{exp['sentence']}，输出：{{'ner':{exp['ner']},"relations":{}\}"
+            prompt += f"""输入：{exp['sentence']}，输出：\{'ner':{exp['ner']},"relations":{1}}"""
     # 加入 SPO 关系限制
-    prompt += f"所有可能的SPO关系如下（SPO三元组形式）：{schema}"
     
     completion = client.chat.completions.create(
         model="qwen-max-2024-09-19",

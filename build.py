@@ -1,4 +1,6 @@
-from lib.collections import *
+import os
+import time
+from lib.lib import *
 from pathlib import Path
 import json
 
@@ -12,14 +14,22 @@ with open(workdir / "data" / "train_sentence.json", "r") as f:
     relations_data = [item["relations"] for item in json_data]
 
 if __name__ == "__main__":
-    insert_sentence(sentences, ner_data, relations_data)
-    collection.load()  # 加载数据到内存
-    query_result = collection.query(
-        expr="id >= 0",  # 条件表达式，检索所有数据
-        output_fields=["sentence", "ner", "relations"],
-    )
-    print("\nQuery Results:")
-    for item in query_result:
-        print("Sentence:", item["sentence"])
-        print("NER:", json.loads(item["ner"]))
-        print("Relations:", json.loads(item["relations"]))
+    if not os.path.exists("record"):
+        os.makedirs("record")
+    next = 0
+    with open(workdir / 'record' / (embbeder.name()+'.next'), 'r+') as f:
+        fc = f.read()
+        if fc and fc.strip().isdigit():
+            next = int(fc)
+    print(f"Starting from index {next} ({next} finished)")
+    batch_size = int(input("Enter batch size: "))
+    while True:
+        if next >= len(sentences):
+            break
+        current_time = time.time()
+        print(f"Processing {next} to {min(next + batch_size, len(sentences))}...")
+        insert_sentence(sentences[next:next+batch_size], ner_data[next:next+batch_size], relations_data[next:next+batch_size])
+        next = min(next + batch_size, len(sentences))
+        with open(workdir / 'record' / (embbeder.name() + '.next'), 'w') as f:
+            f.write(str(next))
+        print(f"Time elapsed: {time.time() - current_time:.2f}s")

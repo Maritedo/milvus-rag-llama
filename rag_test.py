@@ -1,14 +1,22 @@
 import requests
 from lib.cache import QueryCache
-from lib.utility import embedder
+from lib.utility import LocalEmbbeder
 from lib import parse_input
 import os
 from pathlib import Path
 import json
 import time
+import logging
 
 workdir = Path(os.getcwd())
 
+model="llama3.1:70b"
+numofexps=10
+# embbeder = ServerEmbbeder("http://172.16.129.30:11434", model_name=None)
+embedder = LocalEmbbeder(
+    model_name="google-bert/bert-base-uncased"
+    # model_name='sentence-transformers/all-MiniLM-L6-v2'
+)
 
 with open(workdir / 'data' / 'test_sentence.json', "r") as f:
     json_data = json.load(f)
@@ -46,33 +54,37 @@ Numbers in output that appear in pairs are starting index and stoping index of e
 Wait for my inputs and give reasonable outputs according to the instruction above."""
     api_url = "http://172.16.129.30:11434/api/generate"
     payload = {
-        "model": "llama3.1:70b",  # 替换为你使用的具体模型名称
+        "model": model,  # 替换为你使用的具体模型名称
         "system": prompt,
         "prompt": parse_input(sentence),
         "stream": False,
         # "max_tokens": 200,  # 设置生成文本的最大长度
-        # "temperature": 0.7,  # 调节生成文本的多样性
+        # "temperature": 0.7, # 调节生成文本的多样性
         # "top_p": 0.9        # 调节生成文本的随机性
     }
     response = requests.post(api_url, json=payload)
     return response.json()
 
-numofexps = 10
+# 读取结果文件
 if not os.path.exists(workdir / 'results'):
     os.mkdir(workdir / 'results')
-results_file = workdir / 'results' / f"{embedder.name()}_{numofexps}examples.json"
-with open(results_file, "r+") as f:
-    fc = f.read()
-    results: dict = json.loads(fc if fc else "{}")
+results_file = workdir / 'results' / f"{embedder.name()}_{model.replace(":", "-")}_{numofexps}examples.json"
+if os.path.exists(results_file):
+    with open(results_file, "r+") as f:
+        fc = f.read()
+        results: dict = json.loads(fc if fc else "{}")
+else:
+    results = {}
 
 if __name__ == "__main__":
     cache = QueryCache(embedder.name(), db_path=workdir / 'cache' / 'cache.db')
     next = 0
-    checkpointfile = workdir / 'record' / ('evaluate_' + embedder.name() + '_llama3_1.next')
-    with open(checkpointfile, 'r+') as f:
-        fc = f.read()
-        if fc and fc.strip().isdigit():
-            next = int(fc)
+    checkpointfile = workdir / 'record' / (f'evaluate_{embedder.name()}_{model.replace(":", "-")}_{numofexps}exps.next')
+    if os.path.exists(checkpointfile):
+        with open(checkpointfile, 'r+') as f:
+            fc = f.read()
+            if fc and fc.strip().isdigit():
+                next = int(fc)
     print(f"Starting from index {next} ({next} finished)")
     batch_size = int(input("Enter batch size: "))
     try:
@@ -100,7 +112,9 @@ if __name__ == "__main__":
                         if step == 3:
                             results[index] = output
                         raise KeyboardInterrupt
-                    except:
+                    except Exception as e:
+                        # 打印错误堆栈
+                        logging.exception(e)
                         print("Error occurred, retrying...")
                         continue
             next = min(next + batch_size, len(test_sentences))

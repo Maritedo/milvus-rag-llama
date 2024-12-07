@@ -7,6 +7,7 @@ from math import log10
 from dotenv import load_dotenv
 from pathlib import Path
 import os
+from lib import get_sentence_hash
 
 workdir = Path(os.getcwd())
 filedir = workdir / "data"
@@ -25,9 +26,16 @@ class Embedder:
 class LocalEmbbeder(Embedder):
     def __init__(self, model_name) -> None:
         self.model_name = model_name.split("/")[-1].replace("-", "_")
-        self.model = SentenceTransformer(model_name)
+        self.__loaded = False
+        self.model = None
+    
+    def __lazy_load(self):
+        if not self.__loaded:
+            self.model = SentenceTransformer(self.model_name)
+            self.__loaded = True
     
     def embbed(self, sentences):
+        self.__lazy_load()
         if type(sentences) == str:
             sentences = [sentences]
         return self.model.encode(sentences).tolist()
@@ -36,6 +44,7 @@ class LocalEmbbeder(Embedder):
         return self.model_name
     
     def dimension(self):
+        self.__lazy_load()
         return self.model.get_sentence_embedding_dimension()
 
 def get_size_readable(size):
@@ -47,32 +56,36 @@ def get_size_readable(size):
     return f"{size:.2f} PB"
 
 class ServerEmbedder(Embedder):
+    def __interactive_choose(server_url):
+        api_url = f"{server_url}/api/tags"
+        response = requests.get(api_url)
+        if response.status_code == 200:
+            models = response.json()["models"]
+            print(f"Available models ({len(models)} in total):")
+            if len(models) == 0:
+                print("No models available.")
+                raise Exception("No available models")
+            display_len = int(log10(len(models))) + 1
+            max_name_len = max([len(model['name']) for model in models])
+            for index, model in enumerate(models):
+                print(f"{1+index:{display_len}d}. {model['name']:<{max_name_len}} ({get_size_readable(model['size'])})")
+            print()
+            while True:
+                index_str = input(f"Choose a model: ")
+                if not index_str.isdigit():
+                    continue
+                index = int(index_str) - 1
+                if 0 <= index < len(models):
+                    model = models[index]
+                    model_name = model['name']
+                    break
+        else: raise Exception(f"Failed to get models from {api_url}")
+        return (model, model_name)
+    
     def __init__(self, server_url: str, model_name: str | None = None) -> None:
         if model_name is None:
-            api_url = f"{server_url}/api/tags"
-            response = requests.get(api_url)
-            if response.status_code == 200:
-                models = response.json()["models"]
-                print(f"Available models ({len(models)} in total):")
-                if len(models) == 0:
-                    print("No models available.")
-                    raise Exception("No available models")
-                display_len = int(log10(len(models))) + 1
-                max_name_len = max([len(model['name']) for model in models])
-                for index, model in enumerate(models):
-                    print(f"{1+index:{display_len}d}. {model['name']:<{max_name_len}} ({get_size_readable(model['size'])})")
-                print()
-                while True:
-                    index_str = input(f"Choose a model: ")
-                    if not index_str.isdigit():
-                        continue
-                    index = int(index_str) - 1
-                    if 0 <= index < len(models):
-                        model = models[index]
-                        model_name = model['name']
-                        print(f"Selected model: {model['name']} ({get_size_readable(model['size'])})")
-                        break
-            else: raise Exception(f"Failed to get models from {api_url}")
+            (model, model_name) = self.__interactive_choose(server_url)
+            print(f"Selected model: {model['name']} ({get_size_readable(model['size'])})")
         self.model_name = model_name
         self.server_url = server_url
         self.__dimension = None
@@ -147,17 +160,19 @@ def choose_embedder():
     return embedder
 
 class NEREmbeddingColleciton:
-    def __init__(self, embedder) -> None:
+    def __init__(self, embedder: Embedder) -> None:
         self.model_name = embedder.name()
         self.collection_name = f"ner_sentences_train_{self.model_name.split('/')[-1].replace('-', '_')}"
         self.collection = None
+        self.embedder = embedder
     
-    def _init_database(self) -> None:
+    
+    def __create_database(self) -> None:
         # 定义 Collection 的 Schema
         fields = [
             FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
             FieldSchema(name="hash", dtype=DataType.INT64),
-            FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=dimension),
+            FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=self.embedder.dimension),
             FieldSchema(name="sentence", dtype=DataType.VARCHAR, max_length=65535),
             FieldSchema(name="ner", dtype=DataType.VARCHAR, max_length=65535),
             FieldSchema(name="relations", dtype=DataType.VARCHAR, max_length=65535)
@@ -172,48 +187,51 @@ class NEREmbeddingColleciton:
             "params": {"nlist": 128}   # 额外的参数设置
         }
         collection.create_index(field_name="embedding", index_params=index_params)
-        print(f"Index created for '{collection_name}'.")
     
     
     def connect(self):
-        if collection_name in utility.list_collections():
-            print(f"Collection '{collection_name}' already exists. Loading...")
-            collection = Collection(name=collection_name)  # 加载现有 Collection
-            # print(f"Collection length: {collection.num_entities}")
-            # if input("Do you want to drop this collection? (y/n): ").lower() == "y":
-            #     collection.drop()  # 删除 Collection
-            # exit()
+        # 连接到 Milvus
+        # locals: 127.0.0.1
+        # school: 172.16.129.30
+        connections.connect("default", host="172.16.129.30", port="19530")
+        print("Connected to Milvus.")
+        
+    def init(self):
+        if self.collection_name in utility.list_collections():
+            print(f"Collection '{self.collection_name}' already exists. Loading...")
+            self.collection = Collection(name=self.collection_name)
         else:
-            print(f"Collection '{collection_name}' does not exist. Creating...")
-            self._init_database()
-            
-        fields = [
-            FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
-            FieldSchema(name="hash", dtype=DataType.INT64),
-            FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=384),
-            FieldSchema(name="sentence", dtype=DataType.VARCHAR, max_length=65535),
-            FieldSchema(name="ner", dtype=DataType.VARCHAR, max_length=65535),
-            FieldSchema(name="relations", dtype=DataType.VARCHAR, max_length=65535)
-        ]
-        schema = CollectionSchema(fields, description="Sentence storage with embeddings, NER, and relations")
-        self.collection = Collection(name=self.collection_name, schema=schema)
-        print(f"Collection '{self.collection_name}' created.")
-        # 创建索引
-        index_params = {
-            "index_type": "IVF_FLAT",      # 索引类型，例如 IVF_FLAT 或 HNSW
-            "metric_type": "COSINE",       # 相似度度量方式，余弦相似度
-            "params": {"nlist": 128}       # 额外的参数设置
-        }
-        self.collection.create_index(field_name="embedding", index_params=index_params)
-        print(f"Index created for '{self.collection_name}'.")
+            print(f"Collection '{self.collection_name}' does not exist. Creating...")
+            self.__create_database()
+            print(f"Index created for '{self.collection_name}'.")
     
     def load(self):
         self.collection.load()
     
+    
     def insert(self, data):
-        insert_result = collection.insert(data)
-        collection.flush()
+        insert_result = self.collection.insert(data)
+        self.collection.flush()
         return insert_result
+    
+
+    def insert_sentence(self, sentences, ner, relations):
+        embeddings = self.embedder.embbed(sentences)
+        
+        ner_json = [json.dumps(i, indent=0) for i in ner]
+        relations_json = [json.dumps(i, indent=0) for i in relations]
+
+        data = [
+            [get_sentence_hash(i) for i in sentences], # hash 字段
+            embeddings,                                # embedding 向量
+            sentences,                                 # sentence 字段
+            ner_json,                                  # ner 字段（JSON 字符串）
+            relations_json                             # relations 字段（JSON 字符串）
+        ]
+        insert_result = self.collection.insert(data)
+        self.collection.flush()
+        return insert_result
+
     
     def query(self, expr, output_fields):
         return self.collection.query(expr=expr, output_fields=output_fields)
@@ -221,7 +239,7 @@ class NEREmbeddingColleciton:
     def search(self, sentences, anns_field, param, limit, output_fields=["sentence", "ner", "relations"]):
         if type(sentences) == str:
             sentences = [sentences]
-        collection.load()  # 加载数据到内存
+        self.collection.load()  # 加载数据到内存
         query_embedding = self.embedder.embbed(sentences)
         search_params = {
             "metric_type": "COSINE",
@@ -229,7 +247,7 @@ class NEREmbeddingColleciton:
                 "nprobe": 10
             }
         }
-        search_result = collection.search(
+        search_result = self.collection.search(
             data=query_embedding,        # 查询向量
             anns_field="embedding",      # 检索的向量字段
             param=search_params,         # 搜索参数
@@ -237,96 +255,3 @@ class NEREmbeddingColleciton:
             output_fields=output_fields  # 返回的附加字段
         )
         return search_result
-
-# embbeder = ServerEmbbeder("http://172.16.129.30:11434", model_name=None)
-embedder = LocalEmbbeder(
-    model_name="google-bert/bert-base-uncased"
-    # model_name='sentence-transformers/all-MiniLM-L6-v2'
-)
-
-model_name = embedder.name()
-dimension = embedder.dimension()
-print(f"Model: {model_name}, Dimension: {dimension}")
-
-# 连接到 Milvus
-# locals: 127.0.0.1
-# school: 172.16.129.30
-connections.connect("default", host="172.16.129.30", port="19530")
-print("Connected to Milvus.")
-
-# 检查 Collection 是否已存在
-collection_name = f"ner_sentences_train_{model_name.split('/')[-1].replace('-', '_')}"
-if collection_name in utility.list_collections():
-    print(f"Collection '{collection_name}' already exists. Loading...")
-    collection = Collection(name=collection_name)  # 加载现有 Collection
-    # print(f"Collection length: {collection.num_entities}")
-    # if input("Do you want to drop this collection? (y/n): ").lower() == "y":
-    #     collection.drop()  # 删除 Collection
-    # exit()
-else:
-    print(f"Collection '{collection_name}' does not exist. Creating...")
-    # 定义 Collection 的 Schema
-    fields = [
-        FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
-        FieldSchema(name="hash", dtype=DataType.INT64),
-        FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=dimension),
-        FieldSchema(name="sentence", dtype=DataType.VARCHAR, max_length=65535),
-        FieldSchema(name="ner", dtype=DataType.VARCHAR, max_length=65535),
-        FieldSchema(name="relations", dtype=DataType.VARCHAR, max_length=65535)
-    ]
-    schema = CollectionSchema(fields, description="Sentence storage with embeddings, NER, and relations")
-    collection = Collection(name=collection_name, schema=schema)
-    print(f"Collection '{collection_name}' created.")
-    # 创建索引
-    index_params = {
-        "index_type": "IVF_FLAT",  # 索引类型，例如 IVF_FLAT 或 HNSW
-        "metric_type": "COSINE",        # 相似度度量方式，例如 L2 距离
-        "params": {"nlist": 128}    # 额外的参数设置
-    }
-    collection.create_index(field_name="embedding", index_params=index_params)
-    print(f"Index created for '{collection_name}'.")
-
-def get_sentence_hash(sentence):
-    return hash(sentence)  # 生成一个整数哈希值
-
-def insert_sentence(sentences, ner, relations):
-    # 转换句子为嵌入
-    # embeddings = embedding_model.encode(sentences).tolist()
-    embeddings = embedder.embbed(sentences)
-    
-    # 转换 NER 和关系数据为 JSON 字符串
-    ner_json = [json.dumps(i, indent=0) for i in ner]
-    relations_json = [json.dumps(i, indent=0) for i in relations]
-
-    # 插入数据到 Collection
-    data = [
-        # None,              # sentence_id: None 表示自动生成主键
-        [get_sentence_hash(i) for i in sentences],                # hash 字段
-        embeddings,        # embedding 向量
-        sentences,         # sentence 字段
-        ner_json,          # ner 字段（JSON 字符串）
-        relations_json    # relations 字段（JSON 字符串）
-    ]
-    insert_result = collection.insert(data)
-    collection.flush()
-    print(f"Inserted {len(insert_result.primary_keys)} rows into '{collection_name}'.")
-
-def query(sentences, n = 3):
-    if type(sentences) == str:
-        sentences = [sentences]
-    collection.load()  # 加载数据到内存
-    query_embedding = embedder.embbed(sentences)
-    search_params = {
-        "metric_type": "COSINE",
-        "params": {
-            "nprobe": 10
-        }
-    }
-    search_result = collection.search(
-        data=query_embedding,        # 查询向量
-        anns_field="embedding",      # 检索的向量字段
-        param=search_params,         # 搜索参数
-        limit=n,                     # 返回的前 n 个结果
-        output_fields=["sentence", "ner", "relations"],  # 返回的附加字段
-    )
-    return search_result

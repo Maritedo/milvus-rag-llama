@@ -1,7 +1,7 @@
 import sqlite3
 import time
 from typing import List, Tuple
-from lib.utility import query, embedder
+from lib.utility import search, embedder
 import json
 from pathlib import Path
 import os
@@ -92,7 +92,7 @@ if __name__ == "__main__":
                 if 0 <= index < len(test_sentences):
                     current_time = time.time()
                     print(f"Processing {index}...")
-                    result = query(test_sentences[index], n=10)[0]
+                    result = search(test_sentences[index], n=10)[0]
                     tobeinserted = [(train_sentences.index(row.entity.get("sentence")), row.distance) for row in result]
                     print(*tobeinserted, sep="\n")
                     if input("Insert? (y/n): ").lower() != "y":
@@ -113,7 +113,7 @@ if __name__ == "__main__":
         current_time = time.time()
         print(f"Processing {next} to {min(next + batch_size, len(test_sentences))}...")
         items = test_sentences[next:next+batch_size]
-        results = query(items, n=10)
+        results = search(items, n=10)
         for offset, result in enumerate(results):
             # print(f"Input {next+offset}: {items[offset]}")
             # print("Results:")

@@ -60,7 +60,7 @@ if __name__ == "__main__":
             sentence=input("Enter a sentence: ")
             if sentence == "exit":
                 break
-            search_result = query(sentence)
+            search_result = search(sentence)
             print(f"\nTop-3 search results for: '{sentence}'")
             for i, result in enumerate(search_result[0]):  # search_result[0] 对应第一个查询向量的结果
                 print(f"Result {i+1}:")

@@ -1,14 +1,15 @@
 import sqlite3
 import time
 from typing import List, Tuple
-from lib.lib import query, embbeder
+from lib.utility import query, embedder
 import json
 from pathlib import Path
+import os
 
-workdir = Path(__file__).parent
+workdir = Path(os.getcwd())
 
 class QueryCache:
-    def __init__(self, algorithm_name: str, db_path: str = "cache.db"):
+    def __init__(self, algorithm_name: str, db_path: str = workdir / 'cache' / 'cache.db'):
         """
         初始化缓存对象，基于算法名动态创建或使用数据表
         :param algorithm_name: 算法名，用于区分不同的结果缓存表
@@ -66,7 +67,7 @@ class QueryCache:
         self.conn.close()
 
 if __name__ == "__main__":
-    cache = QueryCache(embbeder.name())
+    cache = QueryCache(embedder.name())
     with open(Path(__file__).parent / 'data' / 'train_sentence.json', "r") as f:
         json_data = json.load(f)
         train_sentences = [item["sentence"] for item in json_data]
@@ -75,7 +76,7 @@ if __name__ == "__main__":
         json_data = json.load(f)
         test_sentences = [item["sentence"] for item in json_data]
     next = 0
-    with open(workdir / 'record' / ('cache_' + embbeder.name() + '.next'), 'a+') as f:
+    with open(workdir / 'record' / ('cache_' + embedder.name() + '.next'), 'a+') as f:
         fc = f.read()
         if fc and fc.strip().isdigit():
             next = int(fc)
@@ -122,6 +123,6 @@ if __name__ == "__main__":
             cache.insert_results(next + offset, tobeinserted)
             # input("Press Enter to continue...")
         next = min(next + batch_size, len(test_sentences))
-        with open(workdir / 'record' / ('cache_' + embbeder.name() + '.next'), 'w') as f:
+        with open(workdir / 'record' / ('cache_' + embedder.name() + '.next'), 'w') as f:
             f.write(str(next))
         print(f"Time elapsed: {time.time() - current_time:.2f}s")

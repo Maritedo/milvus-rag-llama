@@ -4,18 +4,25 @@ from sentence_transformers import SentenceTransformer
 from pymilvus import connections, Collection, FieldSchema, CollectionSchema, DataType, utility
 from sentence_transformers import SentenceTransformer
 from math import log10
+from dotenv import load_dotenv
+from pathlib import Path
+import os
 
-class Embbeder:
+workdir = Path(os.getcwd())
+filedir = workdir / "data"
+load_dotenv(workdir / ".env")
+
+class Embedder:
     def __init__(self) -> None:
-        pass
-    def embbed(self, sentence):
+        raise NotImplementedError
+    def embbed(self, sentence: str):
         pass
     def name(self):
         pass
     def dimension(self):
         pass
     
-class LocalEmbbeder(Embbeder):
+class LocalEmbbeder(Embedder):
     def __init__(self, model_name) -> None:
         self.model_name = model_name.split("/")[-1].replace("-", "_")
         self.model = SentenceTransformer(model_name)
@@ -39,7 +46,7 @@ def get_size_readable(size):
         size /= 1024
     return f"{size:.2f} PB"
 
-class ServerEmbbeder(Embbeder):
+class ServerEmbedder(Embedder):
     def __init__(self, server_url: str, model_name: str | None = None) -> None:
         if model_name is None:
             api_url = f"{server_url}/api/tags"
@@ -103,16 +110,83 @@ class ServerEmbbeder(Embbeder):
     def name(self):
         return self.model_name.split(":")[0].replace(".", "_")
 
+def _choose_local():
+    models_list = [
+        "google-bert/bert-base-uncased",
+        "sentence-transformers/all-MiniLM-L6-v2"
+    ]
+    print("Available models:")
+    for index, model in enumerate(models_list):
+        print(f"{index+1}. {model}")
+    while True:
+        index_str = input("Choose a model: ")
+        if not index_str.isdigit():
+            continue
+        index = int(index_str) - 1
+        if 0 <= index < len(models_list):
+            model = models_list[index]
+            print(f"Selected model: {model}")
+            return SentenceTransformer(model)
+
+def _choose_server():
+    server_url = input("Enter server URL:")
+    if not server_url:
+        server_url = "http://172.16.129.30:11434"
+    return ServerEmbedder(server_url=server_url, model_name=None)
+
+def choose_embedder():
+    embedder = None
+    while embedder is None:
+        i = input("Choose an embedder (local/server): ").lower()
+        if not i in ["local", "server"]:
+            continue
+        if i == "local":
+            embedder = _choose_local()
+        else:
+            embedder = _choose_server()
+    return embedder
+
 class NEREmbeddingColleciton:
-    def __init__(self, collection_name) -> None:
-        self.collection_name = collection_name
+    def __init__(self, embedder) -> None:
+        self.model_name = embedder.name()
+        self.collection_name = f"ner_sentences_train_{self.model_name.split('/')[-1].replace('-', '_')}"
         self.collection = None
     
-    def __init__(self) -> None:
-        self.collection_name = "ner_sentences_train"
-        self.collection = None
+    def _init_database(self) -> None:
+        # 定义 Collection 的 Schema
+        fields = [
+            FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
+            FieldSchema(name="hash", dtype=DataType.INT64),
+            FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=dimension),
+            FieldSchema(name="sentence", dtype=DataType.VARCHAR, max_length=65535),
+            FieldSchema(name="ner", dtype=DataType.VARCHAR, max_length=65535),
+            FieldSchema(name="relations", dtype=DataType.VARCHAR, max_length=65535)
+        ]
+        schema = CollectionSchema(fields, description="Sentence storage with embeddings, NER, and relations")
+        collection = Collection(name=self.collection_name, schema=schema)
+        print(f"Collection '{self.collection_name}' created.")
+        # 创建索引
+        index_params = {
+            "index_type": "IVF_FLAT",  # 索引类型，例如 IVF_FLAT 或 HNSW
+            "metric_type": "COSINE",   # 相似度度量方式，例如 L2 距离
+            "params": {"nlist": 128}   # 额外的参数设置
+        }
+        collection.create_index(field_name="embedding", index_params=index_params)
+        print(f"Index created for '{collection_name}'.")
+    
     
     def connect(self):
+        if collection_name in utility.list_collections():
+            print(f"Collection '{collection_name}' already exists. Loading...")
+            collection = Collection(name=collection_name)  # 加载现有 Collection
+            # print(f"Collection length: {collection.num_entities}")
+            # if input("Do you want to drop this collection? (y/n): ").lower() == "y":
+            #     collection.drop()  # 删除 Collection
+            # exit()
+        else:
+            print(f"Collection '{collection_name}' does not exist. Creating...")
+            self._init_database()
+            
         fields = [
             FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
             FieldSchema(name="hash", dtype=DataType.INT64),
@@ -127,8 +201,8 @@ class NEREmbeddingColleciton:
         # 创建索引
         index_params = {
             "index_type": "IVF_FLAT",      # 索引类型，例如 IVF_FLAT 或 HNSW
-            "metric_type": "COSINE",      # 相似度度量方式，余弦相似度
-            "params": {"nlist": 128}               # 额外的参数设置
+            "metric_type": "COSINE",       # 相似度度量方式，余弦相似度
+            "params": {"nlist": 128}       # 额外的参数设置
         }
         self.collection.create_index(field_name="embedding", index_params=index_params)
         print(f"Index created for '{self.collection_name}'.")
@@ -139,24 +213,39 @@ class NEREmbeddingColleciton:
     def insert(self, data):
         insert_result = collection.insert(data)
         collection.flush()
-        print(f"Inserted {len(insert_result.primary_keys)} rows into '{collection_name}'.")
+        return insert_result
     
     def query(self, expr, output_fields):
-        self.collection.query()
         return self.collection.query(expr=expr, output_fields=output_fields)
+    
+    def search(self, sentences, anns_field, param, limit, output_fields=["sentence", "ner", "relations"]):
+        if type(sentences) == str:
+            sentences = [sentences]
+        collection.load()  # 加载数据到内存
+        query_embedding = self.embedder.embbed(sentences)
+        search_params = {
+            "metric_type": "COSINE",
+            "params": {
+                "nprobe": 10
+            }
+        }
+        search_result = collection.search(
+            data=query_embedding,        # 查询向量
+            anns_field="embedding",      # 检索的向量字段
+            param=search_params,         # 搜索参数
+            limit=limit,                 # 返回的前 n 个结果
+            output_fields=output_fields  # 返回的附加字段
+        )
+        return search_result
 
+# embbeder = ServerEmbbeder("http://172.16.129.30:11434", model_name=None)
+embedder = LocalEmbbeder(
+    model_name="google-bert/bert-base-uncased"
+    # model_name='sentence-transformers/all-MiniLM-L6-v2'
+)
 
-
-# model_name = 'google-bert/bert-base-uncased'
-# model_name = 'sentence-transformers/all-MiniLM-L6-v2'
-
-# embedding_model = SentenceTransformer(model_name)
-# dimension = embedding_model.get_sentence_embedding_dimension()
-
-embbeder = ServerEmbbeder("http://172.16.129.30:11434", model_name=None)
-# embbeder = LocalEmbbeder("google-bert/bert-base-uncased")
-model_name = embbeder.name()
-dimension = embbeder.dimension()
+model_name = embedder.name()
+dimension = embedder.dimension()
 print(f"Model: {model_name}, Dimension: {dimension}")
 
 # 连接到 Milvus
@@ -203,7 +292,7 @@ def get_sentence_hash(sentence):
 def insert_sentence(sentences, ner, relations):
     # 转换句子为嵌入
     # embeddings = embedding_model.encode(sentences).tolist()
-    embeddings = embbeder.embbed(sentences)
+    embeddings = embedder.embbed(sentences)
     
     # 转换 NER 和关系数据为 JSON 字符串
     ner_json = [json.dumps(i, indent=0) for i in ner]
@@ -226,7 +315,7 @@ def query(sentences, n = 3):
     if type(sentences) == str:
         sentences = [sentences]
     collection.load()  # 加载数据到内存
-    query_embedding = embbeder.embbed(sentences)
+    query_embedding = embedder.embbed(sentences)
     search_params = {
         "metric_type": "COSINE",
         "params": {

@@ -1,6 +1,6 @@
 import os
 import time
-from lib.lib import *
+from lib.utility import *
 from pathlib import Path
 import json
 
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     if not os.path.exists("record"):
         os.makedirs("record")
     next = 0
-    with open(workdir / 'record' / (embbeder.name()+'.next'), 'r+') as f:
+    with open(workdir / 'record' / (embedder.name()+'.next'), 'r+') as f:
         fc = f.read()
         if fc and fc.strip().isdigit():
             next = int(fc)
@@ -30,6 +30,6 @@ if __name__ == "__main__":
         print(f"Processing {next} to {min(next + batch_size, len(sentences))}...")
         insert_sentence(sentences[next:next+batch_size], ner_data[next:next+batch_size], relations_data[next:next+batch_size])
         next = min(next + batch_size, len(sentences))
-        with open(workdir / 'record' / (embbeder.name() + '.next'), 'w') as f:
+        with open(workdir / 'record' / (embedder.name() + '.next'), 'w') as f:
             f.write(str(next))
         print(f"Time elapsed: {time.time() - current_time:.2f}s")

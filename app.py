@@ -1,4 +1,4 @@
-from lib.lib import *
+from lib.utility import *
 from pymilvus import connections
 from dotenv import load_dotenv
 import os

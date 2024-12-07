@@ -6,8 +6,9 @@ def require_input(prompt: str, check) -> str:
             text = _text
     return text
 
+import json
 def parse_input(t):
-    return str({
+    return str(json.dumps({
         'sentence': t,
         'slices': [(i,e) for i,e in enumerate(t.split())]
-    })
+    }))

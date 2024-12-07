@@ -41,7 +41,7 @@ f"""As a natural language processing api, you should extract the Named Entities 
 {schema_ner}
 {schema_rel}
 Example of an input and its corresponding output is as below:
-{"\n".join([f'Input {i+1}: {parse_input(train_sentences[item[0]]["sentence"])}\nOutput {i+1}: {{"ner": {train_sentences[item[0]]["ner"]}, "relations": {train_sentences[item[0]]["relations"]}}}' for i, item in enumerate(examples)])}
+{"\n".join([f'Input {i+1}: {parse_input(train_sentences[item[0]]["sentence"])}\nOutput {i+1}: {{"ner": {json.dumps(train_sentences[item[0]]["ner"])}, "relations": {json.dumps(train_sentences[item[0]]["relations"])}}}' for i, item in enumerate(examples)])}
 Numbers in output that appear in pairs are starting index and stoping index of entities(!IMPORTAMT! Indexes start with 0).
 Wait for my inputs and give reasonable outputs according to the instruction above."""
     api_url = "http://172.16.129.30:11434/api/generate"
@@ -61,7 +61,7 @@ numofexps = 10
 if not os.path.exists(workdir / 'results'):
     os.mkdir(workdir / 'results')
 results_file = workdir / 'results' / f"{embedder.name()}_{numofexps}examples.json"
-with open(results_file, "a+") as f:
+with open(results_file, "r+") as f:
     fc = f.read()
     results: dict = json.loads(fc if fc else "{}")
 
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     cache = QueryCache(embedder.name(), db_path=workdir / 'cache' / 'cache.db')
     next = 0
     checkpointfile = workdir / 'record' / ('evaluate_' + embedder.name() + '_llama3_1.next')
-    with open(checkpointfile, 'a+') as f:
+    with open(checkpointfile, 'r+') as f:
         fc = f.read()
         if fc and fc.strip().isdigit():
             next = int(fc)
@@ -80,18 +80,25 @@ if __name__ == "__main__":
             if next >= len(test_sentences):
                 break
             current_time = time.time()
-            print(f"Processing {next} to {min(next + batch_size, len(test_sentences))}...")
+            end = min(next + batch_size, len(test_sentences))
+            print(f"Processing index {next}{f" to {end - 1}" if end-1==next else ""}...")
             items = test_sentences[next:next+batch_size]
-            for index in range(next, min(len(test_sentences) - 1, next + batch_size)):
+            for index in range(next, end):
                 exps = cache.fetch_results(next)
                 while True:
+                    step = 0
                     try:
+                        step += 1 # 1
                         res = get_completion(test_sentences[index]["sentence"], exps)
-                        print(res)
-                        output = json.loads(res["response"])
+                        step += 1 # 2
+                        output = json.loads(res["response"].replace("'", '"'))
+                        step += 1 # 3
                         results[index] = output
+                        step += 1 # 4
                         break
                     except KeyboardInterrupt:
+                        if step == 3:
+                            results[index] = output
                         raise KeyboardInterrupt
                     except:
                         print("Error occurred, retrying...")
@@ -104,7 +111,7 @@ if __name__ == "__main__":
         print("\nExiting...")
         _next = max(next, index)
         with open(checkpointfile, 'w') as f:
-            f.write(str(next))
+            f.write(str(_next))
     finally:
         with open(results_file, 'w') as f:
-            json.dump(results, f)
+            json.dump(results, f, indent=2)

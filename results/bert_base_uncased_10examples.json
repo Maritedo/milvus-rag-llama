@@ -1,1 +1,703 @@
-{}
+{
+  "0": {
+    "ner": [
+      [
+        3,
+        5,
+        "Material"
+      ]
+    ],
+    "relations": []
+  },
+  "1": {
+    "ner": [
+      [
+        9,
+        11,
+        "Task"
+      ]
+    ],
+    "relations": []
+  },
+  "2": {
+    "ner": [
+      [
+        4,
+        6,
+        "Task"
+      ],
+      [
+        8,
+        8,
+        "Generic"
+      ],
+      [
+        11,
+        12,
+        "Material"
+      ],
+      [
+        21,
+        22,
+        "Method"
+      ],
+      [
+        25,
+        25,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        6,
+        8,
+        8,
+        "COMPARE"
+      ],
+      [
+        4,
+        6,
+        11,
+        12,
+        "USED-FOR"
+      ],
+      [
+        4,
+        6,
+        21,
+        22,
+        "APPROACH-FOR"
+      ],
+      [
+        11,
+        12,
+        25,
+        25,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "3": {
+    "ner": [
+      [
+        15,
+        16,
+        "OtherScientificTerm"
+      ],
+      [
+        18,
+        19,
+        "OtherScientificTerm"
+      ],
+      [
+        20,
+        21,
+        "OtherScientificTerm"
+      ],
+      [
+        24,
+        25,
+        "Task"
+      ],
+      [
+        27,
+        27,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": [
+      [
+        24,
+        25,
+        15,
+        16,
+        "USED-FOR"
+      ],
+      [
+        24,
+        25,
+        18,
+        19,
+        "USED-FOR"
+      ],
+      [
+        24,
+        25,
+        20,
+        21,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "4": {
+    "ner": [
+      [
+        1,
+        1,
+        "Generic"
+      ]
+    ],
+    "relations": []
+  },
+  "5": {
+    "ner": [
+      [
+        0,
+        0,
+        "System"
+      ],
+      [
+        2,
+        3,
+        "Task"
+      ],
+      [
+        8,
+        9,
+        "Task"
+      ],
+      [
+        11,
+        12,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        0,
+        0,
+        2,
+        3,
+        "HYPONYM-OF"
+      ]
+    ]
+  },
+  "6": {
+    "ner": [
+      [
+        7,
+        7,
+        "Method"
+      ],
+      [
+        9,
+        9,
+        "Task"
+      ],
+      [
+        11,
+        11,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        7,
+        9,
+        9,
+        "USED-FOR"
+      ],
+      [
+        7,
+        7,
+        11,
+        11,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "7": {
+    "ner": [
+      [
+        16,
+        16,
+        "Method"
+      ],
+      [
+        9,
+        10,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        9,
+        10,
+        16,
+        16,
+        "HYPONYM-OF"
+      ]
+    ]
+  },
+  "8": {
+    "ner": [
+      [
+        8,
+        9,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": []
+  },
+  "9": {
+    "ner": [
+      [
+        5,
+        7,
+        "Generic"
+      ],
+      [
+        9,
+        15,
+        "Task"
+      ],
+      [
+        23,
+        24,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": []
+  },
+  "10": {
+    "ner": [
+      [
+        6,
+        7,
+        "Method"
+      ],
+      [
+        10,
+        12,
+        "OtherScientificTerm"
+      ],
+      [
+        13,
+        14,
+        "OtherScientificTerm"
+      ],
+      [
+        16,
+        16,
+        "OtherScientificTerm"
+      ],
+      [
+        18,
+        19,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": []
+  },
+  "11": {
+    "ner": [
+      [
+        5,
+        5,
+        "Method"
+      ],
+      [
+        8,
+        8,
+        "Generic"
+      ],
+      [
+        11,
+        11,
+        "Task"
+      ],
+      [
+        17,
+        18,
+        "Task"
+      ],
+      [
+        20,
+        20,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        5,
+        8,
+        8,
+        "USED-FOR"
+      ],
+      [
+        8,
+        8,
+        11,
+        11,
+        "HYPONYM-OF"
+      ],
+      [
+        11,
+        11,
+        17,
+        18,
+        "HYPONYM-OF"
+      ],
+      [
+        20,
+        20,
+        17,
+        18,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "12": {
+    "ner": [
+      [
+        0,
+        1,
+        "OtherScientificTerm"
+      ],
+      [
+        2,
+        3,
+        "OtherScientificTerm"
+      ],
+      [
+        11,
+        12,
+        "Task"
+      ],
+      [
+        15,
+        16,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        0,
+        1,
+        2,
+        3,
+        "CONJUNCTION"
+      ],
+      [
+        15,
+        16,
+        11,
+        12,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "13": {
+    "ner": [
+      [
+        3,
+        4,
+        "OtherScientificTerm"
+      ],
+      [
+        8,
+        8,
+        "OtherScientificTerm"
+      ],
+      [
+        11,
+        12,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        4,
+        8,
+        8,
+        "FEATURE-OF"
+      ],
+      [
+        11,
+        12,
+        8,
+        8,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "14": {
+    "ner": [
+      [
+        7,
+        8,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": []
+  },
+  "15": {
+    "ner": [
+      [
+        4,
+        6,
+        "Method"
+      ],
+      [
+        10,
+        16,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        6,
+        10,
+        16,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "16": {
+    "ner": [
+      [
+        7,
+        8,
+        "Method"
+      ]
+    ],
+    "relations": []
+  },
+  "17": {
+    "ner": [
+      [
+        0,
+        1,
+        "OtherScientificTerm"
+      ],
+      [
+        7,
+        8,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        8,
+        0,
+        1,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "18": {
+    "ner": [
+      [
+        0,
+        1,
+        "Method"
+      ],
+      [
+        19,
+        20,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": [
+      [
+        0,
+        1,
+        19,
+        20,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "19": {
+    "ner": [
+      [
+        3,
+        5,
+        "OtherScientificTerm"
+      ]
+    ]
+  },
+  "20": {
+    "ner": [
+      [
+        5,
+        5,
+        "Language"
+      ],
+      [
+        7,
+        7,
+        "Language"
+      ],
+      [
+        8,
+        9,
+        "OtherScientificTerm"
+      ],
+      [
+        16,
+        16,
+        "Language"
+      ],
+      [
+        17,
+        19,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": []
+  },
+  "21": {
+    "ner": [
+      [
+        0,
+        3,
+        "Generic"
+      ]
+    ],
+    "relations": []
+  },
+  "22": {
+    "ner": [
+      [
+        3,
+        5,
+        "OtherScientificTerm"
+      ],
+      [
+        8,
+        10,
+        "Generic"
+      ]
+    ]
+  },
+  "23": {
+    "ner": [
+      [
+        7,
+        7,
+        "Generic"
+      ],
+      [
+        12,
+        12,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        7,
+        12,
+        12,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "24": {
+    "ner": [
+      [
+        1,
+        1,
+        "Method"
+      ],
+      [
+        9,
+        10,
+        "Generic"
+      ],
+      [
+        14,
+        14,
+        "OtherScientificTerm"
+      ],
+      [
+        16,
+        16,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        9,
+        10,
+        "USED-FOR"
+      ],
+      [
+        9,
+        10,
+        14,
+        14,
+        "USED-FOR"
+      ],
+      [
+        9,
+        10,
+        16,
+        16,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "25": {
+    "ner": [
+      [
+        6,
+        9,
+        "Generic"
+      ]
+    ],
+    "relations": []
+  },
+  "26": {
+    "ner": [
+      [
+        11,
+        11,
+        "Generic"
+      ],
+      [
+        14,
+        14,
+        "Generic"
+      ],
+      [
+        19,
+        19,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        11,
+        11,
+        14,
+        14,
+        "PART-OF"
+      ]
+    ]
+  },
+  "27": {
+    "ner": [
+      [
+        4,
+        5,
+        "Task"
+      ],
+      [
+        11,
+        11,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": []
+  }
+}

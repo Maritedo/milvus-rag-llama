@@ -1,18 +1,25 @@
 import json
 from pathlib import Path
+import os
 
-with open(Path(__file__).parent / 'data' / 'train_sentence.json', "r") as f:
-    json_data = json.load(f)
-    train_sentences = json_data
-    
-with open(Path(__file__).parent / 'data' / 'test_sentence.json', "r") as f:
-    json_data = json.load(f)
-    test_sentences = json_data
+workdir = Path(os.getcwd())
 
-datas = [train_sentences, test_sentences]
+files = [
+    # workdir / 'data' / 'train_sentence.json',
+    # workdir / 'data' / 'test_sentence.json',
+    workdir / 'results' / 'bert_base_uncased_llama3.1-70b_10examples.json',
+]
+datas = []
+
+for file in files:
+    with open(file, "r") as f:
+        datas.append(json.load(f))
+
 NER = set()
 REL = set()
 for collection in datas:
+    if type(collection) != list:
+        collection = list(collection.values())
     for item in collection:
         for entity in item["ner"]:
             NER.add(entity[2])

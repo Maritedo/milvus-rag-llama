@@ -1,6 +1,6 @@
 import requests
 from lib.cache import QueryCache
-from lib.utility import LocalEmbbeder
+from lib.utility import LocalEmbbeder, ServerEmbedder
 from lib import parse_input
 import os
 from pathlib import Path
@@ -10,122 +10,286 @@ import logging
 
 workdir = Path(os.getcwd())
 
-model="llama3.1:70b"
-numofexps=10
-# embbeder = ServerEmbbeder("http://172.16.129.30:11434", model_name=None)
-embedder = LocalEmbbeder(
-    model_name="google-bert/bert-base-uncased"
-    # model_name='sentence-transformers/all-MiniLM-L6-v2'
-)
-
-with open(workdir / 'data' / 'test_sentence.json', "r") as f:
+with open(workdir / "data" / "test_sentence.new.json", "r") as f:
     json_data = json.load(f)
-    test_sentences = json_data
-with open(workdir / 'data' / 'train_sentence.json', "r") as f:
+    test_sentences = json_data[:250]
+with open(workdir / "data" / "train_sentence.new.json", "r") as f:
     json_data = json.load(f)
     train_sentences = json_data
 
-schema_ner = \
-"""All possible entity types are as below:
+schema_ner = """All entity types are as below:
 1.Task: Applications, problems to solve, systems to construct.
-2.Method: Methods , models, systems to use, or tools, components of a system,frameworks.
+2.Method: Methods , models, systems to use, tools/components of a system/frameworks.
 3.Metric: Metrics, measures, or entities that can express quality of a system/method.
 4.Material: Data, datasets, resources, Corpus, Knowledge base.
-5.OtherScientiﬁcTerms: Phrases that are a scientiﬁc terms but do not fall into any of the above classes.
+5.OtherScientificTerms: Phrases that are a scientific terms but do not fall into any of the above classes.
 6.Generic: General terms or pronouns that may refer to a entity but are not themselves informative, often used as connection words."""
-schema_rel = \
-"""All possible relationship types and their meanings are as below:
+schema_rel = """All relation types are as below:
 1.USED-FOR: B is used for A, B models A, A is trained on B, B exploits A, A is based on B.
 2.FEATURE-OF: B belongs to A, B is a feature of A, B is under A domain.
 3.HYPONYM-OF: B is a hyponym of A, B is a type of A.
 4.PART-OF: B is a part of A.
-5.COMPARE: Symmetric relation (use blue to denote entity). Opposite of conjunction, compare two models/methods, or listing two opposing entities.
-6.CONJUNCTION: Symmetric relation (use blue to denote entity). Function as similar role or use/incorporate with.
-"""
+5.COMPARE: Symmetric relation. Opposite of conjunction, compare two models/methods, or listing two opposing entities.
+6.CONJUNCTION: Symmetric relation. Function as similar role or use/incorporate with."""
 
-def get_completion(sentence, examples):
-    prompt = \
-f"""As a natural language processing api, you should extract the Named Entities from given sliced sentence (a JSON list) and provide their type in a JSON format. Make sure entities you find are meaningful and the result you give MUST be pure JSON string and contains NO extra information. DO NOT give codes or explanation.
+def get_completion(sentence, examples, model):
+    prompt = f"""As a NLP api, you will receive JSON input that includes a sentence and its indexed slices, then you need to extract entities and relations of entities from inputed sentence. Make sure that the result you give MUST be pure JSON string. DO NOT give codes or explanation.
 {schema_ner}
 {schema_rel}
-Example of an input and its corresponding output is as below:
+Parse the structure of the sentence and identify which type of entity each grammatical structure belongs to. After that find out all relations between these entities and classify the relations. Expected output is a JSON string that represent a list, each item in list has 2 fields(both are list, not dict): "ner" and "relations". Items in 'ner' are tuples as [entity, start_index, end_index, entity_type] (entity is string, start_index and end_index corespond to slice indexes in the input, entity_type must be Task, Method, Metric, Material, OtherScientificTerms or Generic). Items in 'relations' are tuples like [start_index_of_A, end_index_of_A, start_index_of_B, end_index_of_B, relation_type]. Notice that entity types and relation types should be one of the types listed above. For examples:
 {"\n".join([f'Input {i+1}: {parse_input(train_sentences[item[0]]["sentence"])}\nOutput {i+1}: {{"ner": {json.dumps(train_sentences[item[0]]["ner"])}, "relations": {json.dumps(train_sentences[item[0]]["relations"])}}}' for i, item in enumerate(examples)])}
-Numbers in output that appear in pairs are starting index and stoping index of entities(!IMPORTAMT! Indexes start with 0).
-Wait for my inputs and give reasonable outputs according to the instruction above."""
+Now wait for a input and give the output."""
     api_url = "http://172.16.129.30:11434/api/generate"
     payload = {
-        "model": model,  # 替换为你使用的具体模型名称
+        "model": model,
         "system": prompt,
         "prompt": parse_input(sentence),
         "stream": False,
-        # "max_tokens": 200,  # 设置生成文本的最大长度
+        # "max_tokens": 1024,  # 设置生成文本的最大长度
         # "temperature": 0.7, # 调节生成文本的多样性
         # "top_p": 0.9        # 调节生成文本的随机性
     }
     response = requests.post(api_url, json=payload)
     return response.json()
 
-# 读取结果文件
-if not os.path.exists(workdir / 'results'):
-    os.mkdir(workdir / 'results')
-results_file = workdir / 'results' / f"{embedder.name()}_{model.replace(":", "-")}_{numofexps}examples.json"
-if os.path.exists(results_file):
-    with open(results_file, "r+") as f:
-        fc = f.read()
-        results: dict = json.loads(fc if fc else "{}")
-else:
-    results = {}
+from lib.evaluate import count_contained_intervals
 
-if __name__ == "__main__":
-    cache = QueryCache(embedder.name(), db_path=workdir / 'cache' / 'cache.db')
+def repair(results_file, results, model, embedder, numofexps, fixed, quite):
+    cache = QueryCache(embedder.name(), db_path=workdir / "cache" / "cache.db")
+    try:
+        indexes = None
+        while True:
+            try:
+                indexes = map(int, input("Enter indexes: ").replace(',', ' ').replace("'", '').split())
+                break
+            except ValueError:
+                print("Please enter valid numbers splited with space.")
+                continue
+        indexes_iter = iter(indexes)
+        while True:
+            index = next(indexes_iter)
+            current_time = time.time()
+            print(f"Processing index {index}...")
+            exps = cache.fetch_results(index)
+            while True:
+                step = 0
+                try:
+                    step += 1  # 1
+                    res = get_completion(test_sentences[index]["sentence"], exps[:numofexps], model)
+                    step += 1  # 2
+                    output: dict = json.loads(res["response"].replace("'", '"'))
+                    step += 1  # 3
+                    if (
+                        "ner" not in output.keys()
+                        or len(output["ner"]) == 0
+                        or type(output["ner"][0]) != list
+                    ):
+                        raise Exception(
+                            f"Invalid output skeleton (no ner field): {output}"
+                        )
+                    else:
+                        len_ner = set(len(i) for i in output["ner"])
+                        if len(len_ner) > 0 and len_ner != {4}:
+                            raise Exception(
+                                f"Invalid output structure (bad ner field): {output}"
+                            )
+                    if "relations" not in output.keys() or (
+                        len(output["relations"]) != 0
+                        and type(output["relations"][0]) != list
+                    ):
+                        raise Exception(
+                            f"Invalid output skeleton (no relations field): {output}"
+                        )
+                    else:
+                        len_rel = set(len(i) for i in output["relations"])
+                        if len(len_rel) > 0 and len_rel != {5}:
+                            raise Exception(
+                                f"Invalid output structure (bad relations field): {output}"
+                            )
+                    step += 1  # 4
+                    results[str(index)] = output
+                    step += 1  # 5
+                    break
+                except KeyboardInterrupt:
+                    if step == 4:
+                        results[str(index)] = output
+                    raise KeyboardInterrupt
+                except Exception as e:
+                    # 打印错误堆栈
+                    if not quite:
+                        logging.exception(e)
+                    if quite and step >= 2:
+                        print(res["response"])
+                    print("Error occurred, retrying...")
+                    continue
+            print(f"Time elapsed: {time.time() - current_time:.2f}s, Length: {len(output['ner'])} + {len(output['relations'])}")
+            matched, recall, precision = count_contained_intervals(test_sentences[index]["ner"], output["ner"])
+            print(f"[{index}] Recall: {recall * 100:.2f}%, Precision: {precision * 100:.2f}%, Matched: {matched}")
+    except KeyboardInterrupt:
+        print("\nExiting...")
+    except StopIteration:
+        print("\nAll indexes processed.")
+    finally:
+        with open(results_file, "w") as f:
+            json.dump(results, f, indent=2)
+
+def evaluate(results_file, results, model, embedder, numofexps, fixed, quite):
+    _interrupted = False
+    if not fixed:
+        cache = QueryCache(embedder.name(), db_path=workdir / "cache" / "cache.db")
+    else:
+        exps = [(557,), (1515,), (1295,), (1028,), (697,), (376,), (273,), (247,), (242,), (1779,), (1365,)]
     next = 0
-    checkpointfile = workdir / 'record' / (f'evaluate_{embedder.name()}_{model.replace(":", "-")}_{numofexps}exps.next')
+    checkpointfile = (
+        workdir / "record" / (f'evaluate_{embedder.name()}_{model.replace(":", "-")}_{numofexps}exps{"_fixed" if fixed else ""}.next')
+    )
     if os.path.exists(checkpointfile):
-        with open(checkpointfile, 'r+') as f:
+        with open(checkpointfile, "r+") as f:
             fc = f.read()
             if fc and fc.strip().isdigit():
                 next = int(fc)
     print(f"Starting from index {next} ({next} finished)")
-    batch_size = int(input("Enter batch size: "))
+    batch_size = 1 # int(input("Enter batch size: "))
     try:
         while True:
             if next >= len(test_sentences):
                 break
-            current_time = time.time()
             end = min(next + batch_size, len(test_sentences))
             print(f"Processing index {next}{f" to {end - 1}" if end-1==next else ""}...")
-            items = test_sentences[next:next+batch_size]
+            current_time = time.time()
             for index in range(next, end):
-                exps = cache.fetch_results(next)
+                if not fixed:
+                    exps = cache.fetch_results(next)
                 while True:
                     step = 0
                     try:
-                        step += 1 # 1
-                        res = get_completion(test_sentences[index]["sentence"], exps)
-                        step += 1 # 2
-                        output = json.loads(res["response"].replace("'", '"'))
-                        step += 1 # 3
-                        results[index] = output
-                        step += 1 # 4
+                        step += 1  # 1
+                        res = get_completion(test_sentences[index]["sentence"], exps[:numofexps], model)
+                        step += 1  # 2
+                        output: dict = json.loads(res["response"])
+                        step += 1  # 3
+                        if (
+                            "ner" not in output.keys()
+                            or len(output["ner"]) == 0
+                            or type(output["ner"][0]) != list
+                        ):
+                            raise Exception(f"Invalid output skeleton (no ner field): {output}")
+                        else:
+                            len_ner = set(len(i) for i in output["ner"])
+                            if len(len_ner) > 0 and len_ner != {4}:
+                                raise Exception(f"Invalid output structure (bad ner field): {output}")
+                        if "relations" not in output.keys() or (
+                            len(output["relations"]) != 0
+                            and type(output["relations"][0]) != list
+                        ):
+                            raise Exception(f"Invalid output skeleton (no relations field): {output}")
+                        else:
+                            len_rel = set(len(i) for i in output["relations"])
+                            if len(len_rel) > 0 and len_rel != {5}:
+                                raise Exception(f"Invalid output structure (bad relations field): {output}")
+                        step += 1  # 4
+                        results[str(index)] = output
+                        step += 1  # 5
                         break
                     except KeyboardInterrupt:
-                        if step == 3:
-                            results[index] = output
+                        if step == 4:
+                            results[str(index)] = output
                         raise KeyboardInterrupt
                     except Exception as e:
-                        # 打印错误堆栈
-                        logging.exception(e)
+                        if not quite:
+                            logging.exception(e)
+                            if step > 2: print(f"Output: {res['response']}")
                         print("Error occurred, retrying...")
                         continue
+            print(f"Time elapsed: {time.time() - current_time:.2f}s, Length: {len(output['ner'])} + {len(output['relations'])}")
+            matched, recall, precision = count_contained_intervals(test_sentences[index]["ner"], output["ner"])
+            print(f"[{index}] Recall: {recall * 100:.2f}%, Precision: {precision * 100:.2f}%, Matched: {matched}/{len(test_sentences[index]['ner'])}")
             next = min(next + batch_size, len(test_sentences))
-            with open(checkpointfile, 'w') as f:
+            with open(checkpointfile, "w") as f:
                 f.write(str(next))
-            print(f"Time elapsed: {time.time() - current_time:.2f}s")
     except KeyboardInterrupt:
         print("\nExiting...")
         _next = max(next, index)
-        with open(checkpointfile, 'w') as f:
+        _interrupted = True
+        with open(checkpointfile, "w") as f:
             f.write(str(_next))
     finally:
-        with open(results_file, 'w') as f:
+        with open(results_file, "w") as f:
             json.dump(results, f, indent=2)
+    return _interrupted
+
+tasks = [
+    {
+        "model": "llama3.1:70b",
+        "numofexps": 3,
+        "quite": False,
+        "fixed": False,
+    },{
+        "model": "llama3.1:70b",
+        "numofexps": 3,
+        "quite": False,
+        "fixed": True,
+    },{
+        "model": "llama3.1:70b",
+        "numofexps": 1,
+        "quite": False,
+        "fixed": False,
+    },{
+        "model": "llama3.1:70b",
+        "numofexps": 1,
+        "quite": False,
+        "fixed": True,
+    },{
+        "model": "llama3.2:3b",
+        "numofexps": 3,
+        "quite": False,
+        "fixed": False,
+    },{
+        "model": "llama3.2:3b",
+        "numofexps": 3,
+        "quite": False,
+        "fixed": True,
+    },{
+        "model": "llama3.2:3b",
+        "numofexps": 1,
+        "quite": False,
+        "fixed": False,
+    },{
+        "model": "llama3.2:3b",
+        "numofexps": 1,
+        "quite": False,
+        "fixed": True,
+    }
+]
+
+
+def main():
+    if not os.path.exists(workdir / "results"):
+        os.mkdir(workdir / "results")
+    if not os.path.exists(workdir / "record"):
+        os.mkdir(workdir / "record")
+    for index, task in enumerate(tasks):
+        model = task["model"]
+        numofexps = task["numofexps"]
+        quite = task["quite"]
+        fixed = task["fixed"]
+        embedder = ServerEmbedder("http://172.16.129.30:11434", model_name=model)
+        print(F"Task {index+1}:: Embedder={embedder.name()} Model={model.replace(':', '-')} Examples={numofexps}{',Fixed' if fixed else ''}")
+        # embedder = LocalEmbbeder(
+            # model_name="google-bert/bert-base-uncased"
+            # model_name='sentence-transformers/all-MiniLM-L6-v2'
+        # )
+        results_file = (workdir / "results" / f"{embedder.name()}_{model.replace(":", "-")}_{numofexps}exps{"_fixed" if fixed else ""}.json")
+        results: dict = None
+        if os.path.exists(results_file):
+            with open(results_file, "r") as f:
+                fc = f.read()
+                results = json.loads(fc if fc else "{}")
+        else:
+            results = {}
+        _interrupted = evaluate(results_file, results, model, embedder, numofexps, fixed, quite)
+        if _interrupted:
+            break
+
+if __name__ == "__main__":
+    main()

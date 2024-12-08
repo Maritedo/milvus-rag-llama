@@ -10,8 +10,8 @@ def require_input(prompt: str, check) -> str:
 
 def parse_input(t):
     return str(json.dumps({
-        'sentence': t,
-        'slices': [(i,e) for i,e in enumerate(t.split())]
+        'slices': {i:e for i,e in enumerate(t.split())},
+        'sentence': t
     }))
     
 

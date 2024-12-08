@@ -56,7 +56,7 @@ def get_size_readable(size):
     return f"{size:.2f} PB"
 
 class ServerEmbedder(Embedder):
-    def __interactive_choose(server_url):
+    def __interactive_choose(self, server_url):
         api_url = f"{server_url}/api/tags"
         response = requests.get(api_url)
         if response.status_code == 200:

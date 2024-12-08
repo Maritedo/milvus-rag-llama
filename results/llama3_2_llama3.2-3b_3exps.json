@@ -1,0 +1,1299 @@
+{
+  "0": {
+    "ner": [
+      [
+        "Recognition",
+        0,
+        5,
+        "Method"
+      ],
+      [
+        "of",
+        1,
+        3,
+        "Generic"
+      ],
+      [
+        "proper nouns",
+        2,
+        4,
+        "Task"
+      ],
+      [
+        "in",
+        4,
+        6,
+        "CONJUNCTION"
+      ],
+      [
+        "Japanese text",
+        5,
+        7,
+        "Material"
+      ],
+      [
+        "has",
+        7,
+        8,
+        "EVALUATE-FOR"
+      ],
+      [
+        "been studied",
+        8,
+        10,
+        "Method"
+      ],
+      [
+        "as",
+        10,
+        11,
+        "CONJUNCTION"
+      ],
+      [
+        "a part of",
+        12,
+        13,
+        "HYPONYM-OF"
+      ],
+      [
+        "the more general problem",
+        14,
+        16,
+        "Task"
+      ],
+      [
+        "of",
+        17,
+        18,
+        "Generic"
+      ],
+      [
+        "morphological analysis",
+        19,
+        20,
+        "Method"
+      ],
+      [
+        "in",
+        21,
+        22,
+        "CONJUNCTION"
+      ],
+      [
+        "Japanese text processing",
+        23,
+        24,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        3,
+        5,
+        7,
+        "HYPONYM-OF"
+      ],
+      [
+        4,
+        6,
+        12,
+        13,
+        "HYPONYM-OF"
+      ],
+      [
+        8,
+        10,
+        17,
+        18,
+        " USED-FOR"
+      ],
+      [
+        14,
+        16,
+        19,
+        20,
+        "USED-FOR"
+      ],
+      [
+        21,
+        22,
+        23,
+        24,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "1": {
+    "ner": [
+      [
+        "Japanese information extraction",
+        9,
+        11,
+        "Method"
+      ],
+      [
+        "recent years",
+        18,
+        20,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        9,
+        11,
+        17,
+        19,
+        "HYPONYM-OF"
+      ],
+      [
+        14,
+        15,
+        9,
+        11,
+        "PART-OF"
+      ],
+      [
+        17,
+        19,
+        9,
+        11,
+        "PART-OF"
+      ],
+      [
+        18,
+        20,
+        9,
+        11,
+        "COMPARE"
+      ]
+    ]
+  },
+  "2": {
+    "ner": [
+      [
+        "Multi-lingual Evaluation Task -LRB- MET -RRB-",
+        6,
+        9,
+        "Task"
+      ],
+      [
+        "Japanese",
+        11,
+        12,
+        "Material"
+      ],
+      [
+        "morphological analysis problem in Japanese",
+        21,
+        23,
+        "Task"
+      ],
+      [
+        "given task",
+        17,
+        18,
+        "Method"
+      ]
+    ],
+    "relations": []
+  },
+  "3": {
+    "ner": [
+      [
+        "Japanese text",
+        32,
+        34,
+        "Material"
+      ],
+      [
+        "proper names",
+        14,
+        15,
+        "Task"
+      ],
+      [
+        "numerical and temporal expressions",
+        19,
+        20,
+        "Method"
+      ],
+      [
+        "Named Entity -LRB- NE -RRB-",
+        25,
+        29,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": []
+  },
+  "4": {
+    "ner": [
+      [
+        "Amorph",
+        5,
+        7,
+        "OtherScientificTerm"
+      ],
+      [
+        "analyzer",
+        1,
+        2,
+        "Generic"
+      ]
+    ],
+    "relations": []
+  },
+  "5": {
+    "ner": [
+      [
+        "dictionary lookup",
+        8,
+        9,
+        "Method"
+      ],
+      [
+        "rule application",
+        11,
+        12,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        9,
+        11,
+        12,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "6": {
+    "ner": [
+      [
+        "dictionaries",
+        7,
+        8,
+        "Material"
+      ],
+      [
+        "kinds of dictionaries",
+        4,
+        6,
+        "Task"
+      ]
+    ],
+    "relations": []
+  },
+  "7": {
+    "ner": [
+      [
+        "dictionary lookup stage",
+        9,
+        10,
+        "Method"
+      ],
+      [
+        "set of rules",
+        15,
+        16,
+        "Material"
+      ]
+    ],
+    "relations": []
+  },
+  "8": {
+    "ner": [
+      [
+        "NE item",
+        8,
+        9,
+        "OtherScientificTerm"
+      ],
+      [
+        "final output",
+        24,
+        26,
+        "Metric"
+      ]
+    ],
+    "relations": []
+  },
+  "9": {
+    "ner": [
+      [
+        "a priori geometric constraints",
+        4,
+        7,
+        "Material"
+      ],
+      [
+        "D stereo reconstruction scheme",
+        13,
+        15,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        7,
+        13,
+        15,
+        "FEATURE-OF"
+      ],
+      [
+        4,
+        7,
+        25,
+        36,
+        "PART-OF"
+      ],
+      [
+        13,
+        15,
+        30,
+        33,
+        "COMPARE"
+      ]
+    ]
+  },
+  "10": {
+    "ner": [
+      [
+        "approach",
+        1,
+        6,
+        "Method"
+      ],
+      [
+        "deformation",
+        7,
+        8,
+        "OtherScientificTerm"
+      ],
+      [
+        "surface mesh",
+        13,
+        14,
+        "Material"
+      ],
+      [
+        "objective function",
+        17,
+        19,
+        "Metric"
+      ]
+    ],
+    "relations": []
+  },
+  "11": {
+    "ner": [
+      [
+        "anisotropic meshing",
+        4,
+        5,
+        "Material"
+      ],
+      [
+        "non-quadratic approach",
+        8,
+        9,
+        "Method"
+      ],
+      [
+        "regularization",
+        11,
+        11,
+        "Task"
+      ],
+      [
+        "reconstruction results",
+        16,
+        17,
+        "Metric"
+      ],
+      [
+        "triangulations with few vertices",
+        20,
+        24,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        6,
+        7,
+        "FEATURE-OF"
+      ],
+      [
+        8,
+        9,
+        11,
+        11,
+        "USED-FOR"
+      ],
+      [
+        16,
+        17,
+        20,
+        24,
+        "FEATURE-OF"
+      ],
+      [
+        11,
+        11,
+        8,
+        9,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "12": {
+    "ner": [
+      [
+        "Structural",
+        0,
+        1,
+        "Generic"
+      ],
+      [
+        "numerical constraints",
+        3,
+        9,
+        "Method"
+      ],
+      [
+        "constraints",
+        3,
+        3,
+        "Task"
+      ],
+      [
+        "can",
+        4,
+        4,
+        "Generic"
+      ],
+      [
+        "then",
+        5,
+        5,
+        "Generic"
+      ],
+      [
+        "be added",
+        7,
+        8,
+        "OtherScientificTerm"
+      ],
+      [
+        "locally",
+        8,
+        8,
+        "Generic"
+      ],
+      [
+        "to the reconstruction process",
+        10,
+        12,
+        "Generic"
+      ],
+      [
+        "reconstruction process",
+        11,
+        11,
+        "Task"
+      ],
+      [
+        "through",
+        13,
+        13,
+        "Generic"
+      ],
+      [
+        "a constrained optimization scheme",
+        15,
+        16,
+        "Method"
+      ],
+      [
+        "optimization scheme",
+        16,
+        16,
+        "Task"
+      ]
+    ],
+    "relations": []
+  },
+  "13": {
+    "ner": [
+      [
+        "reconstruction results",
+        4,
+        6,
+        "Task"
+      ],
+      [
+        "consistency",
+        8,
+        8,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        15,
+        16,
+        14,
+        16,
+        "PART-OF"
+      ]
+    ]
+  },
+  "14": {
+    "ner": [
+      [
+        "description",
+        2,
+        4,
+        "Method"
+      ],
+      [
+        "properties",
+        5,
+        7,
+        "OtherScientificTerm"
+      ],
+      [
+        "modeling",
+        4,
+        6,
+        "Method"
+      ],
+      [
+        "differential features",
+        7,
+        8,
+        "Material"
+      ],
+      [
+        "features",
+        8,
+        9,
+        "Material"
+      ],
+      [
+        "make",
+        9,
+        10,
+        "Generic"
+      ],
+      [
+        "them",
+        10,
+        11,
+        "Generic"
+      ],
+      [
+        "tools",
+        12,
+        13,
+        "Method"
+      ],
+      [
+        "that",
+        13,
+        14,
+        "Generic"
+      ],
+      [
+        "can",
+        14,
+        15,
+        "Generic"
+      ],
+      [
+        "be",
+        15,
+        16,
+        "Generic"
+      ],
+      [
+        "efficiently",
+        16,
+        17,
+        "Generic"
+      ],
+      [
+        "used",
+        17,
+        18,
+        "Generic"
+      ],
+      [
+        "as",
+        18,
+        19,
+        "Generic"
+      ],
+      [
+        "constraints",
+        20,
+        21,
+        "Method"
+      ],
+      [
+        "for",
+        21,
+        22,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        4,
+        6,
+        7,
+        "FEATURE-OF"
+      ],
+      [
+        4,
+        6,
+        5,
+        7,
+        " FEATURE-OF"
+      ],
+      [
+        8,
+        9,
+        10,
+        11,
+        "PART-OF"
+      ],
+      [
+        12,
+        13,
+        14,
+        15,
+        "COMPARE"
+      ],
+      [
+        16,
+        17,
+        18,
+        19,
+        "USE-FOR"
+      ],
+      [
+        20,
+        21,
+        22,
+        23,
+        "FEATURE-OF"
+      ],
+      [
+        24,
+        25,
+        26,
+        27,
+        "PART-OF"
+      ]
+    ]
+  },
+  "15": {
+    "ner": [
+      [
+        "new research direction",
+        5,
+        6,
+        "Task"
+      ],
+      [
+        "traditional n-gram models",
+        15,
+        16,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        6,
+        10,
+        12,
+        "FEATURE-OF"
+      ],
+      [
+        5,
+        6,
+        15,
+        16,
+        "PART-OF"
+      ],
+      [
+        5,
+        6,
+        14,
+        15,
+        "COMPARE"
+      ]
+    ]
+  },
+  "16": {
+    "ner": [
+      [
+        "weakly supervised dependency parser",
+        8,
+        9,
+        "Method"
+      ],
+      [
+        "speech syntax",
+        12,
+        13,
+        "Metric"
+      ],
+      [
+        "any annotated training corpus",
+        19,
+        20,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        9,
+        12,
+        13,
+        "CONJUNCTION"
+      ],
+      [
+        8,
+        9,
+        19,
+        20,
+        "FEATURE-OF"
+      ],
+      [
+        8,
+        9,
+        12,
+        13,
+        " FEATURE-OF"
+      ]
+    ]
+  },
+  "17": {
+    "ner": [
+      [
+        "data",
+        1,
+        1,
+        "Material"
+      ],
+      [
+        "hand-crafted rules",
+        8,
+        9,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        8,
+        9,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "18": {
+    "ner": [
+      [
+        "rules",
+        5,
+        5,
+        "Method"
+      ],
+      [
+        "complex tree structures",
+        13,
+        15,
+        "Task"
+      ],
+      [
+        "discriminative model",
+        19,
+        19,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        5,
+        7,
+        9,
+        "CONJUNCTION"
+      ],
+      [
+        7,
+        9,
+        12,
+        14,
+        "PART-OF"
+      ],
+      [
+        7,
+        9,
+        13,
+        15,
+        "FEATURE-OF"
+      ],
+      [
+        19,
+        19,
+        21,
+        22,
+        "OTHERSCIENTIFIC TERMS"
+      ]
+    ]
+  },
+  "19": {
+    "ner": [
+      [
+        "sparse se-lectional preferences",
+        4,
+        8,
+        "Material"
+      ],
+      [
+        "head word and its dependents",
+        9,
+        13,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        8,
+        9,
+        13,
+        "PART-OF"
+      ]
+    ]
+  },
+  "20": {
+    "ner": [
+      [
+        "newspaper texts",
+        8,
+        9,
+        "Material"
+      ],
+      [
+        "French broadcast news transcriptions",
+        15,
+        17,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        9,
+        4,
+        5,
+        "FEATURE-OF"
+      ],
+      [
+        8,
+        9,
+        12,
+        13,
+        "PART-OF"
+      ],
+      [
+        15,
+        17,
+        4,
+        5,
+        "FEATURE-OF"
+      ],
+      [
+        15,
+        17,
+        16,
+        18,
+        "USED-FOR"
+      ],
+      [
+        16,
+        18,
+        15,
+        17,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "21": {
+    "ner": [
+      [
+        "LCS",
+        2,
+        2,
+        "Method"
+      ],
+      [
+        "paradigm",
+        7,
+        7,
+        "Task"
+      ],
+      [
+        "human interaction",
+        10,
+        12,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        2,
+        4,
+        4,
+        "FEATURE-OF"
+      ],
+      [
+        7,
+        7,
+        10,
+        12,
+        "COMPARE"
+      ]
+    ]
+  },
+  "22": {
+    "ner": [
+      [
+        "spoken language understanding system",
+        2,
+        6,
+        "Material"
+      ],
+      [
+        "mobile agents",
+        8,
+        9,
+        "Material"
+      ],
+      [
+        "users and information sources",
+        14,
+        18,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        6,
+        4,
+        5,
+        "FEATURE-OF"
+      ],
+      [
+        8,
+        9,
+        10,
+        11,
+        "PART-OF"
+      ],
+      [
+        14,
+        15,
+        16,
+        17,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "23": {
+    "ner": [
+      [
+        "application of this approach",
+        4,
+        10,
+        "Task"
+      ],
+      [
+        "this approach",
+        6,
+        7,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        10,
+        2,
+        6,
+        "USED-FOR"
+      ],
+      [
+        2,
+        6,
+        8,
+        9,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "24": {
+    "ner": [
+      [
+        "LCS-Marine",
+        1,
+        1,
+        "Material"
+      ],
+      [
+        "tactical personnel",
+        4,
+        4,
+        "Task"
+      ],
+      [
+        "logistics system",
+        9,
+        9,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        4,
+        4,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "25": {
+    "ner": [
+      [
+        "agent",
+        9,
+        11,
+        "Method"
+      ],
+      [
+        "database",
+        15,
+        15,
+        "Material"
+      ]
+    ],
+    "relations": []
+  },
+  "26": {
+    "ner": [
+      [
+        "system",
+        5,
+        5,
+        "Generic"
+      ],
+      [
+        "request",
+        14,
+        14,
+        "Task"
+      ],
+      [
+        "requestor",
+        0,
+        0,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": []
+  },
+  "27": {
+    "ner": [
+      [
+        "Marines",
+        11,
+        11,
+        "OtherScientificTerm"
+      ],
+      [
+        "technology",
+        19,
+        20,
+        "Material"
+      ]
+    ],
+    "relations": []
+  },
+  "28": {
+    "ner": [
+      [
+        "domain",
+        1,
+        5,
+        "Task"
+      ],
+      [
+        "model",
+        3,
+        7,
+        "Method"
+      ],
+      [
+        "nominal compounds",
+        11,
+        12,
+        "Material"
+      ],
+      [
+        "automated interpretation",
+        9,
+        10,
+        "Metric"
+      ],
+      [
+        "English",
+        13,
+        14,
+        "Material"
+      ]
+    ],
+    "relations": []
+  },
+  "29": {
+    "ner": [
+      [
+        "productive rules of interpretation",
+        5,
+        20,
+        "Method"
+      ],
+      [
+        "interpretation",
+        10,
+        11,
+        "OtherScientificTerm"
+      ],
+      [
+        "morpho-syntactic characteristics",
+        16,
+        19,
+        "Material"
+      ]
+    ],
+    "relations": []
+  },
+  "30": {
+    "ner": [
+      [
+        "particular",
+        1,
+        2,
+        "Generic"
+      ],
+      [
+        "Pustejovsky's principles",
+        8,
+        9,
+        "Method"
+      ],
+      [
+        "the predicative information",
+        13,
+        14,
+        "Metric"
+      ],
+      [
+        "nominals",
+        16,
+        17,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        8,
+        9,
+        "USED-FOR"
+      ],
+      [
+        1,
+        2,
+        13,
+        14,
+        "FEATURE-OF"
+      ],
+      [
+        8,
+        9,
+        13,
+        14,
+        "FEATURE-OF"
+      ],
+      [
+        16,
+        17,
+        13,
+        14,
+        " FEATURE-OF"
+      ]
+    ]
+  },
+  "31": {
+    "ner": [
+      [
+        "generalizable semantic principles",
+        10,
+        12,
+        "Method"
+      ],
+      [
+        "domain-specific semantic information",
+        15,
+        16,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        10,
+        12,
+        17,
+        17,
+        "USED-FOR"
+      ],
+      [
+        14,
+        15,
+        17,
+        17,
+        "COMPARE"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,10534 @@
+{
+  "0": {
+    "ner": [
+      [
+        "proper nouns",
+        2,
+        4,
+        "Material"
+      ],
+      [
+        "Japanese text",
+        5,
+        6,
+        "Material"
+      ],
+      [
+        "morphological analysis",
+        19,
+        21,
+        "Task"
+      ],
+      [
+        "Japanese text processing",
+        22,
+        24,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        4,
+        5,
+        6,
+        "PART-OF"
+      ],
+      [
+        19,
+        21,
+        22,
+        24,
+        "FEATURE-OF"
+      ],
+      [
+        2,
+        4,
+        19,
+        21,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "1": {
+    "ner": [
+      [
+        "Japanese information extraction",
+        9,
+        11,
+        "Method"
+      ],
+      [
+        "framework",
+        7,
+        7,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        7,
+        9,
+        11,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "2": {
+    "ner": [
+      [
+        "Multi-lingual Evaluation Task",
+        4,
+        6,
+        "Task"
+      ],
+      [
+        "MET",
+        8,
+        8,
+        "Method"
+      ],
+      [
+        "morphological analysis problem",
+        21,
+        23,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        6,
+        21,
+        23,
+        "USED-FOR"
+      ],
+      [
+        8,
+        8,
+        4,
+        6,
+        "FEATURE-OF"
+      ],
+      [
+        21,
+        23,
+        4,
+        6,
+        "PART-OF"
+      ]
+    ]
+  },
+  "3": {
+    "ner": [
+      [
+        "morphological analyzer",
+        1,
+        2,
+        "Method"
+      ],
+      [
+        "recognition",
+        11,
+        11,
+        "Task"
+      ],
+      [
+        "classification",
+        13,
+        13,
+        "Task"
+      ],
+      [
+        "proper names",
+        15,
+        16,
+        "Material"
+      ],
+      [
+        "numerical and temporal expressions",
+        18,
+        20,
+        "OtherScientificTerms"
+      ],
+      [
+        "Named Entity -LRB- NE -RRB-",
+        24,
+        28,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        11,
+        11,
+        "USED-FOR"
+      ],
+      [
+        1,
+        2,
+        13,
+        13,
+        "USED-FOR"
+      ],
+      [
+        15,
+        16,
+        11,
+        11,
+        "FEATURE-OF"
+      ],
+      [
+        18,
+        20,
+        11,
+        11,
+        "FEATURE-OF"
+      ],
+      [
+        24,
+        28,
+        11,
+        11,
+        "HYPONYM-OF"
+      ]
+    ]
+  },
+  "4": {
+    "ner": [
+      [
+        "analyzer",
+        1,
+        1,
+        "Method"
+      ],
+      [
+        "Amorph",
+        5,
+        5,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        5,
+        1,
+        1,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "5": {
+    "ner": [
+      [
+        "NE items",
+        2,
+        4,
+        "Task"
+      ],
+      [
+        "dictionary lookup",
+        8,
+        10,
+        "Method"
+      ],
+      [
+        "rule application",
+        11,
+        13,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        10,
+        2,
+        4,
+        "USED-FOR"
+      ],
+      [
+        11,
+        13,
+        2,
+        4,
+        "USED-FOR"
+      ],
+      [
+        8,
+        10,
+        11,
+        13,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "6": {
+    "ner": [
+      [
+        "dictionaries",
+        7,
+        7,
+        "Material"
+      ],
+      [
+        "segment",
+        9,
+        9,
+        "Task"
+      ],
+      [
+        "tag",
+        11,
+        11,
+        "Task"
+      ],
+      [
+        "Japanese character strings",
+        12,
+        14,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        7,
+        9,
+        9,
+        "USED-FOR"
+      ],
+      [
+        7,
+        7,
+        11,
+        11,
+        "USED-FOR"
+      ],
+      [
+        9,
+        9,
+        12,
+        14,
+        "FEATURE-OF"
+      ],
+      [
+        11,
+        11,
+        12,
+        14,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "7": {
+    "ner": [
+      [
+        "dictionary lookup stage",
+        8,
+        11,
+        "Method"
+      ],
+      [
+        "set of rules",
+        14,
+        16,
+        "Method"
+      ],
+      [
+        "segmented strings",
+        20,
+        22,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        11,
+        14,
+        16,
+        "USED-FOR"
+      ],
+      [
+        14,
+        16,
+        20,
+        22,
+        "USED-FOR"
+      ],
+      [
+        20,
+        22,
+        8,
+        11,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "8": {
+    "ner": [
+      [
+        "segment",
+        2,
+        2,
+        "Generic"
+      ],
+      [
+        "NE",
+        8,
+        8,
+        "Method"
+      ],
+      [
+        "information",
+        12,
+        12,
+        "Material"
+      ],
+      [
+        "final output",
+        25,
+        26,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        2,
+        12,
+        12,
+        "USED-FOR"
+      ],
+      [
+        8,
+        8,
+        12,
+        12,
+        "PART-OF"
+      ],
+      [
+        12,
+        12,
+        25,
+        26,
+        "USED-FOR"
+      ],
+      [
+        25,
+        26,
+        2,
+        2,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "9": {
+    "ner": [
+      [
+        "geometric constraints",
+        6,
+        7,
+        "Method"
+      ],
+      [
+        "stereo reconstruction scheme",
+        14,
+        15,
+        "Method"
+      ],
+      [
+        "image information",
+        23,
+        24,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        7,
+        14,
+        15,
+        "USED-FOR"
+      ],
+      [
+        14,
+        15,
+        23,
+        24,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "10": {
+    "ner": [
+      [
+        "iterative deformation of a 3-D surface mesh",
+        6,
+        13,
+        "Method"
+      ],
+      [
+        "objective function",
+        18,
+        19,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        13,
+        18,
+        19,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "11": {
+    "ner": [
+      [
+        "anisotropic meshing",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "non-quadratic approach",
+        8,
+        9,
+        "Method"
+      ],
+      [
+        "regularization",
+        11,
+        11,
+        "OtherScientificTerms"
+      ],
+      [
+        "reconstruction results",
+        17,
+        18,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        8,
+        9,
+        "CONJUNCTION"
+      ],
+      [
+        4,
+        5,
+        11,
+        11,
+        "USED-FOR"
+      ],
+      [
+        8,
+        9,
+        11,
+        11,
+        "USED-FOR"
+      ],
+      [
+        11,
+        11,
+        17,
+        18,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "12": {
+    "ner": [
+      [
+        "structural or numerical constraints",
+        0,
+        3,
+        "OtherScientificTerm"
+      ],
+      [
+        "reconstruction process",
+        11,
+        12,
+        "Task"
+      ],
+      [
+        "constrained optimization scheme",
+        15,
+        17,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        0,
+        3,
+        15,
+        17,
+        "USED-FOR"
+      ],
+      [
+        11,
+        12,
+        15,
+        17,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "13": {
+    "ner": [
+      [
+        "reconstruction results",
+        3,
+        5,
+        "Task"
+      ],
+      [
+        "consistency",
+        8,
+        9,
+        "OtherScientificTerm"
+      ],
+      [
+        "priori knowledge",
+        11,
+        13,
+        "OtherScientificTerm"
+      ],
+      [
+        "object shape",
+        14,
+        16,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        5,
+        11,
+        13,
+        "USED-FOR"
+      ],
+      [
+        3,
+        5,
+        8,
+        9,
+        "FEATURE-OF"
+      ],
+      [
+        11,
+        13,
+        14,
+        16,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "14": {
+    "ner": [
+      [
+        "differential features",
+        7,
+        8,
+        "OtherScientificTerm"
+      ],
+      [
+        "constraints",
+        19,
+        20,
+        "OtherScientificTerm"
+      ],
+      [
+        "3-D reconstruction",
+        21,
+        24,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        8,
+        21,
+        24,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "15": {
+    "ner": [
+      [
+        "new research direction",
+        4,
+        6,
+        "Task"
+      ],
+      [
+        "traditional n-gram models",
+        14,
+        16,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        6,
+        14,
+        16,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "16": {
+    "ner": [
+      [
+        "weakly supervised dependency parser",
+        5,
+        8,
+        "Method"
+      ],
+      [
+        "speech syntax",
+        12,
+        13,
+        "OtherScientificTerm"
+      ],
+      [
+        "annotated training corpus",
+        18,
+        20,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        8,
+        12,
+        13,
+        "USED-FOR"
+      ],
+      [
+        5,
+        8,
+        18,
+        20,
+        "USED-FOR"
+      ],
+      [
+        12,
+        13,
+        5,
+        8,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "17": {
+    "ner": [
+      [
+        "labeled data",
+        0,
+        2,
+        "Material"
+      ],
+      [
+        "hand-crafted rules",
+        7,
+        8,
+        "Method"
+      ],
+      [
+        "basic syntactic knowledge",
+        11,
+        13,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": [
+      [
+        0,
+        2,
+        7,
+        8,
+        "USED-FOR"
+      ],
+      [
+        7,
+        8,
+        11,
+        13,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "18": {
+    "ner": [
+      [
+        "Bayesian inference",
+        0,
+        1,
+        "Method"
+      ],
+      [
+        "complex tree structures",
+        13,
+        15,
+        "Material"
+      ],
+      [
+        "discriminative model",
+        19,
+        20,
+        "OtherScientificTerm"
+      ],
+      [
+        "target unlabeled corpus",
+        25,
+        27,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        0,
+        1,
+        13,
+        15,
+        "USED-FOR"
+      ],
+      [
+        13,
+        15,
+        19,
+        20,
+        "PART-OF"
+      ],
+      [
+        19,
+        20,
+        25,
+        27,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "19": {
+    "ner": [
+      [
+        "posterior",
+        1,
+        2,
+        "OtherScientificTerms"
+      ],
+      [
+        "sparse selectional preferences",
+        3,
+        5,
+        "OtherScientificTerm"
+      ],
+      [
+        "head word",
+        8,
+        9,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        3,
+        5,
+        "USED-FOR"
+      ],
+      [
+        1,
+        2,
+        8,
+        9,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "20": {
+    "ner": [
+      [
+        "model",
+        1,
+        1,
+        "Generic"
+      ],
+      [
+        "English and Czech newspaper texts",
+        5,
+        9,
+        "Material"
+      ],
+      [
+        "French broadcast news transcriptions",
+        16,
+        19,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        5,
+        9,
+        "USED-FOR"
+      ],
+      [
+        1,
+        1,
+        16,
+        19,
+        "VALIDATE-ON"
+      ]
+    ]
+  },
+  "21": {
+    "ner": [
+      [
+        "Listen-Communicate-Show",
+        0,
+        0,
+        "Method"
+      ],
+      [
+        "LCS",
+        2,
+        2,
+        "Generic"
+      ],
+      [
+        "paradigm",
+        7,
+        7,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        7,
+        0,
+        0,
+        "USED-FOR"
+      ],
+      [
+        7,
+        7,
+        9,
+        10,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "22": {
+    "ner": [
+      [
+        "spoken language understanding system",
+        3,
+        5,
+        "Method"
+      ],
+      [
+        "intelligent mobile agents",
+        8,
+        10,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        5,
+        8,
+        10,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "23": {
+    "ner": [
+      [
+        "application",
+        7,
+        7,
+        "Task"
+      ],
+      [
+        "approach",
+        10,
+        10,
+        "Method"
+      ],
+      [
+        "LCS-Marine",
+        12,
+        12,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        7,
+        10,
+        10,
+        "FEATURE-OF"
+      ],
+      [
+        7,
+        7,
+        12,
+        12,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "24": {
+    "ner": [
+      [
+        "LCS-Marine",
+        1,
+        1,
+        "Method"
+      ],
+      [
+        "personnel",
+        4,
+        4,
+        "OtherScientificTerms"
+      ],
+      [
+        "logistics system",
+        9,
+        10,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        9,
+        10,
+        "USED-FOR"
+      ],
+      [
+        9,
+        10,
+        4,
+        4,
+        "PART-OF"
+      ]
+    ]
+  },
+  "25": {
+    "ner": [
+      [
+        "request",
+        1,
+        1,
+        "Task"
+      ],
+      [
+        "mobile intelligent agent",
+        6,
+        9,
+        "Method"
+      ],
+      [
+        "appropriate database",
+        14,
+        15,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        9,
+        1,
+        1,
+        "USED-FOR"
+      ],
+      [
+        6,
+        9,
+        14,
+        15,
+        "PART-OF"
+      ]
+    ]
+  },
+  "26": {
+    "ner": [
+      [
+        "system",
+        5,
+        5,
+        "Method"
+      ],
+      [
+        "status of a request",
+        11,
+        15,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        5,
+        11,
+        15,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "27": {
+    "ner": [
+      [
+        "capability",
+        4,
+        4,
+        "Task"
+      ],
+      [
+        "field exercises",
+        8,
+        8,
+        "Material"
+      ],
+      [
+        "Marines",
+        11,
+        11,
+        "Generic"
+      ],
+      [
+        "applications",
+        16,
+        16,
+        "Method"
+      ],
+      [
+        "technology",
+        19,
+        19,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        16,
+        16,
+        4,
+        4,
+        "USED-FOR"
+      ],
+      [
+        8,
+        8,
+        16,
+        16,
+        "PART-OF"
+      ],
+      [
+        11,
+        11,
+        8,
+        8,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "28": {
+    "ner": [
+      [
+        "domain independent model",
+        0,
+        3,
+        "Method"
+      ],
+      [
+        "nominal compounds",
+        11,
+        12,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        0,
+        3,
+        11,
+        12,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "29": {
+    "ner": [
+      [
+        "model",
+        1,
+        1,
+        "Method"
+      ],
+      [
+        "rules of interpretation",
+        7,
+        10,
+        "OtherScientificTerms"
+      ],
+      [
+        "morpho-syntactic and semantic characteristics",
+        16,
+        19,
+        "OtherScientificTerms"
+      ],
+      [
+        "nominal constituents",
+        22,
+        23,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        7,
+        10,
+        "USED-FOR"
+      ],
+      [
+        16,
+        19,
+        7,
+        10,
+        "FEATURE-OF"
+      ],
+      [
+        16,
+        19,
+        22,
+        23,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "30": {
+    "ner": [
+      [
+        "Pustejovsky's principles",
+        8,
+        10,
+        "Method"
+      ],
+      [
+        "predicative information",
+        13,
+        15,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        10,
+        13,
+        15,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "31": {
+    "ner": [
+      [
+        "generalizable semantic principles",
+        11,
+        13,
+        "OtherScientificTerm"
+      ],
+      [
+        "domain-specific semantic information",
+        15,
+        17,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": [
+      [
+        11,
+        13,
+        15,
+        17,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "32": {
+    "ner": [
+      [
+        "this model",
+        8,
+        9,
+        "Method"
+      ],
+      [
+        "the interpretation of compounds",
+        15,
+        17,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        9,
+        15,
+        17,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "33": {
+    "ner": [
+      [
+        "detecting interest points",
+        6,
+        8,
+        "Task"
+      ],
+      [
+        "histogram information",
+        10,
+        12,
+        "Material"
+      ],
+      [
+        "a new method",
+        2,
+        5,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        8,
+        2,
+        5,
+        "USED-FOR"
+      ],
+      [
+        10,
+        12,
+        2,
+        5,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "34": {
+    "ner": [
+      [
+        "existing interest point detectors",
+        1,
+        4,
+        "Method"
+      ],
+      [
+        "pixel-wise differences",
+        8,
+        9,
+        "Metric"
+      ],
+      [
+        "image intensity",
+        11,
+        12,
+        "Material"
+      ],
+      [
+        "histogram-based representations",
+        17,
+        18,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        4,
+        8,
+        9,
+        "USED-FOR"
+      ],
+      [
+        1,
+        4,
+        17,
+        18,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "35": {
+    "ner": [
+      [
+        "detectors",
+        2,
+        4,
+        "Method"
+      ],
+      [
+        "large-scale structures",
+        7,
+        9,
+        "OtherScientificTerms"
+      ],
+      [
+        "distinctive textured patterns",
+        11,
+        13,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        4,
+        7,
+        9,
+        "USED-FOR"
+      ],
+      [
+        2,
+        4,
+        11,
+        13,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "36": {
+    "ner": [
+      [
+        "histogram-based interest point detectors",
+        7,
+        10,
+        "Method"
+      ],
+      [
+        "matching textured scenes",
+        16,
+        18,
+        "Task"
+      ],
+      [
+        "repeatability",
+        30,
+        31,
+        "Metric"
+      ],
+      [
+        "distinctiveness",
+        32,
+        33,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        10,
+        16,
+        18,
+        "USED-FOR"
+      ],
+      [
+        16,
+        18,
+        30,
+        31,
+        "FEATURE-OF"
+      ],
+      [
+        16,
+        18,
+        32,
+        33,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "37": {
+    "ner": [
+      [
+        "our method",
+        3,
+        5,
+        "Method"
+      ],
+      [
+        "space-time interest point detection",
+        6,
+        9,
+        "Task"
+      ],
+      [
+        "action classification",
+        11,
+        12,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        5,
+        6,
+        9,
+        "USED-FOR"
+      ],
+      [
+        3,
+        5,
+        11,
+        12,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "38": {
+    "ner": [
+      [
+        "restricted domain parser",
+        4,
+        6,
+        "Method"
+      ],
+      [
+        "Plume",
+        8,
+        8,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        6,
+        8,
+        8,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "39": {
+    "ner": [
+      [
+        "previous work",
+        2,
+        3,
+        "Task"
+      ],
+      [
+        "Carnegie-Mellon University",
+        5,
+        6,
+        "Generic"
+      ],
+      [
+        "Plume's approach",
+        16,
+        18,
+        "Method"
+      ],
+      [
+        "semantic caseframe instantiation",
+        24,
+        27,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        3,
+        16,
+        18,
+        "USED-FOR"
+      ],
+      [
+        16,
+        18,
+        24,
+        27,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "40": {
+    "ner": [
+      [
+        "advantages",
+        3,
+        5,
+        "OtherScientificTerms"
+      ],
+      [
+        "efficiency",
+        5,
+        6,
+        "Metric"
+      ],
+      [
+        "robustness",
+        11,
+        12,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        5,
+        5,
+        6,
+        "FEATURE-OF"
+      ],
+      [
+        3,
+        5,
+        11,
+        12,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "41": {
+    "ner": [
+      [
+        "Plume",
+        1,
+        5,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        5,
+        6,
+        11,
+        "FEATURE-OF"
+      ],
+      [
+        1,
+        5,
+        14,
+        15,
+        "FEATURE-OF"
+      ],
+      [
+        1,
+        5,
+        16,
+        18,
+        "FEATURE-OF"
+      ],
+      [
+        1,
+        5,
+        19,
+        20,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "42": {
+    "ner": [
+      [
+        "Plume",
+        3,
+        7,
+        "Method"
+      ],
+      [
+        "detailed design",
+        11,
+        14,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        7,
+        11,
+        14,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "43": {
+    "ner": [
+      [
+        "unlexicalized parser",
+        7,
+        18,
+        "Method"
+      ],
+      [
+        "suffix analysis",
+        15,
+        17,
+        "Method"
+      ],
+      [
+        "labelled bracket F-score",
+        20,
+        24,
+        "Metric"
+      ],
+      [
+        "NEGRA corpus",
+        32,
+        35,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        9,
+        10,
+        11,
+        "USED-FOR"
+      ],
+      [
+        7,
+        18,
+        15,
+        17,
+        "CONJUNCTION"
+      ],
+      [
+        5,
+        7,
+        20,
+        24,
+        "USED-FOR"
+      ],
+      [
+        20,
+        24,
+        32,
+        35,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "44": {
+    "ner": [
+      [
+        "smoothing",
+        13,
+        15,
+        "Method"
+      ],
+      [
+        "parser",
+        17,
+        19,
+        "Method"
+      ],
+      [
+        "model",
+        8,
+        10,
+        "Method"
+      ],
+      [
+        "accuracy",
+        5,
+        7,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        10,
+        5,
+        7,
+        "FEATURE-OF"
+      ],
+      [
+        13,
+        15,
+        17,
+        19,
+        "USED-FOR"
+      ],
+      [
+        17,
+        19,
+        13,
+        15,
+        "USED-FOR"
+      ],
+      [
+        26,
+        28,
+        29,
+        30,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "45": {
+    "ner": [
+      [
+        "unsupervised learning approach",
+        4,
+        6,
+        "Method"
+      ],
+      [
+        "named entities",
+        12,
+        14,
+        "OtherScientificTerms"
+      ],
+      [
+        "lexical and syntactic features",
+        17,
+        21,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        0,
+        2,
+        4,
+        6,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "46": {
+    "ner": [
+      [
+        "calculating",
+        3,
+        4,
+        "Method"
+      ],
+      [
+        "eigenvectors",
+        4,
+        5,
+        "OtherScientificTerms"
+      ],
+      [
+        "adjacency graph 's Laplacian",
+        7,
+        11,
+        "Material"
+      ],
+      [
+        "recover",
+        12,
+        13,
+        "Method"
+      ],
+      [
+        "submanifold of data",
+        14,
+        17,
+        "Task"
+      ],
+      [
+        "high dimensionality space",
+        20,
+        22,
+        "OtherScientificTerms"
+      ],
+      [
+        "performing",
+        24,
+        25,
+        "Method"
+      ],
+      [
+        "cluster number estimation",
+        27,
+        28,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        4,
+        7,
+        11,
+        "USED-FOR"
+      ],
+      [
+        12,
+        13,
+        14,
+        17,
+        "USED-FOR"
+      ],
+      [
+        24,
+        25,
+        4,
+        5,
+        "USED-FOR"
+      ],
+      [
+        20,
+        22,
+        14,
+        17,
+        "PART-OF"
+      ]
+    ]
+  },
+  "47": {
+    "ner": [
+      [
+        "spectral clustering based approach",
+        8,
+        11,
+        "Method"
+      ],
+      [
+        "ACE corpora",
+        3,
+        4,
+        "Material"
+      ],
+      [
+        "clustering methods",
+        15,
+        16,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        11,
+        3,
+        4,
+        "USED-FOR"
+      ],
+      [
+        8,
+        11,
+        15,
+        16,
+        "COMPARE"
+      ]
+    ]
+  },
+  "48": {
+    "ner": [
+      [
+        "generic mathematical formalism",
+        4,
+        6,
+        "Method"
+      ],
+      [
+        "combination",
+        9,
+        10,
+        "Task"
+      ],
+      [
+        "strings",
+        14,
+        15,
+        "Material"
+      ],
+      [
+        "trees",
+        16,
+        17,
+        "Material"
+      ],
+      [
+        "dags",
+        18,
+        19,
+        "Material"
+      ],
+      [
+        "graphs",
+        20,
+        21,
+        "Material"
+      ],
+      [
+        "products of them",
+        22,
+        25,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        6,
+        9,
+        10,
+        "USED-FOR"
+      ],
+      [
+        9,
+        10,
+        14,
+        15,
+        "FEATURE-OF"
+      ],
+      [
+        9,
+        10,
+        16,
+        17,
+        "FEATURE-OF"
+      ],
+      [
+        9,
+        10,
+        18,
+        19,
+        "FEATURE-OF"
+      ],
+      [
+        9,
+        10,
+        20,
+        21,
+        "FEATURE-OF"
+      ],
+      [
+        4,
+        6,
+        22,
+        25,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "49": {
+    "ner": [
+      [
+        "polarization",
+        1,
+        2,
+        "OtherScientificTerms"
+      ],
+      [
+        "objects",
+        4,
+        5,
+        "Generic"
+      ],
+      [
+        "elementary structures",
+        7,
+        9,
+        "Method"
+      ],
+      [
+        "saturation",
+        11,
+        12,
+        "Metric"
+      ],
+      [
+        "final structure",
+        14,
+        15,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        7,
+        9,
+        "FEATURE-OF"
+      ],
+      [
+        4,
+        5,
+        7,
+        9,
+        "PART-OF"
+      ],
+      [
+        1,
+        2,
+        11,
+        12,
+        "USED-FOR"
+      ],
+      [
+        1,
+        2,
+        14,
+        15,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "50": {
+    "ner": [
+      [
+        "formalism",
+        1,
+        1,
+        "Method"
+      ],
+      [
+        "rewriting systems",
+        17,
+        18,
+        "Method"
+      ],
+      [
+        "dependency grammars",
+        20,
+        21,
+        "Method"
+      ],
+      [
+        "TAG",
+        23,
+        23,
+        "OtherScientificTerms"
+      ],
+      [
+        "HPSG",
+        25,
+        25,
+        "OtherScientificTerms"
+      ],
+      [
+        "LFG",
+        27,
+        27,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        17,
+        18,
+        "FEATURE-OF"
+      ],
+      [
+        1,
+        1,
+        20,
+        21,
+        "FEATURE-OF"
+      ],
+      [
+        1,
+        1,
+        23,
+        23,
+        "FEATURE-OF"
+      ],
+      [
+        1,
+        1,
+        25,
+        25,
+        "FEATURE-OF"
+      ],
+      [
+        1,
+        1,
+        27,
+        27,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "51": {
+    "ner": [
+      [
+        "mixed-signal paradigm",
+        1,
+        2,
+        "Method"
+      ],
+      [
+        "high-resolution parallel inner-product computation",
+        6,
+        9,
+        "Task"
+      ],
+      [
+        "very high dimensions",
+        12,
+        13,
+        "OtherScientificTerms"
+      ],
+      [
+        "efficient implementation of kernels",
+        17,
+        20,
+        "Method"
+      ],
+      [
+        "image processing",
+        22,
+        23,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        6,
+        9,
+        "USED-FOR"
+      ],
+      [
+        6,
+        9,
+        12,
+        13,
+        "FEATURE-OF"
+      ],
+      [
+        6,
+        9,
+        17,
+        20,
+        "USED-FOR"
+      ],
+      [
+        17,
+        20,
+        22,
+        23,
+        "PART-OF"
+      ]
+    ]
+  },
+  "52": {
+    "ner": [
+      [
+        "externally digital architecture",
+        5,
+        7,
+        "Method"
+      ],
+      [
+        "high-density, low-power analog array",
+        10,
+        13,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        7,
+        10,
+        13,
+        "PART-OF"
+      ]
+    ]
+  },
+  "53": {
+    "ner": [
+      [
+        "digital resolution",
+        1,
+        2,
+        "Metric"
+      ],
+      [
+        "low-resolution analog-to-digital conversion",
+        7,
+        9,
+        "Method"
+      ],
+      [
+        "random statistics",
+        13,
+        14,
+        "OtherScientificTerms"
+      ],
+      [
+        "analog summation",
+        17,
+        18,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        7,
+        9,
+        "USED-FOR"
+      ],
+      [
+        7,
+        9,
+        13,
+        14,
+        "FEATURE-OF"
+      ],
+      [
+        13,
+        14,
+        17,
+        18,
+        "PART-OF"
+      ]
+    ]
+  },
+  "54": {
+    "ner": [
+      [
+        "random modulation scheme",
+        1,
+        3,
+        "Method"
+      ],
+      [
+        "near-Bernoulli statistics",
+        5,
+        6,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        3,
+        5,
+        6,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "55": {
+    "ner": [
+      [
+        "approach",
+        1,
+        1,
+        "Method"
+      ],
+      [
+        "real image data",
+        5,
+        7,
+        "Material"
+      ],
+      [
+        "experimental results",
+        11,
+        12,
+        "Metric"
+      ],
+      [
+        "CID/DRAM analog array prototype",
+        15,
+        18,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        5,
+        7,
+        "USED-FOR"
+      ],
+      [
+        1,
+        1,
+        11,
+        12,
+        "USED-FOR"
+      ],
+      [
+        11,
+        12,
+        15,
+        18,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "56": {
+    "ner": [
+      [
+        "projective unifocal tensors",
+        6,
+        7,
+        "Method"
+      ],
+      [
+        "bifo-cal tensors",
+        9,
+        9,
+        "Method"
+      ],
+      [
+        "trifocal tensors",
+        12,
+        12,
+        "Method"
+      ],
+      [
+        "affine case",
+        16,
+        17,
+        "OtherScientificTerms"
+      ],
+      [
+        "tensors obtained",
+        22,
+        23,
+        "Material"
+      ],
+      [
+        "registered tensors",
+        28,
+        29,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        7,
+        9,
+        9,
+        "CONJUNCTION"
+      ],
+      [
+        6,
+        7,
+        12,
+        12,
+        "CONJUNCTION"
+      ],
+      [
+        16,
+        17,
+        6,
+        7,
+        "FEATURE-OF"
+      ],
+      [
+        22,
+        23,
+        28,
+        29,
+        "COMPARE"
+      ]
+    ]
+  },
+  "57": {
+    "ner": [
+      [
+        "affine specialization",
+        6,
+        7,
+        "Method"
+      ],
+      [
+        "projective relations",
+        10,
+        11,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        7,
+        10,
+        11,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "58": {
+    "ner": [
+      [
+        "affine cameras",
+        5,
+        6,
+        "Method"
+      ],
+      [
+        "trifocal tensor",
+        18,
+        19,
+        "OtherScientificTerms"
+      ],
+      [
+        "geometric interpretation",
+        25,
+        26,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        6,
+        18,
+        19,
+        "FEATURE-OF"
+      ],
+      [
+        18,
+        19,
+        25,
+        26,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "59": {
+    "ner": [
+      [
+        "estimation",
+        5,
+        6,
+        "Task"
+      ],
+      [
+        "tensors",
+        8,
+        9,
+        "Material"
+      ],
+      [
+        "point correspondences",
+        11,
+        12,
+        "OtherScientificTerms"
+      ],
+      [
+        "factorization",
+        15,
+        16,
+        "Method"
+      ],
+      [
+        "line correspondences",
+        23,
+        24,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        6,
+        8,
+        9,
+        "USED-FOR"
+      ],
+      [
+        5,
+        6,
+        11,
+        12,
+        "USED-FOR"
+      ],
+      [
+        15,
+        16,
+        5,
+        6,
+        "USED-FOR"
+      ],
+      [
+        20,
+        21,
+        23,
+        24,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "60": {
+    "ner": [
+      [
+        "algorithm",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "classifier",
+        9,
+        10,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        4,
+        5,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "61": {
+    "ner": [
+      [
+        "Thai language",
+        2,
+        3,
+        "OtherScientificTerms"
+      ],
+      [
+        "classifier",
+        15,
+        16,
+        "Method"
+      ],
+      [
+        "concrete noun",
+        20,
+        21,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        3,
+        15,
+        16,
+        "FEATURE-OF"
+      ],
+      [
+        15,
+        16,
+        20,
+        21,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "62": {
+    "ner": [
+      [
+        "classifier",
+        8,
+        9,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": []
+  },
+  "63": {
+    "ner": [
+      [
+        "rule-based approach",
+        8,
+        9,
+        "Method"
+      ],
+      [
+        "classifier",
+        21,
+        21,
+        "Method"
+      ],
+      [
+        "noun",
+        24,
+        24,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        9,
+        21,
+        21,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "64": {
+    "ner": [
+      [
+        "classifier",
+        2,
+        11,
+        "Method"
+      ],
+      [
+        "noun",
+        5,
+        5,
+        "OtherScientificTerms"
+      ],
+      [
+        "unit classifier",
+        12,
+        14,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        3,
+        10,
+        11,
+        "FEATURE-OF"
+      ],
+      [
+        5,
+        5,
+        2,
+        3,
+        "PART-OF"
+      ],
+      [
+        12,
+        14,
+        2,
+        3,
+        "HYPONYM-OF"
+      ]
+    ]
+  },
+  "65": {
+    "ner": [
+      [
+        "corpus-based method",
+        3,
+        4,
+        "Method"
+      ],
+      [
+        "Noun Classifier Associations",
+        17,
+        19,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        4,
+        5,
+        14,
+        "USED-FOR"
+      ],
+      [
+        15,
+        20,
+        21,
+        22,
+        "PART-OF"
+      ],
+      [
+        24,
+        25,
+        26,
+        27,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "66": {
+    "ner": [
+      [
+        "NCA",
+        1,
+        3,
+        "Method"
+      ],
+      [
+        "corpus",
+        8,
+        12,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        3,
+        8,
+        12,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "67": {
+    "ner": [
+      [
+        "perception of transparent objects",
+        1,
+        5,
+        "OtherScientificTerms"
+      ],
+      [
+        "problem",
+        14,
+        15,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        5,
+        14,
+        15,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "68": {
+    "ner": [
+      [
+        "transparent objects",
+        14,
+        15,
+        "Material"
+      ],
+      [
+        "image",
+        3,
+        3,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        14,
+        15,
+        3,
+        3,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "69": {
+    "ner": [
+      [
+        "this paper",
+        2,
+        3,
+        "Material"
+      ]
+    ],
+    "relations": []
+  },
+  "70": {
+    "ner": [
+      [
+        "features that are imaged through a transparent object",
+        3,
+        10,
+        "Method"
+      ],
+      [
+        "features that are rigidly attached to the scene",
+        14,
+        21,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        10,
+        14,
+        21,
+        "COMPARE"
+      ]
+    ]
+  },
+  "71": {
+    "ner": [
+      [
+        "novel model-based approach",
+        3,
+        5,
+        "Method"
+      ],
+      [
+        "shapes",
+        9,
+        9,
+        "Task"
+      ],
+      [
+        "poses",
+        12,
+        12,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        5,
+        9,
+        9,
+        "USED-FOR"
+      ],
+      [
+        3,
+        5,
+        12,
+        12,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "72": {
+    "ner": [
+      [
+        "objects",
+        1,
+        1,
+        "OtherScientificTerms"
+      ],
+      [
+        "multiple layers",
+        12,
+        13,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        12,
+        13,
+        "PART-OF"
+      ]
+    ]
+  },
+  "73": {
+    "ner": [
+      [
+        "simulations",
+        4,
+        4,
+        "Method"
+      ],
+      [
+        "practical feasibility",
+        8,
+        9,
+        "Metric"
+      ],
+      [
+        "our algorithm",
+        12,
+        12,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        4,
+        12,
+        12,
+        "USED-FOR"
+      ],
+      [
+        8,
+        9,
+        12,
+        12,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "74": {
+    "ner": [
+      [
+        "real scenes that include transparent objects",
+        5,
+        10,
+        "Material"
+      ],
+      [
+        "high accuracy",
+        19,
+        20,
+        "Metric"
+      ]
+    ],
+    "relations": []
+  },
+  "75": {
+    "ner": [
+      [
+        "probabilistic framework",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "visual models of 3D object categories",
+        9,
+        13,
+        "Task"
+      ],
+      [
+        "appearance information",
+        16,
+        17,
+        "Material"
+      ],
+      [
+        "geometric constraints",
+        19,
+        20,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        9,
+        13,
+        "USED-FOR"
+      ],
+      [
+        16,
+        17,
+        9,
+        13,
+        "FEATURE-OF"
+      ],
+      [
+        19,
+        20,
+        9,
+        13,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "76": {
+    "ner": [
+      [
+        "coherent ensemble of parts",
+        5,
+        11,
+        "Method"
+      ],
+      [
+        "3D viewpoint transformations",
+        13,
+        15,
+        "Method"
+      ]
+    ],
+    "relations": []
+  },
+  "77": {
+    "ner": [
+      [
+        "salient image features",
+        6,
+        8,
+        "Material"
+      ],
+      [
+        "collection of salient image features",
+        4,
+        8,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        8,
+        6,
+        8,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "78": {
+    "ner": [
+      [
+        "generative framework",
+        1,
+        2,
+        "Method"
+      ],
+      [
+        "model",
+        8,
+        8,
+        "Method"
+      ],
+      [
+        "relative position of parts within each of the discretized viewpoints",
+        12,
+        21,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        8,
+        8,
+        "USED-FOR"
+      ],
+      [
+        1,
+        2,
+        12,
+        21,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "79": {
+    "ner": [
+      [
+        "mixture of viewpoints models",
+        6,
+        9,
+        "Method"
+      ],
+      [
+        "our model",
+        12,
+        13,
+        "Method"
+      ],
+      [
+        "explicit correspondences of parts",
+        15,
+        17,
+        "OtherScientificTerms"
+      ],
+      [
+        "object class",
+        23,
+        24,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        12,
+        13,
+        6,
+        9,
+        "CONJUNCTION"
+      ],
+      [
+        15,
+        17,
+        12,
+        13,
+        "FEATURE-OF"
+      ],
+      [
+        15,
+        17,
+        23,
+        24,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "80": {
+    "ner": [
+      [
+        "image",
+        3,
+        3,
+        "Material"
+      ],
+      [
+        "detection and classification",
+        5,
+        7,
+        "Task"
+      ],
+      [
+        "model",
+        18,
+        18,
+        "Method"
+      ],
+      [
+        "candidate objects",
+        25,
+        26,
+        "OtherScientificTerms"
+      ],
+      [
+        "recognition scores",
+        21,
+        22,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        7,
+        3,
+        3,
+        "USED-FOR"
+      ],
+      [
+        18,
+        18,
+        25,
+        26,
+        "FEATURE-OF"
+      ],
+      [
+        21,
+        22,
+        25,
+        26,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "81": {
+    "ner": [
+      [
+        "approach",
+        1,
+        1,
+        "Generic"
+      ],
+      [
+        "generative probabilistic framework",
+        9,
+        11,
+        "Method"
+      ],
+      [
+        "3D object categorization",
+        13,
+        15,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        9,
+        11,
+        1,
+        1,
+        "USED-FOR"
+      ],
+      [
+        9,
+        11,
+        13,
+        15,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "82": {
+    "ner": [
+      [
+        "algorithm",
+        3,
+        3,
+        "Method"
+      ],
+      [
+        "detection task",
+        6,
+        7,
+        "Task"
+      ],
+      [
+        "viewpoint classification task",
+        11,
+        12,
+        "Task"
+      ],
+      [
+        "car category",
+        16,
+        18,
+        "Material"
+      ],
+      [
+        "Savarese et al. 2007 dataset",
+        22,
+        25,
+        "Material"
+      ],
+      [
+        "PASCAL VOC 2006 dataset",
+        27,
+        30,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        3,
+        6,
+        7,
+        "USED-FOR"
+      ],
+      [
+        3,
+        3,
+        11,
+        12,
+        "USED-FOR"
+      ],
+      [
+        16,
+        18,
+        22,
+        25,
+        "PART-OF"
+      ],
+      [
+        16,
+        18,
+        27,
+        30,
+        "PART-OF"
+      ]
+    ]
+  },
+  "83": {
+    "ner": [
+      [
+        "detection and viewpoint classification tasks",
+        7,
+        11,
+        "Task"
+      ],
+      [
+        "promising results",
+        2,
+        3,
+        "Metric"
+      ],
+      [
+        "these two challenging datasets",
+        13,
+        17,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        11,
+        2,
+        3,
+        "FEATURE-OF"
+      ],
+      [
+        7,
+        11,
+        13,
+        17,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "84": {
+    "ner": [
+      [
+        "application",
+        3,
+        3,
+        "Generic"
+      ],
+      [
+        "ambiguity packing",
+        5,
+        6,
+        "Method"
+      ],
+      [
+        "stochastic disambiguation techniques",
+        8,
+        10,
+        "Method"
+      ],
+      [
+        "Lexical-Functional Grammars",
+        12,
+        14,
+        "OtherScientificTerms"
+      ],
+      [
+        "sentence condensation",
+        21,
+        22,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        6,
+        3,
+        3,
+        "USED-FOR"
+      ],
+      [
+        8,
+        10,
+        3,
+        3,
+        "USED-FOR"
+      ],
+      [
+        12,
+        14,
+        5,
+        6,
+        "FEATURE-OF"
+      ],
+      [
+        12,
+        14,
+        8,
+        10,
+        "FEATURE-OF"
+      ],
+      [
+        21,
+        22,
+        3,
+        3,
+        "PART-OF"
+      ]
+    ]
+  },
+  "85": {
+    "ner": [
+      [
+        "linguistic parser/generator",
+        5,
+        5,
+        "Method"
+      ],
+      [
+        "LFG",
+        7,
+        7,
+        "Material"
+      ],
+      [
+        "transfer component",
+        11,
+        11,
+        "Method"
+      ],
+      [
+        "parse reduction",
+        14,
+        14,
+        "Task"
+      ],
+      [
+        "packed parse forests",
+        19,
+        19,
+        "Material"
+      ],
+      [
+        "maximum-entropy model",
+        24,
+        24,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        5,
+        7,
+        7,
+        "FEATURE-OF"
+      ],
+      [
+        11,
+        11,
+        14,
+        14,
+        "USED-FOR"
+      ],
+      [
+        14,
+        14,
+        19,
+        19,
+        "USED-FOR"
+      ],
+      [
+        24,
+        24,
+        27,
+        28,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "86": {
+    "ner": [
+      [
+        "standard parser evaluation methods",
+        7,
+        10,
+        "Method"
+      ],
+      [
+        "summarization quality",
+        15,
+        16,
+        "Metric"
+      ],
+      [
+        "sentence condensation systems",
+        18,
+        20,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        10,
+        15,
+        16,
+        "USED-FOR"
+      ],
+      [
+        7,
+        10,
+        18,
+        20,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "87": {
+    "ner": [
+      [
+        "experimental evaluation",
+        1,
+        2,
+        "Method"
+      ],
+      [
+        "summarization quality",
+        4,
+        5,
+        "Metric"
+      ],
+      [
+        "automatic parse-based evaluation",
+        12,
+        14,
+        "Method"
+      ],
+      [
+        "manual evaluation",
+        17,
+        18,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        12,
+        14,
+        17,
+        18,
+        "COMPARE"
+      ]
+    ]
+  },
+  "88": {
+    "ner": [
+      [
+        "summarization quality",
+        1,
+        2,
+        "Metric"
+      ],
+      [
+        "proposed system",
+        5,
+        6,
+        "Method"
+      ],
+      [
+        "state-of-the-art",
+        8,
+        8,
+        "OtherScientificTerms"
+      ],
+      [
+        "constraint-based parser/generator",
+        23,
+        24,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        8,
+        1,
+        2,
+        "FEATURE-OF"
+      ],
+      [
+        5,
+        6,
+        23,
+        24,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "89": {
+    "ner": [
+      [
+        "robust principal component analysis",
+        2,
+        4,
+        "Method"
+      ],
+      [
+        "robust PCA",
+        6,
+        7,
+        "Method"
+      ],
+      [
+        "problem",
+        9,
+        9,
+        "Task"
+      ],
+      [
+        "machine learning applications",
+        15,
+        17,
+        "Material"
+      ],
+      [
+        "goal",
+        21,
+        21,
+        "Generic"
+      ],
+      [
+        "data matrix",
+        26,
+        27,
+        "Material"
+      ],
+      [
+        "low rank part",
+        30,
+        32,
+        "OtherScientificTerms"
+      ],
+      [
+        "sparse residual",
+        35,
+        36,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        4,
+        9,
+        9,
+        "USED-FOR"
+      ],
+      [
+        6,
+        7,
+        2,
+        4,
+        "HYPONYM-OF"
+      ],
+      [
+        15,
+        17,
+        9,
+        9,
+        "FEATURE-OF"
+      ],
+      [
+        21,
+        21,
+        30,
+        32,
+        "PART-OF"
+      ]
+    ]
+  },
+  "90": {
+    "ner": [
+      [
+        "current approaches",
+        1,
+        2,
+        "Method"
+      ],
+      [
+        "low rank plus sparse structure",
+        9,
+        13,
+        "OtherScientificTerms"
+      ],
+      [
+        "side information of row and/or column entities",
+        20,
+        25,
+        "Material"
+      ],
+      [
+        "robust PCA",
+        43,
+        44,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        9,
+        13,
+        "USED-FOR"
+      ],
+      [
+        43,
+        44,
+        1,
+        2,
+        "USED-FOR"
+      ],
+      [
+        20,
+        25,
+        43,
+        44,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "91": {
+    "ner": [
+      [
+        "problem of robust PCA",
+        9,
+        12,
+        "Task"
+      ],
+      [
+        "side information",
+        14,
+        15,
+        "Material"
+      ],
+      [
+        "prior structure",
+        19,
+        20,
+        "OtherScientificTerm"
+      ],
+      [
+        "features of entities",
+        22,
+        24,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": [
+      [
+        9,
+        12,
+        14,
+        15,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "92": {
+    "ner": [
+      [
+        "convex problem",
+        3,
+        4,
+        "Task"
+      ],
+      [
+        "side information",
+        7,
+        8,
+        "Material"
+      ],
+      [
+        "robust PCA",
+        10,
+        11,
+        "Method"
+      ],
+      [
+        "low rank matrix",
+        16,
+        17,
+        "OtherScientificTerms"
+      ],
+      [
+        "proposed method",
+        25,
+        26,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        4,
+        10,
+        11,
+        "USED-FOR"
+      ],
+      [
+        7,
+        8,
+        10,
+        11,
+        "FEATURE-OF"
+      ],
+      [
+        3,
+        4,
+        25,
+        26,
+        "USED-FOR"
+      ],
+      [
+        16,
+        17,
+        25,
+        26,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "93": {
+    "ner": [
+      [
+        "low rank matrices",
+        11,
+        13,
+        "Material"
+      ],
+      [
+        "standard robust PCA",
+        21,
+        23,
+        "Method"
+      ],
+      [
+        "our proposed method",
+        28,
+        30,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        11,
+        13,
+        21,
+        23,
+        "USED-FOR"
+      ],
+      [
+        11,
+        13,
+        28,
+        30,
+        "USED-FOR"
+      ],
+      [
+        21,
+        23,
+        28,
+        30,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "94": {
+    "ner": [
+      [
+        "result",
+        1,
+        1,
+        "OtherScientificTerms"
+      ],
+      [
+        "effectiveness",
+        5,
+        5,
+        "Metric"
+      ],
+      [
+        "features",
+        7,
+        7,
+        "Material"
+      ],
+      [
+        "robust PCA",
+        9,
+        10,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        5,
+        5,
+        "USED-FOR"
+      ],
+      [
+        7,
+        7,
+        9,
+        10,
+        "PART-OF"
+      ]
+    ]
+  },
+  "95": {
+    "ner": [
+      [
+        "method",
+        21,
+        21,
+        "Method"
+      ],
+      [
+        "performance",
+        25,
+        25,
+        "Metric"
+      ],
+      [
+        "synthetic experiments",
+        5,
+        6,
+        "Task"
+      ],
+      [
+        "real application",
+        10,
+        11,
+        "Task"
+      ],
+      [
+        "noisy image classification",
+        14,
+        16,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        21,
+        21,
+        5,
+        6,
+        "USED-FOR"
+      ],
+      [
+        21,
+        21,
+        10,
+        11,
+        "USED-FOR"
+      ],
+      [
+        25,
+        25,
+        21,
+        21,
+        "USED-FOR"
+      ],
+      [
+        21,
+        21,
+        14,
+        16,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "96": {
+    "ner": [
+      [
+        "paper",
+        1,
+        1,
+        "Material"
+      ],
+      [
+        "demonstrative expressions",
+        11,
+        12,
+        "OtherScientificTerms"
+      ],
+      [
+        "English",
+        14,
+        14,
+        "Generic"
+      ],
+      [
+        "discourse processing algorithms",
+        21,
+        22,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        11,
+        12,
+        "USED-FOR"
+      ],
+      [
+        1,
+        1,
+        21,
+        22,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "97": {
+    "ner": [
+      [
+        "demonstrative forms",
+        13,
+        14,
+        "OtherScientificTerms"
+      ],
+      [
+        "functions",
+        16,
+        16,
+        "OtherScientificTerms"
+      ],
+      [
+        "genre",
+        18,
+        18,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        13,
+        14,
+        18,
+        18,
+        "HYPONYM-OF"
+      ],
+      [
+        16,
+        16,
+        18,
+        18,
+        "HYPONYM-OF"
+      ]
+    ]
+  },
+  "98": {
+    "ner": [
+      [
+        "research",
+        1,
+        1,
+        "Task"
+      ],
+      [
+        "study",
+        7,
+        7,
+        "Method"
+      ],
+      [
+        "anaphoric expressions",
+        9,
+        10,
+        "OtherScientificTerms"
+      ],
+      [
+        "natural language generation system",
+        22,
+        24,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        7,
+        7,
+        "PART-OF"
+      ],
+      [
+        7,
+        7,
+        9,
+        10,
+        "FEATURE-OF"
+      ],
+      [
+        9,
+        10,
+        22,
+        24,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "99": {
+    "ner": [
+      [
+        "expressive speech communication",
+        4,
+        6,
+        "Task"
+      ],
+      [
+        "emotion perceived by the listener",
+        14,
+        16,
+        "OtherScientificTerms"
+      ],
+      [
+        "intended emotion conveyed by the speaker",
+        25,
+        27,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        14,
+        16,
+        25,
+        27,
+        "COMPARE"
+      ]
+    ]
+  },
+  "100": {
+    "ner": [
+      [
+        "paper",
+        1,
+        1,
+        "OtherScientificTerms"
+      ],
+      [
+        "assumption",
+        7,
+        7,
+        "Generic"
+      ],
+      [
+        "mismatches",
+        11,
+        11,
+        "Metric"
+      ],
+      [
+        "listeners",
+        20,
+        20,
+        "Material"
+      ],
+      [
+        "speakers",
+        24,
+        24,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        7,
+        7,
+        "USED-FOR"
+      ],
+      [
+        7,
+        7,
+        11,
+        11,
+        "FEATURE-OF"
+      ],
+      [
+        11,
+        11,
+        20,
+        20,
+        "PART-OF"
+      ],
+      [
+        11,
+        11,
+        24,
+        24,
+        "PART-OF"
+      ]
+    ]
+  },
+  "101": {
+    "ner": [
+      [
+        "analysis",
+        1,
+        1,
+        "Task"
+      ],
+      [
+        "hypothesis",
+        6,
+        6,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        6,
+        6,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "102": {
+    "ner": [
+      [
+        "self-assessments",
+        2,
+        2,
+        "Method"
+      ],
+      [
+        "intended emotions",
+        8,
+        9,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        2,
+        8,
+        9,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "103": {
+    "ner": [
+      [
+        "IEMOCAP",
+        2,
+        2,
+        "Material"
+      ],
+      [
+        "discrete categorical",
+        5,
+        8,
+        "Metric"
+      ],
+      [
+        "continuous attribute",
+        10,
+        13,
+        "Metric"
+      ],
+      [
+        "emotional assessments",
+        14,
+        15,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        2,
+        5,
+        8,
+        "USED-FOR"
+      ],
+      [
+        2,
+        2,
+        10,
+        13,
+        "USED-FOR"
+      ],
+      [
+        5,
+        8,
+        10,
+        13,
+        "CONJUNCTION"
+      ],
+      [
+        5,
+        8,
+        14,
+        15,
+        "FEATURE-OF"
+      ],
+      [
+        10,
+        13,
+        14,
+        15,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "104": {
+    "ner": [
+      [
+        "results",
+        1,
+        1,
+        "Material"
+      ],
+      [
+        "mismatch",
+        7,
+        7,
+        "OtherScientificTerms"
+      ],
+      [
+        "expression",
+        10,
+        10,
+        "Task"
+      ],
+      [
+        "perception",
+        12,
+        12,
+        "Method"
+      ],
+      [
+        "emotion",
+        14,
+        14,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        7,
+        7,
+        "USED-FOR"
+      ],
+      [
+        10,
+        10,
+        12,
+        12,
+        "CONJUNCTION"
+      ],
+      [
+        10,
+        10,
+        14,
+        14,
+        "FEATURE-OF"
+      ],
+      [
+        12,
+        12,
+        14,
+        14,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "105": {
+    "ner": [
+      [
+        "speakers",
+        1,
+        1,
+        "OtherScientificTerms"
+      ],
+      [
+        "database",
+        4,
+        4,
+        "Material"
+      ],
+      [
+        "emotions",
+        8,
+        8,
+        "Metric"
+      ],
+      [
+        "emotional categories",
+        12,
+        13,
+        "Task"
+      ],
+      [
+        "activation-valence space",
+        23,
+        24,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        4,
+        4,
+        "PART-OF"
+      ],
+      [
+        8,
+        8,
+        12,
+        13,
+        "FEATURE-OF"
+      ],
+      [
+        12,
+        13,
+        23,
+        24,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "106": {
+    "ner": [
+      [
+        "blind separation of underdetermined instantaneous mixtures of independent signals",
+        3,
+        11,
+        "Task"
+      ],
+      [
+        "a method relying on nonstationarity of the original signals",
+        16,
+        23,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        11,
+        16,
+        23,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "107": {
+    "ner": [
+      [
+        "signals",
+        1,
+        1,
+        "Material"
+      ],
+      [
+        "piecewise stationary",
+        6,
+        7,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        6,
+        7,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "108": {
+    "ner": [
+      [
+        "previous works",
+        3,
+        4,
+        "OtherScientificTerms"
+      ],
+      [
+        "this paper",
+        6,
+        8,
+        "Material"
+      ],
+      [
+        "signals",
+        13,
+        14,
+        "Material"
+      ],
+      [
+        "first-order autoregressive model",
+        25,
+        27,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        4,
+        25,
+        27,
+        "USED-FOR"
+      ],
+      [
+        13,
+        14,
+        25,
+        27,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "109": {
+    "ner": [
+      [
+        "model",
+        1,
+        1,
+        "Method"
+      ],
+      [
+        "blind separation",
+        9,
+        10,
+        "Task"
+      ],
+      [
+        "natural speech signals",
+        12,
+        13,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        9,
+        10,
+        "USED-FOR"
+      ],
+      [
+        9,
+        10,
+        12,
+        13,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "110": {
+    "ner": [
+      [
+        "separation method",
+        1,
+        2,
+        "Method"
+      ],
+      [
+        "Cram\u00e9r-Rao lower bound",
+        14,
+        17,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        14,
+        17,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "111": {
+    "ner": [
+      [
+        "natural speech signals",
+        4,
+        6,
+        "Material"
+      ],
+      [
+        "method",
+        9,
+        9,
+        "Method"
+      ],
+      [
+        "separation accuracy",
+        14,
+        15,
+        "Metric"
+      ],
+      [
+        "state-of-the-art methods",
+        19,
+        20,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        9,
+        9,
+        4,
+        6,
+        "USED-FOR"
+      ],
+      [
+        9,
+        9,
+        14,
+        15,
+        "USED-FOR"
+      ],
+      [
+        14,
+        15,
+        19,
+        20,
+        "COMPARE"
+      ]
+    ]
+  },
+  "112": {
+    "ner": [
+      [
+        "convolution kernel",
+        6,
+        7,
+        "Method"
+      ],
+      [
+        "parse trees",
+        9,
+        10,
+        "Material"
+      ],
+      [
+        "syntactic structure information",
+        13,
+        15,
+        "OtherScientificTerms"
+      ],
+      [
+        "relation extraction",
+        17,
+        18,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        7,
+        9,
+        10,
+        "USED-FOR"
+      ],
+      [
+        6,
+        7,
+        13,
+        15,
+        "USED-FOR"
+      ],
+      [
+        9,
+        10,
+        13,
+        15,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "113": {
+    "ner": [
+      [
+        "study",
+        1,
+        1,
+        "Task"
+      ],
+      [
+        "syntactic structure features",
+        5,
+        7,
+        "OtherScientificTerms"
+      ],
+      [
+        "parse tree",
+        11,
+        12,
+        "Method"
+      ],
+      [
+        "relation extraction",
+        17,
+        18,
+        "Task"
+      ],
+      [
+        "convolution tree kernel",
+        28,
+        30,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        17,
+        18,
+        "USED-FOR"
+      ],
+      [
+        5,
+        7,
+        11,
+        12,
+        "PART-OF"
+      ],
+      [
+        11,
+        12,
+        28,
+        30,
+        "USED-FOR"
+      ],
+      [
+        17,
+        18,
+        28,
+        30,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "114": {
+    "ner": [
+      [
+        "ACE 2003 corpus",
+        3,
+        5,
+        "Material"
+      ],
+      [
+        "convolution kernel over parse trees",
+        9,
+        13,
+        "Method"
+      ],
+      [
+        "comparable performance",
+        16,
+        17,
+        "Metric"
+      ],
+      [
+        "previous best-reported feature-based methods",
+        21,
+        23,
+        "Method"
+      ],
+      [
+        "24 ACE relation subtypes",
+        26,
+        30,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        5,
+        9,
+        13,
+        "USED-FOR"
+      ],
+      [
+        9,
+        13,
+        16,
+        17,
+        "FEATURE-OF"
+      ],
+      [
+        21,
+        23,
+        16,
+        17,
+        "COMPARE"
+      ]
+    ]
+  },
+  "115": {
+    "ner": [
+      [
+        "our method",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "the previous two dependency tree kernels",
+        8,
+        12,
+        "Method"
+      ],
+      [
+        "the 5 ACE relation major types",
+        15,
+        20,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        8,
+        12,
+        "OUTPERFORMS"
+      ]
+    ]
+  },
+  "116": {
+    "ner": [
+      [
+        "Combinatory Categorial Grammar -LRB- CCG -RRB-",
+        9,
+        14,
+        "Method"
+      ],
+      [
+        "Turkish dependency treebank",
+        18,
+        20,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        9,
+        14,
+        18,
+        20,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "117": {
+    "ner": [
+      [
+        "Turkish",
+        3,
+        3,
+        "OtherScientificTerms"
+      ],
+      [
+        "agglutinating free word order language",
+        6,
+        9,
+        "Method"
+      ],
+      [
+        "challenge",
+        13,
+        13,
+        "Task"
+      ],
+      [
+        "language theories",
+        15,
+        16,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        9,
+        15,
+        16,
+        "USED-FOR"
+      ],
+      [
+        3,
+        3,
+        6,
+        9,
+        "HYPONYM-OF"
+      ],
+      [
+        13,
+        13,
+        15,
+        16,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "118": {
+    "ner": [
+      [
+        "compact lexicon",
+        7,
+        9,
+        "Material"
+      ],
+      [
+        "CCG principles",
+        12,
+        14,
+        "Method"
+      ],
+      [
+        "treebank",
+        17,
+        17,
+        "Material"
+      ],
+      [
+        "Penn WSJ",
+        26,
+        27,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        9,
+        12,
+        14,
+        "FEATURE-OF"
+      ],
+      [
+        17,
+        17,
+        7,
+        9,
+        "USED-FOR"
+      ],
+      [
+        17,
+        17,
+        26,
+        27,
+        "COMPARE"
+      ]
+    ]
+  },
+  "119": {
+    "ner": [
+      [
+        "sentence extraction",
+        1,
+        2,
+        "Method"
+      ],
+      [
+        "summarization",
+        7,
+        7,
+        "Task"
+      ],
+      [
+        "documents",
+        14,
+        14,
+        "Material"
+      ],
+      [
+        "genres",
+        17,
+        17,
+        "OtherScientificTerms"
+      ],
+      [
+        "conversational nature of email communication",
+        22,
+        26,
+        "OtherScientificTerms"
+      ],
+      [
+        "utterances",
+        28,
+        28,
+        "Generic"
+      ],
+      [
+        "relation",
+        32,
+        32,
+        "Generic"
+      ],
+      [
+        "segments of dialogue",
+        47,
+        47,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        7,
+        7,
+        "USED-FOR"
+      ],
+      [
+        22,
+        26,
+        14,
+        14,
+        "FEATURE-OF"
+      ],
+      [
+        28,
+        28,
+        32,
+        32,
+        "PART-OF"
+      ]
+    ]
+  },
+  "120": {
+    "ner": [
+      [
+        "question-answer pairs",
+        12,
+        13,
+        "Task"
+      ],
+      [
+        "email conversation",
+        16,
+        17,
+        "Material"
+      ],
+      [
+        "email summarization",
+        22,
+        23,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        12,
+        13,
+        16,
+        17,
+        "FEATURE-OF"
+      ],
+      [
+        12,
+        13,
+        22,
+        23,
+        "USED-FOR"
+      ],
+      [
+        16,
+        17,
+        22,
+        23,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "121": {
+    "ner": [
+      [
+        "features based on the structure of email-threads",
+        3,
+        10,
+        "Method"
+      ],
+      [
+        "lexical similarity",
+        17,
+        18,
+        "Metric"
+      ],
+      [
+        "discourse segments",
+        20,
+        21,
+        "Material"
+      ],
+      [
+        "question-answer pairing",
+        23,
+        24,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        10,
+        17,
+        18,
+        "USED-FOR"
+      ],
+      [
+        3,
+        10,
+        20,
+        21,
+        "FEATURE-OF"
+      ],
+      [
+        17,
+        18,
+        20,
+        21,
+        "COMPARE"
+      ],
+      [
+        23,
+        24,
+        3,
+        10,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "122": {
+    "ner": [
+      [
+        "object detection",
+        5,
+        6,
+        "Task"
+      ],
+      [
+        "a small number of training examples",
+        9,
+        14,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        6,
+        9,
+        14,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "123": {
+    "ner": [
+      [
+        "simple prior on the distribution of natural images",
+        8,
+        15,
+        "Method"
+      ],
+      [
+        "support vector machines",
+        18,
+        20,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        15,
+        18,
+        20,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "124": {
+    "ner": [
+      [
+        "SVMs",
+        0,
+        0,
+        "Method"
+      ],
+      [
+        "overfitting",
+        7,
+        7,
+        "OtherScientificTerms"
+      ],
+      [
+        "training examples",
+        13,
+        15,
+        "Material"
+      ],
+      [
+        "structure of the class",
+        21,
+        25,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        0,
+        0,
+        7,
+        7,
+        "USED-FOR"
+      ],
+      [
+        13,
+        15,
+        21,
+        25,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "125": {
+    "ner": [
+      [
+        "resulting detectors",
+        2,
+        3,
+        "Method"
+      ],
+      [
+        "training examples",
+        15,
+        16,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        3,
+        15,
+        16,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "126": {
+    "ner": [
+      [
+        "natural images",
+        5,
+        6,
+        "Material"
+      ],
+      [
+        "separating hyperplane",
+        11,
+        12,
+        "Method"
+      ],
+      [
+        "wide margin",
+        18,
+        19,
+        "Metric"
+      ],
+      [
+        "positive half space",
+        26,
+        28,
+        "OtherScientificTerms"
+      ],
+      [
+        "low probability",
+        32,
+        33,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        6,
+        11,
+        12,
+        "USED-FOR"
+      ],
+      [
+        11,
+        12,
+        18,
+        19,
+        "FEATURE-OF"
+      ],
+      [
+        26,
+        28,
+        32,
+        33,
+        "PART-OF"
+      ],
+      [
+        5,
+        6,
+        26,
+        28,
+        "COMPARE"
+      ]
+    ]
+  },
+  "127": {
+    "ner": [
+      [
+        "experiments",
+        1,
+        1,
+        "Task"
+      ],
+      [
+        "detector",
+        10,
+        10,
+        "Method"
+      ],
+      [
+        "linear and kernel SVM",
+        25,
+        28,
+        "Method"
+      ],
+      [
+        "training examples",
+        18,
+        19,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        10,
+        10,
+        "USED-FOR"
+      ],
+      [
+        10,
+        10,
+        25,
+        28,
+        "COMPARE"
+      ],
+      [
+        18,
+        19,
+        25,
+        28,
+        "USED-FOR"
+      ],
+      [
+        32,
+        37,
+        25,
+        28,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "128": {
+    "ner": [
+      [
+        "clustering",
+        4,
+        4,
+        "Task"
+      ],
+      [
+        "unified framework",
+        21,
+        22,
+        "Method"
+      ],
+      [
+        "research community",
+        41,
+        42,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        4,
+        21,
+        22,
+        "USED-FOR"
+      ],
+      [
+        21,
+        22,
+        41,
+        42,
+        "FEATURE-OF"
+      ],
+      [
+        4,
+        4,
+        41,
+        42,
+        "PART-OF"
+      ]
+    ]
+  },
+  "129": {
+    "ner": [
+      [
+        "formal perspective",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "difficulty",
+        8,
+        9,
+        "Task"
+      ],
+      [
+        "unification",
+        13,
+        13,
+        "Task"
+      ],
+      [
+        "impossibility theorem",
+        21,
+        21,
+        "OtherScientificTerms"
+      ],
+      [
+        "set of three simple properties",
+        25,
+        30,
+        "Material"
+      ],
+      [
+        "clustering function",
+        37,
+        38,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        8,
+        9,
+        "USED-FOR"
+      ],
+      [
+        13,
+        13,
+        21,
+        21,
+        "FEATURE-OF"
+      ],
+      [
+        21,
+        21,
+        25,
+        30,
+        "USED-FOR"
+      ],
+      [
+        37,
+        38,
+        25,
+        30,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "130": {
+    "ner": [
+      [
+        "clustering techniques",
+        18,
+        19,
+        "Method"
+      ],
+      [
+        "single-linkage",
+        22,
+        22,
+        "Method"
+      ],
+      [
+        "sum-of-pairs",
+        24,
+        24,
+        "Method"
+      ],
+      [
+        "k-means",
+        26,
+        26,
+        "Method"
+      ],
+      [
+        "k-median",
+        29,
+        29,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        18,
+        19,
+        22,
+        22,
+        "PART-OF"
+      ],
+      [
+        18,
+        19,
+        24,
+        24,
+        "PART-OF"
+      ],
+      [
+        18,
+        19,
+        26,
+        26,
+        "PART-OF"
+      ],
+      [
+        18,
+        19,
+        29,
+        29,
+        "PART-OF"
+      ]
+    ]
+  },
+  "131": {
+    "ner": [
+      [
+        "event-based extractive mutli-document summarization approaches",
+        5,
+        9,
+        "Method"
+      ]
+    ],
+    "relations": []
+  },
+  "132": {
+    "ner": [
+      [
+        "events",
+        4,
+        4,
+        "Generic"
+      ],
+      [
+        "event terms",
+        8,
+        9,
+        "OtherScientificTerms"
+      ],
+      [
+        "associated event elements",
+        11,
+        13,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        4,
+        8,
+        9,
+        "HYPONYM-OF"
+      ],
+      [
+        4,
+        4,
+        11,
+        13,
+        "HYPONYM-OF"
+      ]
+    ]
+  },
+  "133": {
+    "ner": [
+      [
+        "independent approach",
+        1,
+        2,
+        "Method"
+      ],
+      [
+        "important contents",
+        6,
+        7,
+        "Material"
+      ],
+      [
+        "frequency of events",
+        9,
+        11,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        7,
+        9,
+        11,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "134": {
+    "ner": [
+      [
+        "PageRank algorithm",
+        9,
+        10,
+        "Method"
+      ],
+      [
+        "event map",
+        13,
+        14,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        9,
+        10,
+        13,
+        14,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "135": {
+    "ner": [
+      [
+        "Experimental results",
+        0,
+        1,
+        "Material"
+      ]
+    ],
+    "relations": []
+  },
+  "136": {
+    "ner": [
+      [
+        "scanning method",
+        3,
+        4,
+        "Method"
+      ],
+      [
+        "camera-projector correspondence",
+        9,
+        10,
+        "Task"
+      ],
+      [
+        "photometric calibration",
+        14,
+        15,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        4,
+        9,
+        10,
+        "USED-FOR"
+      ],
+      [
+        14,
+        15,
+        3,
+        4,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "137": {
+    "ner": [
+      [
+        "Subpixel accuracy",
+        0,
+        1,
+        "Metric"
+      ],
+      [
+        "zero-crossings",
+        7,
+        7,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        0,
+        1,
+        7,
+        7,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "138": {
+    "ner": [
+      [
+        "gray-level band-pass white noise patterns",
+        2,
+        5,
+        "Material"
+      ],
+      [
+        "robustness",
+        9,
+        9,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        5,
+        9,
+        9,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "139": {
+    "ner": [
+      [
+        "method",
+        7,
+        7,
+        "Method"
+      ],
+      [
+        "scene geometry",
+        10,
+        11,
+        "Task"
+      ],
+      [
+        "subpixel precision",
+        13,
+        14,
+        "Metric"
+      ],
+      [
+        "active reconstruction systems",
+        25,
+        26,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        7,
+        10,
+        11,
+        "USED-FOR"
+      ],
+      [
+        7,
+        7,
+        13,
+        14,
+        "USED-FOR"
+      ],
+      [
+        10,
+        11,
+        13,
+        14,
+        "FEATURE-OF"
+      ],
+      [
+        25,
+        26,
+        10,
+        11,
+        "PART-OF"
+      ]
+    ]
+  },
+  "140": {
+    "ner": [
+      [
+        "state of the art methods",
+        5,
+        9,
+        "Method"
+      ],
+      [
+        "mi-cro phase shifting",
+        12,
+        14,
+        "Method"
+      ],
+      [
+        "modulated phase shifting",
+        16,
+        18,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        9,
+        12,
+        14,
+        "CONJUNCTION"
+      ],
+      [
+        12,
+        14,
+        16,
+        18,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "141": {
+    "ner": [
+      [
+        "novel system",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "adjectival subcategorization frames",
+        9,
+        10,
+        "OtherScientificTerms"
+      ],
+      [
+        "scfs",
+        12,
+        12,
+        "Generic"
+      ],
+      [
+        "frequency information",
+        16,
+        17,
+        "Metric"
+      ],
+      [
+        "English corpus data",
+        19,
+        21,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        7,
+        8,
+        "USED-FOR"
+      ],
+      [
+        9,
+        10,
+        12,
+        12,
+        "HYPONYM-OF"
+      ],
+      [
+        9,
+        10,
+        16,
+        17,
+        "FEATURE-OF"
+      ],
+      [
+        19,
+        21,
+        4,
+        5,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "142": {
+    "ner": [
+      [
+        "decision-tree classifier",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "scf types",
+        7,
+        9,
+        "OtherScientificTerms"
+      ],
+      [
+        "grammatical relations",
+        16,
+        17,
+        "Task"
+      ],
+      [
+        "robust statistical parser",
+        26,
+        28,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        7,
+        9,
+        "USED-FOR"
+      ],
+      [
+        4,
+        5,
+        16,
+        17,
+        "USED-FOR"
+      ],
+      [
+        26,
+        28,
+        16,
+        17,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "143": {
+    "ner": [
+      [
+        "pattern-matching language",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "grs",
+        8,
+        8,
+        "Material"
+      ],
+      [
+        "frames",
+        10,
+        10,
+        "Task"
+      ],
+      [
+        "inheritance-based lexica",
+        17,
+        18,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        8,
+        8,
+        "USED-FOR"
+      ],
+      [
+        8,
+        8,
+        10,
+        10,
+        "PART-OF"
+      ],
+      [
+        4,
+        5,
+        17,
+        18,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "144": {
+    "ner": [
+      [
+        "experiments",
+        1,
+        2,
+        "OtherScientificTerms"
+      ],
+      [
+        "system",
+        5,
+        6,
+        "Method"
+      ],
+      [
+        "scf types",
+        10,
+        11,
+        "Material"
+      ],
+      [
+        "precision",
+        15,
+        16,
+        "Metric"
+      ],
+      [
+        "recall rate",
+        19,
+        20,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        5,
+        6,
+        "USED-FOR"
+      ],
+      [
+        5,
+        6,
+        10,
+        11,
+        "USED-FOR"
+      ],
+      [
+        5,
+        6,
+        15,
+        16,
+        "FEATURE-OF"
+      ],
+      [
+        5,
+        6,
+        19,
+        20,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "145": {
+    "ner": [
+      [
+        "linguistic annotation",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "corpus data",
+        9,
+        10,
+        "Material"
+      ],
+      [
+        "training and test data",
+        21,
+        25,
+        "Material"
+      ],
+      [
+        "subcategorization acquisition",
+        26,
+        28,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        9,
+        10,
+        "USED-FOR"
+      ],
+      [
+        4,
+        5,
+        26,
+        28,
+        "USED-FOR"
+      ],
+      [
+        9,
+        10,
+        21,
+        25,
+        "PART-OF"
+      ],
+      [
+        21,
+        25,
+        26,
+        28,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "146": {
+    "ner": [
+      [
+        "transliteration/back-transliteration",
+        1,
+        1,
+        "Method"
+      ],
+      [
+        "multilingual speech and language applications",
+        8,
+        12,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        8,
+        12,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "147": {
+    "ner": [
+      [
+        "machine transliteration/backtransliteration",
+        8,
+        9,
+        "Method"
+      ],
+      [
+        "framework",
+        5,
+        6,
+        "Method"
+      ],
+      [
+        "orthographical mapping",
+        16,
+        17,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        6,
+        8,
+        9,
+        "USED-FOR"
+      ],
+      [
+        8,
+        9,
+        16,
+        17,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "148": {
+    "ner": [
+      [
+        "joint source-channel transliteration model",
+        5,
+        8,
+        "Method"
+      ],
+      [
+        "n-gram transliteration model",
+        12,
+        14,
+        "Method"
+      ],
+      [
+        "transliteration process",
+        26,
+        27,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        8,
+        12,
+        14,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "149": {
+    "ner": [
+      [
+        "proposed methods",
+        3,
+        4,
+        "Method"
+      ],
+      [
+        "transliteration/backtransliteration experiments",
+        7,
+        8,
+        "Task"
+      ],
+      [
+        "English/Chinese",
+        10,
+        11,
+        "Material"
+      ],
+      [
+        "English/Japanese",
+        12,
+        13,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        4,
+        7,
+        8,
+        "USED-FOR"
+      ],
+      [
+        10,
+        11,
+        12,
+        13,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "150": {
+    "ner": [
+      [
+        "method",
+        6,
+        6,
+        "Generic"
+      ],
+      [
+        "study",
+        1,
+        1,
+        "Task"
+      ],
+      [
+        "system development effort",
+        12,
+        14,
+        "Task"
+      ],
+      [
+        "transliteration accuracy",
+        19,
+        20,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        6,
+        12,
+        14,
+        "USED-FOR"
+      ],
+      [
+        6,
+        6,
+        19,
+        20,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "151": {
+    "ner": [
+      [
+        "bio-inspired model",
+        1,
+        3,
+        "Method"
+      ],
+      [
+        "analog programmable array processor",
+        5,
+        8,
+        "Method"
+      ],
+      [
+        "studies on the vertebrate retina",
+        15,
+        20,
+        "Material"
+      ],
+      [
+        "complex programmable spatio-temporal dynamics",
+        26,
+        30,
+        "Task"
+      ],
+      [
+        "VLSI",
+        31,
+        31,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        3,
+        5,
+        8,
+        "USED-FOR"
+      ],
+      [
+        1,
+        3,
+        15,
+        20,
+        "USED-FOR"
+      ],
+      [
+        5,
+        8,
+        26,
+        30,
+        "USED-FOR"
+      ],
+      [
+        26,
+        30,
+        31,
+        31,
+        "PART-OF"
+      ]
+    ]
+  },
+  "152": {
+    "ner": [
+      [
+        "model",
+        1,
+        1,
+        "Method"
+      ],
+      [
+        "visual pathway",
+        12,
+        13,
+        "OtherScientificTerms"
+      ],
+      [
+        "early vision applications",
+        24,
+        25,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        12,
+        13,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "153": {
+    "ner": [
+      [
+        "prototype chip",
+        1,
+        2,
+        "Method"
+      ],
+      [
+        "CMOS process",
+        13,
+        14,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        13,
+        14,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "154": {
+    "ner": [
+      [
+        "Computing power per area",
+        0,
+        3,
+        "Metric"
+      ],
+      [
+        "power consumption",
+        5,
+        6,
+        "Metric"
+      ]
+    ],
+    "relations": []
+  },
+  "155": {
+    "ner": [
+      [
+        "Design challenges",
+        0,
+        1,
+        "Task"
+      ],
+      [
+        "trade-offs",
+        3,
+        3,
+        "OtherScientificTerms"
+      ],
+      [
+        "experimental results",
+        6,
+        7,
+        "Material"
+      ]
+    ],
+    "relations": []
+  },
+  "156": {
+    "ner": [
+      [
+        "Determiners",
+        0,
+        0,
+        "OtherScientificTerms"
+      ],
+      [
+        "methods",
+        28,
+        28,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        28,
+        28,
+        0,
+        0,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "157": {
+    "ner": [
+      [
+        "problem",
+        1,
+        1,
+        "Task"
+      ],
+      [
+        "determiners",
+        3,
+        3,
+        "OtherScientificTerms"
+      ],
+      [
+        "ambiguity",
+        7,
+        7,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        3,
+        3,
+        "FEATURE-OF"
+      ],
+      [
+        3,
+        3,
+        7,
+        7,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "158": {
+    "ner": [
+      [
+        "paper",
+        2,
+        2,
+        "Generic"
+      ],
+      [
+        "formalism",
+        7,
+        7,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        7,
+        2,
+        2,
+        "PART-OF"
+      ]
+    ]
+  },
+  "159": {
+    "ner": [
+      [
+        "embodied conversational agents",
+        15,
+        17,
+        "Task"
+      ],
+      [
+        "design",
+        13,
+        13,
+        "Method"
+      ],
+      [
+        "verbal means",
+        3,
+        5,
+        "Material"
+      ],
+      [
+        "nonverbal means",
+        5,
+        6,
+        "Material"
+      ],
+      [
+        "common ground",
+        27,
+        29,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        15,
+        17,
+        13,
+        13,
+        "USED-FOR"
+      ],
+      [
+        15,
+        17,
+        3,
+        5,
+        "USED-FOR"
+      ],
+      [
+        15,
+        17,
+        5,
+        6,
+        "USED-FOR"
+      ],
+      [
+        27,
+        29,
+        30,
+        31,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "160": {
+    "ner": [
+      [
+        "eye gaze",
+        2,
+        4,
+        "OtherScientificTerms"
+      ],
+      [
+        "head nods",
+        5,
+        6,
+        "OtherScientificTerms"
+      ],
+      [
+        "attentional focus",
+        8,
+        10,
+        "Method"
+      ],
+      [
+        "direction-giving task",
+        15,
+        17,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        15,
+        17,
+        2,
+        4,
+        "FEATURE-OF"
+      ],
+      [
+        15,
+        17,
+        5,
+        6,
+        "FEATURE-OF"
+      ],
+      [
+        15,
+        17,
+        8,
+        10,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "161": {
+    "ner": [
+      [
+        "nonverbal behaviors",
+        3,
+        5,
+        "OtherScientificTerms"
+      ],
+      [
+        "dialogue move",
+        11,
+        13,
+        "Method"
+      ],
+      [
+        "negative feedback",
+        26,
+        28,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        5,
+        11,
+        13,
+        "FEATURE-OF"
+      ],
+      [
+        11,
+        13,
+        26,
+        28,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "162": {
+    "ner": [
+      [
+        "an ECA",
+        7,
+        8,
+        "Method"
+      ],
+      [
+        "verbal and nonverbal grounding acts",
+        11,
+        14,
+        "OtherScientificTerms"
+      ],
+      [
+        "dialogue state",
+        17,
+        19,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        11,
+        14,
+        7,
+        8,
+        "USED-FOR"
+      ],
+      [
+        17,
+        19,
+        7,
+        8,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "163": {
+    "ner": [
+      [
+        "speech recognition output",
+        10,
+        12,
+        "Material"
+      ],
+      [
+        "sentence boundary detection",
+        0,
+        2,
+        "Method"
+      ],
+      [
+        "downstream modules",
+        21,
+        22,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        0,
+        2,
+        10,
+        12,
+        "USED-FOR"
+      ],
+      [
+        21,
+        22,
+        10,
+        12,
+        "PART-OF"
+      ]
+    ]
+  },
+  "164": {
+    "ner": [
+      [
+        "hidden Markov model",
+        7,
+        9,
+        "Method"
+      ],
+      [
+        "maximum entropy",
+        14,
+        15,
+        "Metric"
+      ],
+      [
+        "HMM",
+        11,
+        11,
+        "OtherScientificTerms"
+      ],
+      [
+        "Maxent",
+        17,
+        17,
+        "OtherScientificTerms"
+      ],
+      [
+        "classifiers",
+        19,
+        19,
+        "Method"
+      ],
+      [
+        "textual and prosodic knowledge sources",
+        22,
+        25,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        9,
+        14,
+        15,
+        "USED-FOR"
+      ],
+      [
+        7,
+        9,
+        19,
+        19,
+        "PART-OF"
+      ],
+      [
+        14,
+        15,
+        19,
+        19,
+        "PART-OF"
+      ],
+      [
+        11,
+        11,
+        7,
+        9,
+        "HYPONYM-OF"
+      ],
+      [
+        17,
+        17,
+        14,
+        15,
+        "HYPONYM-OF"
+      ]
+    ]
+  },
+  "165": {
+    "ner": [
+      [
+        "conditional random field -LRB- CRF -RRB-",
+        10,
+        15,
+        "Method"
+      ],
+      [
+        "this task",
+        18,
+        19,
+        "Task"
+      ],
+      [
+        "this model",
+        24,
+        25,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        10,
+        15,
+        18,
+        19,
+        "USED-FOR"
+      ],
+      [
+        10,
+        15,
+        24,
+        25,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "166": {
+    "ner": [
+      [
+        "conversational telephone speech",
+        6,
+        8,
+        "Material"
+      ],
+      [
+        "broadcast news speech",
+        10,
+        12,
+        "Material"
+      ],
+      [
+        "human transcriptions",
+        16,
+        18,
+        "Material"
+      ],
+      [
+        "speech recognition output",
+        19,
+        21,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        8,
+        16,
+        18,
+        "COMPARE"
+      ],
+      [
+        6,
+        8,
+        19,
+        21,
+        "USED-FOR"
+      ],
+      [
+        10,
+        12,
+        16,
+        18,
+        "COMPARE"
+      ],
+      [
+        10,
+        12,
+        19,
+        21,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "167": {
+    "ner": [
+      [
+        "our CRF model",
+        3,
+        5,
+        "Method"
+      ],
+      [
+        "HMM and Max-ent models",
+        12,
+        15,
+        "Method"
+      ],
+      [
+        "NIST sentence boundary detection task",
+        18,
+        22,
+        "Task"
+      ],
+      [
+        "speech",
+        24,
+        25,
+        "Material"
+      ],
+      [
+        "three-way voting among the classifiers",
+        40,
+        45,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        5,
+        12,
+        15,
+        "COMPARE"
+      ],
+      [
+        3,
+        5,
+        18,
+        22,
+        "USED-FOR"
+      ],
+      [
+        18,
+        22,
+        24,
+        25,
+        "FEATURE-OF"
+      ],
+      [
+        40,
+        45,
+        18,
+        22,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "168": {
+    "ner": [
+      [
+        "each model",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "strengths",
+        7,
+        8,
+        "Metric"
+      ],
+      [
+        "weaknesses",
+        9,
+        10,
+        "Metric"
+      ],
+      [
+        "modeling the knowledge sources",
+        11,
+        15,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        8,
+        4,
+        5,
+        "FEATURE-OF"
+      ],
+      [
+        9,
+        10,
+        4,
+        5,
+        "FEATURE-OF"
+      ],
+      [
+        11,
+        15,
+        4,
+        5,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "169": {
+    "ner": [
+      [
+        "a novel approach",
+        2,
+        4,
+        "Method"
+      ],
+      [
+        "objects",
+        7,
+        7,
+        "OtherScientificTerms"
+      ],
+      [
+        "multiple PTZ cameras",
+        9,
+        11,
+        "Material"
+      ],
+      [
+        "camera handoff",
+        18,
+        19,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        4,
+        7,
+        7,
+        "USED-FOR"
+      ],
+      [
+        9,
+        11,
+        18,
+        19,
+        "PART-OF"
+      ]
+    ]
+  },
+  "170": {
+    "ner": [
+      [
+        "previous approaches",
+        1,
+        3,
+        "Method"
+      ],
+      [
+        "geometric",
+        5,
+        5,
+        "OtherScientificTerms"
+      ],
+      [
+        "appearance",
+        7,
+        7,
+        "OtherScientificTerms"
+      ],
+      [
+        "correlation-based information",
+        10,
+        11,
+        "OtherScientificTerms"
+      ],
+      [
+        "establishing correspondences",
+        13,
+        14,
+        "Task"
+      ],
+      [
+        "static cameras",
+        16,
+        17,
+        "Material"
+      ],
+      [
+        "well-known limitations",
+        22,
+        23,
+        "Metric"
+      ],
+      [
+        "wide-area settings",
+        29,
+        30,
+        "OtherScientificTerm"
+      ],
+      [
+        "PTZ cameras",
+        32,
+        33,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        3,
+        5,
+        5,
+        "USED-FOR"
+      ],
+      [
+        1,
+        3,
+        7,
+        7,
+        "USED-FOR"
+      ],
+      [
+        1,
+        3,
+        10,
+        11,
+        "USED-FOR"
+      ],
+      [
+        13,
+        14,
+        16,
+        17,
+        "USED-FOR"
+      ],
+      [
+        22,
+        23,
+        16,
+        17,
+        "FEATURE-OF"
+      ],
+      [
+        29,
+        30,
+        16,
+        17,
+        "CONJUNCTION"
+      ],
+      [
+        32,
+        33,
+        16,
+        17,
+        "PART-OF"
+      ]
+    ]
+  },
+  "171": {
+    "ner": [
+      [
+        "our approach",
+        2,
+        4,
+        "Method"
+      ],
+      [
+        "slave camera",
+        5,
+        7,
+        "OtherScientificTerm"
+      ],
+      [
+        "target",
+        10,
+        11,
+        "Generic"
+      ],
+      [
+        "master",
+        18,
+        19,
+        "OtherScientificTerm"
+      ],
+      [
+        "incoming imagery",
+        25,
+        27,
+        "Material"
+      ],
+      [
+        "problems faced by previous approaches",
+        32,
+        37,
+        "Task"
+      ],
+      [
+        "need to perform any model transfer",
+        40,
+        47,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        7,
+        10,
+        11,
+        "USED-FOR"
+      ],
+      [
+        18,
+        19,
+        10,
+        11,
+        "CONJUNCTION"
+      ],
+      [
+        25,
+        27,
+        5,
+        7,
+        "USED-FOR"
+      ],
+      [
+        32,
+        37,
+        40,
+        47,
+        "HYPONYM-OF"
+      ]
+    ]
+  },
+  "172": {
+    "ner": [
+      [
+        "this goal",
+        1,
+        2,
+        "Task"
+      ],
+      [
+        "we",
+        4,
+        4,
+        "Generic"
+      ],
+      [
+        "novel Multiple Instance Learning (MIL) formulation",
+        8,
+        14,
+        "Method"
+      ],
+      [
+        "the problem",
+        17,
+        18,
+        "Task"
+      ],
+      [
+        "logistic softmax function",
+        22,
+        24,
+        "OtherScientificTerm"
+      ],
+      [
+        "covariance-based region features",
+        26,
+        28,
+        "Material"
+      ],
+      [
+        "a MAP estimation framework",
+        31,
+        33,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        8,
+        14,
+        "USED-FOR"
+      ],
+      [
+        4,
+        4,
+        8,
+        14,
+        "USED-FOR"
+      ],
+      [
+        17,
+        18,
+        8,
+        14,
+        "FEATURE-OF"
+      ],
+      [
+        22,
+        24,
+        26,
+        28,
+        "CONJUNCTION"
+      ],
+      [
+        26,
+        28,
+        31,
+        33,
+        "PART-OF"
+      ],
+      [
+        31,
+        33,
+        8,
+        14,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "173": {
+    "ner": [
+      [
+        "our approach",
+        3,
+        4,
+        "Method"
+      ],
+      [
+        "multiple PTZ camera sequences",
+        5,
+        8,
+        "Material"
+      ],
+      [
+        "typical outdoor surveillance settings",
+        10,
+        13,
+        "OtherScientificTerms"
+      ],
+      [
+        "a comparison",
+        16,
+        17,
+        "Task"
+      ],
+      [
+        "state-of-the-art approaches",
+        19,
+        20,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        4,
+        5,
+        8,
+        "USED-FOR"
+      ],
+      [
+        3,
+        4,
+        10,
+        13,
+        "FEATURE-OF"
+      ],
+      [
+        5,
+        8,
+        16,
+        17,
+        "USED-FOR"
+      ],
+      [
+        5,
+        8,
+        19,
+        20,
+        "COMPARE"
+      ],
+      [
+        16,
+        17,
+        19,
+        20,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "174": {
+    "ner": [
+      [
+        "paper",
+        1,
+        1,
+        "Task"
+      ],
+      [
+        "specialized regression problem",
+        4,
+        6,
+        "Task"
+      ],
+      [
+        "sampling probabilities",
+        9,
+        10,
+        "Metric"
+      ],
+      [
+        "records",
+        12,
+        12,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        4,
+        6,
+        "USED-FOR"
+      ],
+      [
+        4,
+        6,
+        9,
+        10,
+        "USED-FOR"
+      ],
+      [
+        9,
+        10,
+        12,
+        12,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "175": {
+    "ner": [
+      [
+        "goal",
+        1,
+        1,
+        "Task"
+      ],
+      [
+        "sample",
+        4,
+        4,
+        "Method"
+      ],
+      [
+        "set of records",
+        7,
+        9,
+        "Material"
+      ],
+      [
+        "evaluating aggregate queries",
+        12,
+        14,
+        "Task"
+      ],
+      [
+        "efficiently",
+        19,
+        19,
+        "Metric"
+      ],
+      [
+        "accurately",
+        21,
+        21,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        4,
+        4,
+        "USED-FOR"
+      ],
+      [
+        7,
+        9,
+        4,
+        4,
+        "FEATURE-OF"
+      ],
+      [
+        12,
+        14,
+        7,
+        9,
+        "USED-FOR"
+      ],
+      [
+        19,
+        19,
+        12,
+        14,
+        "FEATURE-OF"
+      ],
+      [
+        21,
+        21,
+        12,
+        14,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "176": {
+    "ner": [
+      [
+        "solution",
+        6,
+        6,
+        "Method"
+      ],
+      [
+        "problem",
+        9,
+        9,
+        "Task"
+      ],
+      [
+        "it",
+        11,
+        11,
+        "Generic"
+      ],
+      [
+        "data insights",
+        17,
+        18,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        6,
+        9,
+        9,
+        "USED-FOR"
+      ],
+      [
+        6,
+        6,
+        11,
+        11,
+        "USED-FOR"
+      ],
+      [
+        17,
+        18,
+        6,
+        6,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "177": {
+    "ner": [
+      [
+        "standard regression problems",
+        1,
+        3,
+        "Task"
+      ],
+      [
+        "loss",
+        6,
+        6,
+        "Metric"
+      ],
+      [
+        "regressed-to values",
+        12,
+        13,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        6,
+        12,
+        13,
+        "USED-FOR"
+      ],
+      [
+        6,
+        6,
+        1,
+        3,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "178": {
+    "ner": [
+      [
+        "cost zero solution",
+        3,
+        5,
+        "Task"
+      ],
+      [
+        "hard budget constraints",
+        14,
+        16,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        5,
+        14,
+        16,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "179": {
+    "ner": [
+      [
+        "unique form of reg-ularization",
+        1,
+        4,
+        "Method"
+      ],
+      [
+        "A unique form of reg-ularization",
+        0,
+        4,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        4,
+        0,
+        4,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "180": {
+    "ner": [
+      [
+        "regularized Empirical Risk Minimization -LRB- ERM -RRB-",
+        6,
+        12,
+        "Method"
+      ],
+      [
+        "algorithm",
+        13,
+        13,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        12,
+        13,
+        13,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "181": {
+    "ner": [
+      [
+        "experimental results",
+        2,
+        3,
+        "Metric"
+      ],
+      [
+        "uniform sampling",
+        8,
+        9,
+        "Method"
+      ],
+      [
+        "standard stratified sampling",
+        11,
+        13,
+        "Method"
+      ],
+      [
+        "industry standards",
+        18,
+        19,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        8,
+        9,
+        18,
+        19,
+        "HYPONYM-OF"
+      ],
+      [
+        11,
+        13,
+        18,
+        19,
+        "HYPONYM-OF"
+      ]
+    ]
+  },
+  "182": {
+    "ner": [
+      [
+        "problem of computing the Kullback-Leibler distance",
+        3,
+        8,
+        "Task"
+      ],
+      [
+        "Kullback-Leibler distance",
+        7,
+        8,
+        "OtherScientificTerms"
+      ],
+      [
+        "relative entropy",
+        13,
+        14,
+        "OtherScientificTerms"
+      ],
+      [
+        "probabilistic context-free grammar",
+        19,
+        20,
+        "Method"
+      ],
+      [
+        "probabilistic finite automaton",
+        23,
+        25,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        8,
+        3,
+        8,
+        "FEATURE-OF"
+      ],
+      [
+        13,
+        14,
+        7,
+        8,
+        "HYPONYM-OF"
+      ],
+      [
+        19,
+        20,
+        23,
+        25,
+        "COMPARE"
+      ]
+    ]
+  },
+  "183": {
+    "ner": [
+      [
+        "closed-form -LRB- analytical -RRB- solution",
+        6,
+        9,
+        "Method"
+      ],
+      [
+        "Kullback-Leibler distance",
+        16,
+        17,
+        "Metric"
+      ],
+      [
+        "cross-entropy",
+        21,
+        21,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        9,
+        16,
+        17,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "184": {
+    "ner": [
+      [
+        "distributional approximation of probabilistic context-free grammars",
+        11,
+        16,
+        "Task"
+      ],
+      [
+        "probabilistic finite automata",
+        21,
+        22,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        11,
+        16,
+        21,
+        22,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "185": {
+    "ner": [
+      [
+        "illumination and pose invariance",
+        10,
+        13,
+        "OtherScientificTerms"
+      ],
+      [
+        "face recognition",
+        19,
+        20,
+        "Task"
+      ],
+      [
+        "practical applications",
+        23,
+        24,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        10,
+        13,
+        19,
+        20,
+        "FEATURE-OF"
+      ],
+      [
+        19,
+        20,
+        23,
+        24,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "186": {
+    "ner": [
+      [
+        "this work",
+        3,
+        4,
+        "Task"
+      ],
+      [
+        "faces",
+        8,
+        8,
+        "OtherScientificTerms"
+      ],
+      [
+        "video sequences",
+        10,
+        11,
+        "Material"
+      ],
+      [
+        "training",
+        14,
+        14,
+        "Method"
+      ],
+      [
+        "recognition",
+        16,
+        16,
+        "Method"
+      ],
+      [
+        "realistic , unconstrained setup",
+        21,
+        24,
+        "Generic"
+      ],
+      [
+        "lighting , pose and user motion pattern",
+        27,
+        32,
+        "OtherScientificTerms"
+      ],
+      [
+        "face images",
+        40,
+        40,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        4,
+        10,
+        11,
+        "USED-FOR"
+      ],
+      [
+        8,
+        8,
+        14,
+        14,
+        "PART-OF"
+      ],
+      [
+        8,
+        8,
+        16,
+        16,
+        "PART-OF"
+      ],
+      [
+        27,
+        32,
+        21,
+        24,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "187": {
+    "ner": [
+      [
+        "photometric model of image formation",
+        16,
+        20,
+        "Method"
+      ],
+      [
+        "statistical model of generic face appearance variation",
+        26,
+        32,
+        "Method"
+      ],
+      [
+        "geodesically local appearance manifold structure",
+        55,
+        59,
+        "OtherScientificTerms"
+      ],
+      [
+        "same-identity likelihood",
+        62,
+        65,
+        "Metric"
+      ],
+      [
+        "video sequence '' reillumination '' algorithm",
+        86,
+        95,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        16,
+        20,
+        26,
+        32,
+        "CONJUNCTION"
+      ],
+      [
+        55,
+        59,
+        62,
+        65,
+        "FEATURE-OF"
+      ],
+      [
+        86,
+        95,
+        16,
+        20,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "188": {
+    "ner": [
+      [
+        "recognition system",
+        5,
+        6,
+        "Method"
+      ],
+      [
+        "proposed method",
+        10,
+        11,
+        "Method"
+      ],
+      [
+        "evaluation",
+        14,
+        15,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        6,
+        10,
+        11,
+        "USED-FOR"
+      ],
+      [
+        14,
+        15,
+        5,
+        6,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "189": {
+    "ner": [
+      [
+        "system",
+        6,
+        6,
+        "Generic"
+      ],
+      [
+        "recognition rate",
+        12,
+        13,
+        "Metric"
+      ],
+      [
+        "99.7 %",
+        16,
+        17,
+        "Metric"
+      ],
+      [
+        "databases",
+        21,
+        21,
+        "Material"
+      ],
+      [
+        "state-of-the-art commercial software",
+        26,
+        28,
+        "Method"
+      ],
+      [
+        "methods from the literature",
+        30,
+        33,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        6,
+        12,
+        13,
+        "USED-FOR"
+      ],
+      [
+        12,
+        13,
+        16,
+        17,
+        "FEATURE-OF"
+      ],
+      [
+        21,
+        21,
+        26,
+        28,
+        "COMPARE"
+      ],
+      [
+        21,
+        21,
+        30,
+        33,
+        "COMPARE"
+      ]
+    ]
+  },
+  "190": {
+    "ner": [
+      [
+        "Minimum Bayes-Risk -LRB- MBR -RRB- decoding",
+        2,
+        7,
+        "Method"
+      ],
+      [
+        "statistical machine translation",
+        9,
+        11,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        7,
+        9,
+        11,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "191": {
+    "ner": [
+      [
+        "statistical approach",
+        1,
+        3,
+        "Method"
+      ],
+      [
+        "expected loss of translation errors",
+        6,
+        10,
+        "Metric"
+      ],
+      [
+        "translation performance",
+        16,
+        17,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        3,
+        6,
+        10,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "192": {
+    "ner": [
+      [
+        "hierarchy of loss functions",
+        3,
+        7,
+        "Method"
+      ],
+      [
+        "linguistic information",
+        13,
+        15,
+        "OtherScientificTerms"
+      ],
+      [
+        "word strings",
+        16,
+        17,
+        "Material"
+      ],
+      [
+        "word-to-word alignments",
+        19,
+        20,
+        "Material"
+      ],
+      [
+        "MT system",
+        22,
+        23,
+        "Method"
+      ],
+      [
+        "syntactic structure",
+        27,
+        28,
+        "OtherScientificTerms"
+      ],
+      [
+        "parse-trees of source and target language sentences",
+        30,
+        36,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        7,
+        13,
+        15,
+        "USED-FOR"
+      ],
+      [
+        3,
+        7,
+        16,
+        17,
+        "USED-FOR"
+      ],
+      [
+        3,
+        7,
+        19,
+        20,
+        "USED-FOR"
+      ],
+      [
+        22,
+        23,
+        19,
+        20,
+        "FEATURE-OF"
+      ],
+      [
+        27,
+        28,
+        30,
+        36,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "193": {
+    "ner": [
+      [
+        "MBR decoders",
+        6,
+        7,
+        "Method"
+      ],
+      [
+        "Chinese-to-English translation task",
+        10,
+        12,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        7,
+        10,
+        12,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "194": {
+    "ner": [
+      [
+        "MBR decoding",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "statistical MT performance",
+        11,
+        13,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        11,
+        13,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "195": {
+    "ner": [
+      [
+        "critical discussion",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "evaluation of Natural Language systems",
+        14,
+        20,
+        "Task"
+      ],
+      [
+        "various approaches",
+        8,
+        9,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        14,
+        20,
+        8,
+        9,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "196": {
+    "ner": [
+      [
+        "previous approaches",
+        3,
+        5,
+        "Method"
+      ],
+      [
+        "systems",
+        9,
+        9,
+        "OtherScientificTerms"
+      ],
+      [
+        "the context of their use",
+        11,
+        15,
+        "Generic"
+      ],
+      [
+        "a task requiring data retrieval",
+        20,
+        24,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        5,
+        9,
+        9,
+        "USED-FOR"
+      ],
+      [
+        3,
+        5,
+        20,
+        24,
+        "USED-FOR"
+      ],
+      [
+        9,
+        9,
+        11,
+        15,
+        "FEATURE-OF"
+      ],
+      [
+        20,
+        24,
+        9,
+        9,
+        "PART-OF"
+      ]
+    ]
+  },
+  "197": {
+    "ner": [
+      [
+        "questions",
+        2,
+        2,
+        "OtherScientificTerms"
+      ],
+      [
+        "validity",
+        5,
+        5,
+        "Metric"
+      ],
+      [
+        "approaches",
+        8,
+        8,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        2,
+        5,
+        5,
+        "FEATURE-OF"
+      ],
+      [
+        2,
+        2,
+        8,
+        8,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "198": {
+    "ner": [
+      [
+        "Wizard of Oz technique",
+        15,
+        18,
+        "Method"
+      ],
+      [
+        "laboratory study",
+        11,
+        12,
+        "Task"
+      ],
+      [
+        "NL requirements",
+        21,
+        22,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        15,
+        18,
+        11,
+        12,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "199": {
+    "ner": [
+      [
+        "task dialogues",
+        5,
+        7,
+        "Material"
+      ],
+      [
+        "technique",
+        9,
+        10,
+        "Method"
+      ],
+      [
+        "prototype Natural Language system",
+        14,
+        19,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        7,
+        9,
+        10,
+        "USED-FOR"
+      ],
+      [
+        5,
+        7,
+        14,
+        19,
+        "PART-OF"
+      ]
+    ]
+  },
+  "200": {
+    "ner": [
+      [
+        "task",
+        9,
+        9,
+        "Task"
+      ],
+      [
+        "database access",
+        22,
+        23,
+        "Method"
+      ],
+      [
+        "operators",
+        16,
+        16,
+        "Method"
+      ],
+      [
+        "complex contextual reference",
+        25,
+        28,
+        "OtherScientificTerms"
+      ],
+      [
+        "reference to the structure of the information source",
+        30,
+        36,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        9,
+        9,
+        22,
+        23,
+        "USED-FOR"
+      ],
+      [
+        16,
+        16,
+        22,
+        23,
+        "FEATURE-OF"
+      ],
+      [
+        25,
+        28,
+        30,
+        36,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "201": {
+    "ner": [
+      [
+        "these",
+        3,
+        3,
+        "Generic"
+      ],
+      [
+        "future Natural Language systems",
+        8,
+        11,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        3,
+        8,
+        11,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "202": {
+    "ner": [
+      [
+        "addressee identification",
+        5,
+        6,
+        "Task"
+      ],
+      [
+        "Bayesian Network",
+        11,
+        12,
+        "Method"
+      ],
+      [
+        "Naive Bayes classifiers",
+        14,
+        15,
+        "Method"
+      ]
+    ],
+    "relations": []
+  },
+  "203": {
+    "ner": [
+      [
+        "dialogue act",
+        10,
+        11,
+        "Task"
+      ],
+      [
+        "gaze",
+        17,
+        17,
+        "OtherScientificTerms"
+      ],
+      [
+        "utterance",
+        19,
+        19,
+        "Material"
+      ],
+      [
+        "conversational context features",
+        22,
+        23,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        10,
+        11,
+        17,
+        17,
+        "USED-FOR"
+      ],
+      [
+        10,
+        11,
+        19,
+        19,
+        "USED-FOR"
+      ],
+      [
+        10,
+        11,
+        22,
+        23,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "204": {
+    "ner": [
+      [
+        "meeting context",
+        7,
+        8,
+        "Material"
+      ],
+      [
+        "classifiers",
+        11,
+        11,
+        "Method"
+      ],
+      [
+        "performances",
+        13,
+        13,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        11,
+        11,
+        13,
+        13,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "205": {
+    "ner": [
+      [
+        "classifiers",
+        1,
+        1,
+        "Method"
+      ],
+      [
+        "conversational context",
+        6,
+        7,
+        "Material"
+      ],
+      [
+        "utterance features",
+        9,
+        10,
+        "OtherScientificTerms"
+      ],
+      [
+        "speaker's gaze information",
+        14,
+        17,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        6,
+        7,
+        "USED-FOR"
+      ],
+      [
+        1,
+        1,
+        9,
+        10,
+        "USED-FOR"
+      ],
+      [
+        1,
+        1,
+        14,
+        17,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "206": {
+    "ner": [
+      [
+        "classifiers",
+        1,
+        1,
+        "Method"
+      ],
+      [
+        "gain",
+        4,
+        4,
+        "Metric"
+      ],
+      [
+        "information",
+        6,
+        6,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        6,
+        6,
+        "USED-FOR"
+      ],
+      [
+        6,
+        6,
+        4,
+        4,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "207": {
+    "ner": [
+      [
+        "paraphrase examples",
+        17,
+        18,
+        "Material"
+      ],
+      [
+        "class-oriented framework",
+        13,
+        14,
+        "Method"
+      ],
+      [
+        "automatic candidate generation",
+        34,
+        35,
+        "Method"
+      ],
+      [
+        "manual judgement",
+        38,
+        39,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        13,
+        14,
+        17,
+        18,
+        "USED-FOR"
+      ],
+      [
+        34,
+        35,
+        17,
+        18,
+        "USED-FOR"
+      ],
+      [
+        38,
+        39,
+        17,
+        18,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "208": {
+    "ner": [
+      [
+        "paraphrase corpus",
+        6,
+        7,
+        "Material"
+      ],
+      [
+        "cost-efficiency",
+        22,
+        22,
+        "Metric"
+      ],
+      [
+        "exhaustiveness",
+        24,
+        24,
+        "Metric"
+      ],
+      [
+        "reliability",
+        27,
+        27,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        7,
+        22,
+        22,
+        "USED-FOR"
+      ],
+      [
+        6,
+        7,
+        24,
+        24,
+        "USED-FOR"
+      ],
+      [
+        6,
+        7,
+        27,
+        27,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "209": {
+    "ner": [
+      [
+        "evaluation techniques",
+        13,
+        14,
+        "Method"
+      ],
+      [
+        "human language learners",
+        22,
+        24,
+        "Material"
+      ],
+      [
+        "machine translation systems",
+        30,
+        31,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        11,
+        12,
+        7,
+        8,
+        "USED-FOR"
+      ],
+      [
+        19,
+        20,
+        16,
+        17,
+        "USED-FOR"
+      ],
+      [
+        27,
+        28,
+        33,
+        34,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "210": {
+    "ner": [
+      [
+        "evaluation techniques",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "human language learning process",
+        12,
+        15,
+        "Task"
+      ],
+      [
+        "translation process",
+        18,
+        19,
+        "Task"
+      ],
+      [
+        "development of machine translation systems",
+        22,
+        25,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        12,
+        15,
+        "USED-FOR"
+      ],
+      [
+        4,
+        5,
+        18,
+        19,
+        "USED-FOR"
+      ],
+      [
+        4,
+        5,
+        22,
+        25,
+        "USED-FOR"
+      ],
+      [
+        12,
+        15,
+        18,
+        19,
+        "CONJUNCTION"
+      ],
+      [
+        12,
+        15,
+        22,
+        25,
+        "CONJUNCTION"
+      ],
+      [
+        18,
+        19,
+        22,
+        25,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "211": {
+    "ner": [
+      [
+        "experiment",
+        4,
+        11,
+        "Task"
+      ],
+      [
+        "intelligibility",
+        14,
+        16,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        11,
+        14,
+        16,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "212": {
+    "ner": [
+      [
+        "language learning",
+        1,
+        3,
+        "Task"
+      ],
+      [
+        "assessors",
+        6,
+        7,
+        "OtherScientificTerms"
+      ],
+      [
+        "native",
+        9,
+        10,
+        "Generic"
+      ],
+      [
+        "non-native",
+        11,
+        12,
+        "Generic"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        3,
+        6,
+        7,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "213": {
+    "ner": [
+      [
+        "factors",
+        5,
+        6,
+        "OtherScientificTerms"
+      ],
+      [
+        "decisions",
+        11,
+        12,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        6,
+        11,
+        12,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "214": {
+    "ner": [
+      [
+        "experiment",
+        14,
+        15,
+        "Task"
+      ],
+      [
+        "machine translation output",
+        16,
+        18,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        14,
+        15,
+        16,
+        18,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "215": {
+    "ner": [
+      [
+        "set",
+        4,
+        5,
+        "OtherScientificTerms"
+      ],
+      [
+        "extracts",
+        8,
+        9,
+        "Material"
+      ],
+      [
+        "translated newswire text",
+        11,
+        14,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        11,
+        14,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "216": {
+    "ner": [
+      [
+        "human translations",
+        5,
+        7,
+        "Material"
+      ],
+      [
+        "machine translation outputs",
+        11,
+        13,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        7,
+        11,
+        13,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "217": {
+    "ner": [
+      [
+        "expert human translation",
+        18,
+        21,
+        "OtherScientificTerms"
+      ],
+      [
+        "machine translation",
+        23,
+        25,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        18,
+        21,
+        23,
+        25,
+        "COMPARE"
+      ]
+    ]
+  },
+  "218": {
+    "ner": [
+      [
+        "decision",
+        14,
+        15,
+        "Task"
+      ]
+    ],
+    "relations": []
+  },
+  "219": {
+    "ner": [
+      [
+        "results",
+        1,
+        2,
+        "OtherScientificTerms"
+      ],
+      [
+        "experiment",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "analysis",
+        10,
+        11,
+        "Method"
+      ],
+      [
+        "factors",
+        13,
+        14,
+        "OtherScientificTerms"
+      ],
+      [
+        "decision making process",
+        17,
+        19,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        2,
+        4,
+        5,
+        "USED-FOR"
+      ],
+      [
+        10,
+        11,
+        13,
+        14,
+        "FEATURE-OF"
+      ],
+      [
+        10,
+        11,
+        17,
+        19,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "220": {
+    "ner": [
+      [
+        "machine learning approach",
+        5,
+        7,
+        "Method"
+      ],
+      [
+        "bare slice disambiguation",
+        9,
+        10,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        7,
+        4,
+        5,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "221": {
+    "ner": [
+      [
+        "heuristic principles",
+        5,
+        7,
+        "Method"
+      ],
+      [
+        "corpus-based sample",
+        9,
+        11,
+        "Material"
+      ],
+      [
+        "probabilistic Horn clauses",
+        15,
+        18,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        7,
+        9,
+        11,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "222": {
+    "ner": [
+      [
+        "predicates",
+        4,
+        6,
+        "OtherScientificTerms"
+      ],
+      [
+        "clauses",
+        7,
+        9,
+        "OtherScientificTerms"
+      ],
+      [
+        "features",
+        15,
+        17,
+        "OtherScientificTerms"
+      ],
+      [
+        "dataset",
+        20,
+        22,
+        "Material"
+      ],
+      [
+        "SLIPPER",
+        30,
+        31,
+        "Method"
+      ],
+      [
+        "TiMBL",
+        38,
+        39,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        6,
+        7,
+        9,
+        "FEATURE-OF"
+      ],
+      [
+        4,
+        6,
+        15,
+        17,
+        "USED-FOR"
+      ],
+      [
+        20,
+        22,
+        30,
+        31,
+        "USED-FOR"
+      ],
+      [
+        20,
+        22,
+        38,
+        39,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "223": {
+    "ner": [
+      [
+        "learners",
+        1,
+        2,
+        "Generic"
+      ],
+      [
+        "success rates",
+        7,
+        9,
+        "Metric"
+      ]
+    ],
+    "relations": []
+  },
+  "224": {
+    "ner": [
+      [
+        "heuristic principles",
+        11,
+        13,
+        "Method"
+      ],
+      [
+        "Horn clauses",
+        26,
+        28,
+        "Method"
+      ],
+      [
+        "features",
+        5,
+        7,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        10,
+        12,
+        15,
+        17,
+        "FEATURE-OF"
+      ],
+      [
+        24,
+        25,
+        26,
+        28,
+        "USED-FOR"
+      ],
+      [
+        29,
+        31,
+        34,
+        35,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "225": {
+    "ner": [
+      [
+        "goal",
+        4,
+        4,
+        "Task"
+      ],
+      [
+        "evaluation criterion",
+        7,
+        8,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        4,
+        7,
+        8,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "226": {
+    "ner": [
+      [
+        "criterion",
+        2,
+        5,
+        "OtherScientificTerms"
+      ],
+      [
+        "substitutability",
+        5,
+        7,
+        "OtherScientificTerms"
+      ],
+      [
+        "NLP applications",
+        12,
+        15,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        5,
+        12,
+        15,
+        "USED-FOR"
+      ],
+      [
+        2,
+        5,
+        11,
+        12,
+        "FEATURE-OF"
+      ],
+      [
+        5,
+        7,
+        2,
+        5,
+        "HYPONYM-OF"
+      ]
+    ]
+  },
+  "227": {
+    "ner": [
+      [
+        "semantic criterion",
+        3,
+        5,
+        "OtherScientificTerms"
+      ],
+      [
+        "distributional word feature vectors",
+        11,
+        15,
+        "Material"
+      ],
+      [
+        "word similarity results",
+        20,
+        22,
+        "Metric"
+      ],
+      [
+        "objective measure",
+        25,
+        27,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        5,
+        11,
+        15,
+        "USED-FOR"
+      ],
+      [
+        11,
+        15,
+        20,
+        22,
+        "USED-FOR"
+      ],
+      [
+        25,
+        27,
+        30,
+        32,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "228": {
+    "ner": [
+      [
+        "feature weighting and selection function",
+        3,
+        8,
+        "Method"
+      ],
+      [
+        "feature vectors",
+        15,
+        16,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        5,
+        9,
+        10,
+        "USED-FOR"
+      ],
+      [
+        15,
+        16,
+        3,
+        8,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "229": {
+    "ner": [
+      [
+        "image sequences",
+        2,
+        4,
+        "Material"
+      ],
+      [
+        "layers",
+        7,
+        8,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        8,
+        2,
+        4,
+        "PART-OF"
+      ]
+    ]
+  },
+  "230": {
+    "ner": [
+      [
+        "phenomenon",
+        1,
+        1,
+        "OtherScientificTerms"
+      ],
+      [
+        "image processing techniques",
+        4,
+        6,
+        "Method"
+      ],
+      [
+        "motion estimation",
+        23,
+        24,
+        "Task"
+      ],
+      [
+        "object recognition",
+        26,
+        27,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        1,
+        1,
+        4,
+        6,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "231": {
+    "ner": [
+      [
+        "automated technique",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "image sequences",
+        10,
+        11,
+        "Material"
+      ],
+      [
+        "motion trajectories",
+        14,
+        15,
+        "OtherScientificTerms"
+      ],
+      [
+        "feature points",
+        17,
+        18,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        14,
+        15,
+        10,
+        11,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "232": {
+    "ner": [
+      [
+        "reflection",
+        2,
+        2,
+        "OtherScientificTerm"
+      ],
+      [
+        "regions containing two different layers",
+        4,
+        8,
+        "OtherScientificTerm"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        2,
+        4,
+        8,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "233": {
+    "ner": [
+      [
+        "strong detector",
+        4,
+        5,
+        "Method"
+      ],
+      [
+        "set of weak detectors",
+        9,
+        12,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        9,
+        12,
+        4,
+        5,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "234": {
+    "ner": [
+      [
+        "novel priors",
+        2,
+        4,
+        "Method"
+      ],
+      [
+        "sparse and dense detection maps",
+        6,
+        10,
+        "OtherScientificTerms"
+      ],
+      [
+        "high detection rate",
+        15,
+        17,
+        "Metric"
+      ],
+      [
+        "pathological motion",
+        21,
+        22,
+        "Material"
+      ],
+      [
+        "occlusion",
+        24,
+        25,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        4,
+        6,
+        10,
+        "USED-FOR"
+      ],
+      [
+        15,
+        17,
+        6,
+        10,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "235": {
+    "ner": [
+      [
+        "problem of reconstructing the motion of a 3D articulated tree",
+        4,
+        13,
+        "Task"
+      ],
+      [
+        "2D point correspondences",
+        15,
+        17,
+        "Material"
+      ],
+      [
+        "temporal prior",
+        21,
+        22,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        15,
+        17,
+        4,
+        13,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "236": {
+    "ner": [
+      [
+        "smooth motion",
+        2,
+        3,
+        "OtherScientificTerm"
+      ],
+      [
+        "trajectory basis",
+        9,
+        10,
+        "Method"
+      ],
+      [
+        "hard combinatorial problem",
+        15,
+        16,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        9,
+        10,
+        2,
+        3,
+        "USED-FOR"
+      ],
+      [
+        15,
+        16,
+        9,
+        10,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "237": {
+    "ner": [
+      [
+        "Branch and bound strategies",
+        0,
+        3,
+        "Method"
+      ],
+      [
+        "complexity",
+        10,
+        10,
+        "OtherScientificTerm"
+      ],
+      [
+        "global optimality",
+        13,
+        14,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        0,
+        3,
+        10,
+        10,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "238": {
+    "ner": [
+      [
+        "exhaustive search",
+        11,
+        12,
+        "Method"
+      ],
+      [
+        "guarantee",
+        5,
+        5,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        5,
+        11,
+        12,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "239": {
+    "ner": [
+      [
+        "recent work",
+        2,
+        4,
+        "Method"
+      ],
+      [
+        "compact high-pass filters",
+        9,
+        11,
+        "Material"
+      ],
+      [
+        "dynamic programming approach",
+        16,
+        18,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        9,
+        11,
+        2,
+        4,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "240": {
+    "ner": [
+      [
+        "affine projection",
+        2,
+        3,
+        "Method"
+      ],
+      [
+        "reconstruction",
+        5,
+        5,
+        "Task"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        3,
+        5,
+        5,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "241": {
+    "ner": [
+      [
+        "blog post retrieval",
+        2,
+        3,
+        "Task"
+      ],
+      [
+        "relevance",
+        15,
+        15,
+        "Metric"
+      ],
+      [
+        "topic",
+        19,
+        19,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        3,
+        15,
+        15,
+        "FEATURE-OF"
+      ],
+      [
+        2,
+        3,
+        19,
+        19,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "242": {
+    "ner": [
+      [
+        "topical blog post retrieval",
+        2,
+        5,
+        "Task"
+      ],
+      [
+        "textual credibility indicators",
+        8,
+        10,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        2,
+        5,
+        8,
+        10,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "243": {
+    "ner": [
+      [
+        "indicators",
+        5,
+        5,
+        "OtherScientificTerms"
+      ],
+      [
+        "post level indicators",
+        7,
+        9,
+        "Method"
+      ],
+      [
+        "blog posts",
+        15,
+        16,
+        "Material"
+      ],
+      [
+        "blog level indicators",
+        20,
+        22,
+        "Method"
+      ],
+      [
+        "underlying blogs",
+        28,
+        29,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        5,
+        5,
+        7,
+        9,
+        "FEATURE-OF"
+      ],
+      [
+        7,
+        9,
+        15,
+        16,
+        "USED-FOR"
+      ],
+      [
+        5,
+        5,
+        20,
+        22,
+        "FEATURE-OF"
+      ],
+      [
+        20,
+        22,
+        28,
+        29,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "244": {
+    "ner": [
+      [
+        "estimate",
+        4,
+        4,
+        "Method"
+      ],
+      [
+        "indicators",
+        6,
+        6,
+        "Metric"
+      ],
+      [
+        "retrieval approach",
+        14,
+        15,
+        "Task"
+      ],
+      [
+        "language models",
+        18,
+        19,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        4,
+        4,
+        6,
+        6,
+        "USED-FOR"
+      ],
+      [
+        14,
+        15,
+        18,
+        19,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "245": {
+    "ner": [
+      [
+        "TREC Blog track test set",
+        3,
+        7,
+        "Material"
+      ],
+      [
+        "credibility indicators",
+        13,
+        15,
+        "OtherScientificTerms"
+      ],
+      [
+        "retrieval effectiveness",
+        17,
+        19,
+        "Metric"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        7,
+        13,
+        15,
+        "FEATURE-OF"
+      ],
+      [
+        13,
+        15,
+        17,
+        19,
+        "USED-FOR"
+      ],
+      [
+        3,
+        7,
+        23,
+        25,
+        "CONJUNCTION"
+      ]
+    ]
+  },
+  "246": {
+    "ner": [
+      [
+        "the problem of learning to predict moves",
+        3,
+        8,
+        "Task"
+      ],
+      [
+        "game records",
+        16,
+        17,
+        "Material"
+      ],
+      [
+        "expert players",
+        19,
+        20,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        3,
+        8,
+        16,
+        17,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "247": {
+    "ner": [
+      [
+        "probability distribution",
+        6,
+        7,
+        "OtherScientificTerms"
+      ],
+      [
+        "legal moves",
+        10,
+        11,
+        "Material"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        7,
+        10,
+        11,
+        "FEATURE-OF"
+      ]
+    ]
+  },
+  "248": {
+    "ner": [
+      [
+        "computer Go",
+        6,
+        7,
+        "Task"
+      ],
+      [
+        "stand-alone Go player",
+        14,
+        16,
+        "Method"
+      ]
+    ],
+    "relations": [
+      [
+        6,
+        7,
+        14,
+        16,
+        "USED-FOR"
+      ]
+    ]
+  },
+  "249": {
+    "ner": [
+      [
+        "move selector",
+        7,
+        8,
+        "Method"
+      ],
+      [
+        "move sorter",
+        10,
+        11,
+        "Method"
+      ],
+      [
+        "game tree search",
+        13,
+        15,
+        "Task"
+      ],
+      [
+        "training tool",
+        18,
+        19,
+        "Method"
+      ],
+      [
+        "Go players",
+        22,
+        23,
+        "OtherScientificTerms"
+      ]
+    ],
+    "relations": [
+      [
+        7,
+        8,
+        13,
+        15,
+        "USED-FOR"
+      ],
+      [
+        10,
+        11,
+        13,
+        15,
+        "USED-FOR"
+      ],
+      [
+        18,
+        19,
+        22,
+        23,
+        "USED-FOR"
+      ]
+    ]
+  }
+}

@@ -81,7 +81,6 @@ class QueryCache:
             input_index INTEGER,
             rank INTEGER,
             data_index INTEGER,
-            data_id INTEGER,
             similarity REAL,
             PRIMARY KEY (input_index, rank)
         )
@@ -95,8 +94,8 @@ class QueryCache:
         :param results: 查询结果，列表，包含 (数据索引, 相似度) 的元组
         """
         self.cursor.executemany(
-            f"INSERT OR REPLACE INTO {self.table_name} (input_index, rank, data_index, data_id, similarity) VALUES (?, ?, ?, ?, ?)",
-            [(input_index, rank, data_index, data_id, similarity) for rank, (data_index, data_id, similarity) in enumerate(results)]
+            f"INSERT OR REPLACE INTO {self.table_name} (input_index, rank, data_index, similarity) VALUES (?, ?, ?, ?)",
+            [(input_index, rank, data_index, similarity) for rank, (data_index, similarity) in enumerate(results)]
         )
         self.conn.commit()
 
@@ -107,7 +106,7 @@ class QueryCache:
         :return: 查询结果，列表，包含 (数据索引, 向量索引, 相似度) 的元组
         """
         self.cursor.execute(
-            f"SELECT data_index, data_id, similarity FROM {self.table_name} WHERE input_index = ? ORDER BY rank",
+            f"SELECT data_index, similarity FROM {self.table_name} WHERE input_index = ? ORDER BY rank",
             (input_index,)
         )
         return self.cursor.fetchall()

@@ -1,5 +1,7 @@
+from . import filter_input
+
 def compare_tag(a, b):
-    return a.lower().replace(' ', '').replace('-', '') == b.lower().replace(' ', '').replace('-', '')
+    return filter_input(a).lower().replace(' ', '').replace('-', '') == filter_input(b).lower().replace(' ', '').replace('-', '')
 
 def match_list(target: list[tuple[int, int, str]], generated: list[tuple[int, int, str]]) -> tuple[int, float, float]:
     """
@@ -34,13 +36,15 @@ def match_list(target: list[tuple[int, int, str]], generated: list[tuple[int, in
 def count_contained_intervals(target, generated):
     count = 0
     for _target in target:
-        if len(_target) == 3:
+        if len(_target) == 2:
+            a_text, a_tag = _target
+        elif len(_target) == 3:
             a_start, a_end, a_tag = _target
         elif len(_target) == 4:
             a_text, a_start, a_end, a_tag = _target
         else:
             raise ValueError("Invalid target item")
-        for b_text, b_start, b_end, b_tag in generated:
+        for b_text, b_tag in generated:
             if (a_text in b_text) and compare_tag(a_tag, b_tag):
                 count += 1
                 break

@@ -1,4 +1,9 @@
 import json
+import re
+filter_pattern = r"^-[A-Z]{3}-$"
+
+def filter_input(text: str):
+    return " ".join([s for s in text.split() if not re.match(filter_pattern, s)])
 
 def require_input(prompt: str, check) -> str:
     text = None

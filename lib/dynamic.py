@@ -10,7 +10,7 @@ class DynamicText:
         return self.text_func()
 
 class DynamicDisplay:
-    frame_rate = 60
+    frame_rate = 24
     update_interval = 1 / frame_rate
     
     def __init__(self, n_lines, extra=None, extra_height=0):

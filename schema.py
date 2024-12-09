@@ -5,9 +5,9 @@ import os
 workdir = Path(os.getcwd())
 
 files = [
-    # workdir / 'data' / 'train_sentence.json',
-    # workdir / 'data' / 'test_sentence.json',
-    workdir / 'results' / 'bert_base_uncased_llama3.1-70b_10examples.json',
+    workdir / 'data' / 'train_sentence.json',
+    workdir / 'data' / 'test_sentence.json',
+    # workdir / 'results' / 'bert_base_uncased_llama3.1-70b_10examples.json',
 ]
 datas = []
 

@@ -17,14 +17,14 @@ with open(workdir / "data" / "train_sentence.new.json", "r") as f:
     json_data = json.load(f)
     train_sentences = json_data
 
-schema_ner = """All entity types are as below:
+schema_ner = """所有可能的实体类型:
 1.Task: Applications, problems to solve, systems to construct.
 2.Method: Methods , models, systems to use, tools/components of a system/frameworks.
 3.Metric: Metrics, measures, or entities that can express quality of a system/method.
 4.Material: Data, datasets, resources, Corpus, Knowledge base.
 5.OtherScientificTerms: Phrases that are a scientific terms but do not fall into any of the above classes.
 6.Generic: General terms or pronouns that may refer to a entity but are not themselves informative, often used as connection words."""
-schema_rel = """All relation types are as below:
+schema_rel = """所有可能的关系类型:
 1.USED-FOR: B is used for A, B models A, A is trained on B, B exploits A, A is based on B.
 2.FEATURE-OF: B belongs to A, B is a feature of A, B is under A domain.
 3.HYPONYM-OF: B is a hyponym of A, B is a type of A.

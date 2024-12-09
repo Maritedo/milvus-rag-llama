@@ -6,8 +6,8 @@ def match_list(target: list[tuple[int, int, str]], generated: list[tuple[int, in
     返回值: (matched, recall, precision)
     """
     matched = 0
-    _target = sorted(target, key=lambda x: x[1])
-    _generated = sorted(generated, key=lambda x: x[1])
+    _target = sorted(target, key=lambda x: x[0])
+    _generated = sorted(generated, key=lambda x: x[0])
     index_t = 0
     index_g = 0
     len_t = len(target)
@@ -34,9 +34,14 @@ def match_list(target: list[tuple[int, int, str]], generated: list[tuple[int, in
 def count_contained_intervals(target, generated):
     count = 0
     for _target in target:
-        a_start, a_end, a_tag = _target if len(_target) == 3 else _target[1:]
-        for _, b_start, b_end, b_tag in generated:
-            if ((b_start <= a_start and a_end <= b_end ) or (a_start <= b_start and b_end <= a_end)) and compare_tag(a_tag, b_tag):
+        if len(_target) == 3:
+            a_start, a_end, a_tag = _target
+        elif len(_target) == 4:
+            a_text, a_start, a_end, a_tag = _target
+        else:
+            raise ValueError("Invalid target item")
+        for b_text, b_start, b_end, b_tag in generated:
+            if (a_text in b_text) and compare_tag(a_tag, b_tag):
                 count += 1
                 break
     return (count, count / len(target) if len(target) > 0 else -1, count / len(generated) if len(generated) > 0 else -1)

@@ -2,14 +2,11 @@ from datetime import datetime
 import requests
 from lib.cache import QueryCache
 from lib.utility import LocalEmbbeder, ServerEmbedder
-from lib import parse_input, filter_input
+from lib import parse_input, filter_input, workdir
 import os
-from pathlib import Path
 import json
 import time
 import traceback
-
-workdir = Path(os.getcwd())
 
 with open(workdir / "data" / "test_sentence.parsed.json", "r") as f:
     json_data = json.load(f)
@@ -58,8 +55,8 @@ def get_completion(sentence, examples, model):
 一些输入和应给出的输出示例如下：
 {"\n".join([f'Input {i+1}: {filter_input(train_sentences[item[0]]["sentence"])}\nOutput {i+1}: {remove_mark(train_sentences[item[0]])}' for i, item in enumerate(examples)])}
 在提取实体以及找出提取出的实体的关系时，应提取尽可能多的结果，并且不应对内容进行改写。等待输入并给出结果..."""
-    with open(workdir / "tmp" / f"prompt_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.txt", "w") as f:
-        f.write(prompt)
+    # with open(workdir / "tmp" / f"prompt_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.txt", "w") as f:
+    #     f.write(prompt)
     api_url = "http://172.16.129.30:11434/api/generate"
     payload = {
         "model": model,

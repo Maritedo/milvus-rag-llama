@@ -1,17 +1,10 @@
 import requests
 import json
-from sentence_transformers import SentenceTransformer
-from pymilvus import connections, Collection, FieldSchema, CollectionSchema, DataType, utility
-from sentence_transformers import SentenceTransformer
 from math import log10
-from dotenv import load_dotenv
-from pathlib import Path
-import os
 from lib import get_sentence_hash
 
-workdir = Path(os.getcwd())
-filedir = workdir / "data"
-load_dotenv(workdir / ".env")
+# filedir = workdir / "data"
+# load_dotenv(workdir / ".env")
 
 class Embedder:
     def __init__(self) -> None:
@@ -31,6 +24,7 @@ class LocalEmbbeder(Embedder):
     
     def __lazy_load(self):
         if not self.__loaded:
+            from sentence_transformers import SentenceTransformer
             self.model = SentenceTransformer(self.model_name)
             self.__loaded = True
     
@@ -168,6 +162,7 @@ class NEREmbeddingColleciton:
     
     
     def __create_database(self) -> None:
+        from pymilvus import Collection, FieldSchema, CollectionSchema, DataType
         # 定义 Collection 的 Schema
         fields = [
             FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
@@ -190,6 +185,7 @@ class NEREmbeddingColleciton:
     
     
     def connect(self):
+        from pymilvus import connections
         # 连接到 Milvus
         # locals: 127.0.0.1
         # school: 172.16.129.30
@@ -197,6 +193,7 @@ class NEREmbeddingColleciton:
         print("Connected to Milvus.")
         
     def init(self):
+        from pymilvus import Collection, utility
         if self.collection_name in utility.list_collections():
             print(f"Collection '{self.collection_name}' already exists. Loading...")
             self.collection = Collection(name=self.collection_name)

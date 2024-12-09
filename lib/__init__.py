@@ -1,5 +1,10 @@
 import json
 import re
+from pathlib import Path
+from os import getcwd
+
+workdir = Path(getcwd())
+
 filter_pattern = r"^-[A-Z]{3}-$"
 
 def filter_input(text: str):

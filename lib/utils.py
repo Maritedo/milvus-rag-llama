@@ -5,6 +5,14 @@ from datetime import datetime
 # filedir = workdir / "data"
 # load_dotenv(workdir / ".env")
 
+def check_element_layout(value: list, *kargs):
+    if len(value) != len(kargs):
+        return False
+    for i in range(len(value)):
+        if not isinstance(value[i], kargs[i]):
+            return False
+    return True
+
 
 # 捕获并保存异常
 import signal
@@ -44,7 +52,7 @@ def load_checkpoint(filename, default=None):
 
 
 def get_time_str():
-    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
 
 
 def get_hf_models():

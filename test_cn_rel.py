@@ -7,13 +7,13 @@ import traceback
 from lib import parse_input, filter_input, workdir
 from lib.cache import QueryCache
 from lib.embedder import LocalEmbedder, ServerEmbedder
-from lib.utils import KeyboardInterruptTemporaryIgnored, load_checkpoint, get_time_str
+from lib.utils import KeyboardInterruptTemporaryIgnored, load_checkpoint, get_time_str, check_element_layout
 from lib.evaluate import count_contained_intervals
 
 
 with open(workdir / "data" / "test_sentence.parsed.json", "r", encoding="utf-8") as f:
     json_data = json.load(f)
-    test_sentences = json_data[:250]
+    test_sentences = json_data
 with open(workdir / "data" / "train_sentence.parsed.json", "r", encoding="utf-8") as f:
     json_data = json.load(f)
     train_sentences = json_data
@@ -43,10 +43,10 @@ def extract_entity_types(entities):
         entity_dict[entity_type].append(entity)
     return entity_dict
 
-def remove_mark(input):
+def remove_mark(element):
     filtered = {
-        "sentence": filter_input(input['sentence']),
-        "entities": [[filter_input(ent[0]), ent[1]] for ent in input['entities']]
+        "sentence": filter_input(element['sentence']),
+        "entities": [[filter_input(ent[0]), ent[1]] for ent in element['entities']]
     }
     return json.dumps(filtered)
 
@@ -55,7 +55,7 @@ def get_completion(element, examples, model):
     system = f"""你是一个SPO三元组抽取专家，我将输入一个句子和句子的实体提取结果，你需要根据语境，找出给定实体的关系。不要给出代码或解释说明。
 {schema_ner}
 {schema_rel}
-一些输入和应给出的输出示例如下：
+一些输入和应给出的输出示例如下（format: {{"relations": [[entityA, entityB, rtype], ...]}}）：
 {"\n".join([f'Input {i+1}: {remove_mark(train_sentences[item[0]])}\nOutput {i+1}: {{"relations": {[[filter_input(rel[0]), filter_input(rel[1]), rel[2]] for rel in train_sentences[item[0]]['relations']]}}}' for i, item in enumerate(examples)])}
 在提取实体的关系时，应提取尽可能多的结果，并且不应对内容进行改写。等待输入并给出结果..."""
     prompt = parse_input(element, True)
@@ -82,12 +82,15 @@ def get_completion(element, examples, model):
 def check_output(output):
     if type(output) != dict:
         raise Exception(f"Invalid output type: {type(output)}")
-    if "relations" not in output.keys() or (len(output["relations"]) != 0 and type(output["relations"][0]) != list):
-        raise Exception(f"Invalid output skeleton (no relations field): {output}")
+    if "relations" not in output.keys() or type(output["relations"]) != list:
+        raise Exception(f"Invalid output skeleton (no valid relations field): {output}")
     else:
-        len_rel = set(len(i) for i in output["relations"])
-        if len(len_rel) > 0 and len_rel != {3}:
-            raise Exception(f"Invalid output structure (bad element layout of 'relations'): {output}")
+        if len(output["relations"]) != 0 and set([type(rel) for rel in output["relations"]]) != {list}:
+            raise Exception(f"Invalid output structure (bad type of 'relations'): {output}")
+        for rel in output["relations"]:
+            if not check_element_layout(rel, str, str, str):
+                raise Exception(f"Invalid output structure (bad type of elements in 'relations'): {output}")
+            
     return True
 
 fixed_exps = [(557,), (1515,), (1295,), (1028,), (697,), (376,), (273,), (247,), (242,), (1779,), (1365,)]
@@ -100,8 +103,7 @@ def evaluation_worker(index, model, exps, logger, max_retries=10, quite=False) -
     output = None
     while True:
         try:
-            sentence = filter_input(test_sentences[index]["sentence"])
-            logger(f"Input: {sentence}")
+            logger(f"Input: {parse_input(test_sentences[index])}")
             res = get_completion(test_sentences[index], exps, model)
             with KeyboardInterruptTemporaryIgnored():
                 output = json.loads(res["response"])
@@ -146,7 +148,7 @@ def evaluate(results_file, results, model, embedder, title, identifier=None, num
         display.set_line(0, title)
         status_line = DynamicText(lambda: f"[Relati] Expected:{total[0]} Generated:{total[1]} Matched:{total[2]}")
         display.set_line(1, status_line)
-        statis_line = DynamicText(lambda: f"[Status] Recall: {(total[2] / (total[0]) if total[0] else 0) * 100:.2f}%, Precision: {(total[2] / total[1] if total[0] else 0) * 100:.2f}%, F1 Score: {(2 * total[2] / (total[0] + total[1]) if total[0] + total[1] else 0):.4f}")
+        statis_line = DynamicText(lambda: f"[Status] Recall: {(total[2] / (total[0]) if total[0] else 0) * 100:.2f}%, Precision: {(total[2] / total[1] if total[1] else 0) * 100:.2f}%, F1 Score: {(2 * total[2] / (total[0] + total[1]) if total[0] + total[1] else 0):.4f}")
         display.set_line(2, statis_line)
         extras_info = DynamicText(lambda: f"[Extras] Failure: {total[3]}")
         display.set_line(3, extras_info)
@@ -192,6 +194,7 @@ def evaluate(results_file, results, model, embedder, title, identifier=None, num
                         total[1] += len(output["relations"])
                         total[2] += matched
                         results[str(next)] = output
+                        log(f"Output: {output}")
                         log(f"Time elapsed: {time.time() - current_time:.2f}s, Length: {len(output["relations"])}")
                         log(f"[{next}] Recall: {recall * 100:.2f}%, Precision: {precision * 100:.2f}%, Matched: {matched}/{len(test_sentences[next]["relations"])}")
                     else:
@@ -220,9 +223,9 @@ def evaluate(results_file, results, model, embedder, title, identifier=None, num
 
 tasks = []
 
-for m in ["llama3.1:70b", "llama3.2:3b"]:
-    for n in [1, 3]:
-        for f in [True, False]:
+for m in ["llama3.2:3b"]:
+    for n in [3, 1]:
+        for f in [True]:
             tasks.append({
                 "model": m,
                 "numofexps": n,

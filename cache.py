@@ -1,7 +1,7 @@
 import sqlite3
 import time
 from typing import List, Tuple
-from lib.utility import search, embedder
+from lib.utils import search, embedder
 import json
 from pathlib import Path
 import os

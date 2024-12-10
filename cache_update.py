@@ -1,5 +1,5 @@
 import time
-from lib.utility import embedder, collection
+from lib.utils import embedder, collection
 import json
 from pathlib import Path
 from lib.cache import QueryCache, QueryCacheOld

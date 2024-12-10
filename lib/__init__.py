@@ -18,12 +18,14 @@ def require_input(prompt: str, check) -> str:
             text = _text
     return text
 
-def parse_input(t):
-    return str(json.dumps({
-        'slices': {i:e for i,e in enumerate(t.split())},
-        'sentence': t
-    }))
-    
+def parse_input(raw, relations=False):
+    if relations:
+        return json.dumps({
+            "sentence": filter_input(raw["sentence"]),
+            'entities': [[filter_input(entity[0]), entity[1]] for entity in raw["entities"]]
+        })
+    else:
+        return filter_input(raw["sentence"])
 
 def get_sentence_hash(sentence):
     return hash(sentence)  # 生成一个整数哈希值

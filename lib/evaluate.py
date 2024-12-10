@@ -35,20 +35,26 @@ def match_list(target: list[tuple[int, int, str]], generated: list[tuple[int, in
 
 def count_contained_intervals(target, generated):
     count = 0
-    for _target in target:
-        if len(_target) == 2:
-            a_text, a_tag = _target
-        elif len(_target) == 3:
-            a_start, a_end, a_tag = _target
-        elif len(_target) == 4:
-            a_text, a_start, a_end, a_tag = _target
-        else:
-            raise ValueError("Invalid target item")
-        for b_text, b_tag in generated:
-            if (a_text in b_text) and compare_tag(a_tag, b_tag):
-                count += 1
-                break
-    return (count, count / len(target) if len(target) > 0 else -1, count / len(generated) if len(generated) > 0 else -1)
+    if len(target) == 0 or len(generated) == 0:
+        return (0, -1, -1)
+    len_s = len(target[0])
+    if len_s != len(generated[0]):
+        raise ValueError("Length of target and generated should be the same")
+    if len_s == 2:
+        for entity, ent_type in target:
+            for _entity, _ent_type in generated:
+                if entity in _entity and compare_tag(ent_type, _ent_type):
+                    count += 1
+                    break
+    elif len_s == 3:
+        for entity_a, entity_b, rel_type in target:
+            for _entity_a, _entity_b, _rel_type in generated:
+                if entity_a in _entity_a and entity_b in _entity_b and compare_tag(rel_type, _rel_type):
+                    count += 1
+                    break   
+    else:
+        raise ValueError("Invalid length of target and generated")
+    return (count, count / len(target), count / len(generated))
 
 def get_all(a, b):
     res = []

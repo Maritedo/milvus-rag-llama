@@ -1,6 +1,6 @@
 import requests
 from lib.cache import QueryCache
-from lib.utility import LocalEmbbeder, ServerEmbedder
+from lib.utils import LocalEmbbeder, ServerEmbedder
 from lib import parse_input
 import os
 from pathlib import Path

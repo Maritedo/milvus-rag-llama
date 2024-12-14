@@ -7,7 +7,7 @@ from .utils import get_size_readable
 class Embedder:
     def __init__(self) -> None:
         raise NotImplementedError
-    def embbed(self, sentence: str):
+    def embbed(self, sentences: str | list):
         pass
     def name(self):
         pass
@@ -19,6 +19,7 @@ class Embedder:
 class LocalEmbedder(Embedder):
     def __init__(self, model_name) -> None:
         self.model_name = model_name.split("/")[-1].replace("-", "_")
+        self.__model_path = model_name
         self.__loaded = False
         self.model = None
     
@@ -40,6 +41,9 @@ class LocalEmbedder(Embedder):
     def dimension(self):
         self.__lazy_load()
         return self.model.get_sentence_embedding_dimension()
+    
+    def __eq__(self, value):
+        return super().__eq__(value) or self.__model_path == value.__model_path
 
 
 class ServerEmbedder(Embedder):
@@ -86,6 +90,7 @@ class ServerEmbedder(Embedder):
             "model": self.model_name,
             "seed": 42
         }
+        print(f"Requesting embeddings from {api_url} with model {self.model_name}...")
         response = requests.post(api_url, json=payload)
         if response.status_code == 200:
             return response.json()['embeddings']
@@ -111,3 +116,6 @@ class ServerEmbedder(Embedder):
     
     def name(self):
         return self.model_name.split(":")[0].replace(".", "_")
+    
+    def __eq__(self, value):
+        return super().__eq__(value) or (self.server_url == value.server_url and self.model_name == value.model_name)

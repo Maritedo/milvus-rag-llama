@@ -223,9 +223,9 @@ def evaluate(results_file, results, model, embedder, title, identifier=None, num
 
 tasks = []
 
-for m in ["llama3.2:3b"]:
+for m in ["llama3.1:70b", "llama3.2:3b"]:
     for n in [3, 1]:
-        for f in [True]:
+        for f in [False, True]:
             tasks.append({
                 "model": m,
                 "numofexps": n,

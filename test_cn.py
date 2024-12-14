@@ -13,7 +13,7 @@ from lib.evaluate import count_contained_intervals
 
 with open(workdir / "data" / "test_sentence.parsed.json", "r", encoding="utf-8") as f:
     json_data = json.load(f)
-    test_sentences = json_data[:250]
+    test_sentences = json_data
 with open(workdir / "data" / "train_sentence.parsed.json", "r", encoding="utf-8") as f:
     json_data = json.load(f)
     train_sentences = json_data

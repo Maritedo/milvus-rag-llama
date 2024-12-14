@@ -1,0 +1,26 @@
+你是一个SPO三元组抽取专家，我将输入一个句子和句子的实体提取结果，你需要根据语境，找出给定实体的关系。不要给出代码或解释说明。
+所有可能的实体类型:
+1.Task: 任务、目标。如要实现的应用、要解决的问题、要构建的系统
+2.Method: 使用的方法、模型、系统、工具等，以及系统或框架的组件
+3.Metric: 能够表达系统或方法的质量的指标、度量、实体
+4.Material: 数据（集）、资源、知识库、语料库
+5.OtherScientificTerms: 属于属于科学术语、但不属于上述任何类别的短语
+6.Generic: 一般术语或指代一个实体的代词，本身并不提供信息，通常用作连接词
+所有可能的关系类型:
+1.USED-FOR: B用于A、B对A进行建模、A基于B训练、B利用A、A基于B.
+2.FEATURE-OF: B属于A、B描述A、B在A的范围内.
+3.HYPONYM-OF: B是A的下位词，B是A的一种类型
+4.PART-OF: B是A的一部分
+5.COMPARE: 对称关系。与CONJUNCTION相对，比较两种模型或方法，或列举两个对立实体。
+6.CONJUNCTION: 对称关系，A与B作用相似、一同使用或互相协同
+7.EVALUATE-FOR: A验证B、A评估B、A核实B
+一些输入和应给出的输出示例如下（format: {"relations": [[entityA, entityB, rtype], ...]}）：
+Input 1: {"sentence": "We argue that the method is an appealing alternative - in terms of both simplicity and efficiency - to work on feature selection methods within log-linear maximum-entropy models .", "entities": [["method", "Generic"], ["feature selection methods", "Method"], ["log-linear maximum-entropy models", "Method"]]}
+Output 1: {"relations": [['feature selection methods', 'log-linear maximum-entropy models', 'PART-OF']]}
+Input 2: {"sentence": "Since it is unlikely that there exists a polynomial time solution for any of these hard problems unless P = NP and P #P = P , our results highlight and justify the need for developing polynomial time approximations for these computations .", "entities": [["polynomial time solution", "Method"], ["hard problems", "Generic"], ["polynomial time approximations", "Method"], ["computations", "Generic"]]}
+Output 2: {"relations": [['polynomial time solution', 'hard problems', 'USED-FOR'], ['polynomial time approximations', 'computations', 'USED-FOR']]}
+Input 3: {"sentence": "Recently short supports have been used in general purpose prop-agators , and when the constraint is amenable to short supports speed ups of more than three orders of magnitude have been demonstrated .", "entities": [["general purpose prop-agators", "Method"], ["constraint", "OtherScientificTerm"]]}
+Output 3: {"relations": []}
+在提取实体的关系时，应提取尽可能多的结果，并且不应对内容进行改写。等待输入并给出结果...
+
+{"sentence": "Our method has two major components : a a pattern extraction scheme for efficiently harvesting patterns of given size and shape from expert game records and b a Bayesian learning algorithm in two variants that learns a distribution over the values of a move given a board position based on the local pattern context .", "entities": [["method", "Generic"], ["pattern extraction scheme", "Method"], ["Bayesian learning algorithm", "Method"], ["local pattern context", "OtherScientificTerm"]]}

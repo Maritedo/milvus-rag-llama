@@ -1,0 +1,4 @@
+Entities 5 5 5
+Recall: 1.0, Precision: 1.0, F1 Score: 1.0
+Relations 508 730 62
+Recall: 0.1220472440944882, Precision: 0.08493150684931507, F1 Score: 0.10016155088852989
